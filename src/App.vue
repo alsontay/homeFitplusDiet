@@ -5,7 +5,7 @@
       Home  {{'\xa0'}} {{'\xa0'}}
       Progress
     </nav> -->
-    <div id = "body">
+    <div id="body">
       <router-view></router-view>
     </div>
   </div>
@@ -15,11 +15,11 @@
 import Header from "./components/Header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Header
-  }
-}
+    Header,
+  },
+};
 </script>
 
 <style>
@@ -37,9 +37,6 @@ nav {
   padding: 5px;
   padding-bottom: 15px;
   color: #2c3e50;
-  background:rgb(185, 222, 195);
+  background: rgb(185, 222, 195);
 }
-
 </style>
-
-
