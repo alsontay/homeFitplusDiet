@@ -26,4 +26,18 @@ export default {
   width: 100vw;
   height: 100vh;
 }
+
+nav {
+  padding: 5px;
+  padding-bottom: 15px;
+  color: #2c3e50;
+  background: rgb(185, 222, 195);
+}
+
+nav {
+  padding: 5px;
+  padding-bottom: 15px;
+  color: #2c3e50;
+  background: rgb(185, 222, 195);
+}
 </style>
