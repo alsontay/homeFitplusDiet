@@ -26,7 +26,11 @@
             <label>Confirm Password</label>
             <md-input v-model="password" type="password"></md-input>
           </md-field>
-          <md-button class="md-raised md-primary" id="signinbutton" type="submit">
+          <md-button
+            class="md-raised md-primary"
+            id="signinbutton"
+            type="submit"
+          >
             Sign Up
           </md-button>
         </form>

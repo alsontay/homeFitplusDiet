@@ -18,7 +18,11 @@
             <label>Password</label>
             <md-input v-model="form.password" type="password"></md-input>
           </md-field>
-          <md-button class="md-raised md-primary" id="signinbutton" type="submit">
+          <md-button
+            class="md-raised md-primary"
+            id="signinbutton"
+            type="submit"
+          >
             Login
           </md-button>
           <div v-if="error" id="errormessage">{{ error }}</div>
@@ -51,12 +55,14 @@ export default {
     async submit(event) {
       try {
         event.preventDefault();
-        await firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password)
+        await firebase
+          .auth()
+          .signInWithEmailAndPassword(this.form.email, this.form.password);
       } catch (error) {
         this.error = error.message;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
