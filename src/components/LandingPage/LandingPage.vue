@@ -16,7 +16,9 @@
       <br />
       <h3>Happy EATING FIT and KEEPING FIT!</h3>
     </div>
-    <md-button class="md-dense md-raised md-primary">Sign In</md-button>
+    <md-button class="md-dense md-raised md-primary" href="/signin">
+      Sign In
+    </md-button>
   </div>
 </template>
 
