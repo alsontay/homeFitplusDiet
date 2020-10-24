@@ -2,25 +2,26 @@
   <div id="page">
     <md-card id="signincard">
       <div id="signinheader">
-        <md-avatar class="md-avatar-icon md-primary" id="signinicon">
-          <md-icon>lock_open</md-icon> </md-avatar
-        ><br />
-        <span class="md-display-1">Sign In</span>
+        <md-avatar class="md-avatar-icon md-primary md-large" id="signinicon">
+          <md-icon class="md-size-3x">lock_open</md-icon>
+        </md-avatar>
+        <span class="md-display-1">Login</span>
       </div>
       <md-divider id="signindivider"></md-divider>
       <div id="signinform">
-        <form>
+        <form @submit="submit">
           <md-field>
             <label>Email</label>
-            <md-input v-model="initial"></md-input>
+            <md-input v-model="form.email"></md-input>
           </md-field>
           <md-field id="signininput">
             <label>Password</label>
-            <md-input v-model="password" type="password"></md-input>
+            <md-input v-model="form.password" type="password"></md-input>
           </md-field>
-          <md-button class="md-raised md-primary" id="signinbutton">
-            Sign In
+          <md-button class="md-raised md-primary" id="signinbutton" type="submit">
+            Login
           </md-button>
+          <div v-if="error" id="errormessage">{{ error }}</div>
         </form>
         <div id="noaccountbox">
           <router-link to="/signup"
@@ -33,8 +34,29 @@
 </template>
 
 <script>
+import firebase from "../../firebase";
+
 export default {
-  name: "SignInPage",
+  name: "LoginPage",
+  data() {
+    return {
+      form: {
+        email: "",
+        password: "",
+      },
+      error: null,
+    };
+  },
+  methods: {
+    async submit(event) {
+      try {
+        event.preventDefault();
+        await firebase.auth().signInWithEmailAndPassword(this.form.email, this.form.password)
+      } catch (error) {
+        this.error = error.message;
+      }
+    }
+  }
 };
 </script>
 
@@ -56,10 +78,9 @@ export default {
 
 #signinheader {
   padding: 20px;
-}
-
-#signinicon {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #signindivider {
@@ -75,6 +96,10 @@ export default {
 
 #signininput {
   margin-bottom: 50px;
+}
+
+#errormessage {
+  color: red;
 }
 
 #signinbutton {

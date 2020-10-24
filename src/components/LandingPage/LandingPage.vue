@@ -20,7 +20,7 @@
             We aim to help you achieve your goals in fitness and dieting while
             you are stuck at home! Our fitness and diet plans are crafted by an
             algorithm designed by professional coaches and nutritionists. So if
-            you stuck to the plans, we guarantee that you will see results!
+            you stick to the plans, we guarantee that you will see results!
             <br /><br />
             Happy EATING FIT and KEEPING FIT!
           </span>
@@ -34,14 +34,14 @@
           </md-button>
           <md-button
             class="md-primary md-raised md-lg actionbutton"
-            to="/signin"
+            to="/login"
           >
             Login
           </md-button>
         </div>
       </div>
       <div class="container">
-        <img src="/images/undraw_pilates_gpdb.svg" class="md-medium-hide"/>
+        <img src="/images/undraw_pilates_gpdb.svg" class="md-medium-hide" />
       </div>
     </div>
   </div>
@@ -56,19 +56,3 @@ export default {
 <style scoped>
 @import "./LandingPage.css";
 </style>
-
-<!-- <div id="body">
-      <h2>WELCOME TO HOMEFIT+DIET!</h2>
-      <h3>
-        We aim to help you achieve your goals in fitness and dieting while you
-        are stuck at home! <br />
-        Our fitness and diet plans are crafted by an algorithm designed by
-        professional coaches and nutritionists. <br />
-        So if you stuck to the plans, we guarantee that you will see results!
-        <br /><br />
-        Happy EATING FIT and KEEPING FIT!
-      </h3>
-      <md-button class="md-dense md-raised md-primary" href="/signin">
-        Sign In
-      </md-button>
-    </div> -->
