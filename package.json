@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "pretty": "prettier --write src/**/*.{js,vue}"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -14,6 +15,7 @@
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.1",
     "vue-material": "^1.0.0-beta-15",
+    "vue-material-design-icons": "^4.10.0",
     "vue-router": "^3.4.7",
     "vuex": "^3.5.1"
   },
@@ -32,7 +34,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run pretty && npm run lint"
     }
   },
   "eslintConfig": {
@@ -42,7 +44,6 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "plugin:prettier/recommended",
       "eslint:recommended"
     ],
     "parserOptions": {

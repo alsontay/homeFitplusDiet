@@ -1,5 +1,5 @@
 <template>
-<header>
+  <header>
     <div>
       <span class="md-display-3"> HOMEFIT+DIET </span><br />
       <span class="md-subheading"> eat fit, keep fit </span>
