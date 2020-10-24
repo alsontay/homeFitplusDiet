@@ -13,6 +13,7 @@
 
 <script>
 import Header from "./components/Header.vue";
+import LandingPage from './components/LandingPage.vue'
 
 export default {
   name: "App",
@@ -39,4 +40,14 @@ nav {
   color: #2c3e50;
   background: rgb(185, 222, 195);
 }
+
+nav {
+  padding: 5px;
+  padding-bottom: 15px;
+  color: #2c3e50;
+  background:rgb(185, 222, 195);
+}
+
 </style>
+
+
