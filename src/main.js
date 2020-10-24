@@ -1,12 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Vuex from "vuex";
-
-// Vue-Material imports and themes
 import VueMaterial from "vue-material";
-import "vue-material/dist/vue-material.min.css";
-
-// Local imports
+import "vue-material/dist/vue-material.css";
 import App from "./App.vue";
 import { routes } from "./routes";
 
