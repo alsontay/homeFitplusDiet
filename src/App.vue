@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <Header/>
-    <!-- This section is to be updated when router is up -->
-    <nav>
+    <Header />
+    <!-- <nav>
       Home  {{'\xa0'}} {{'\xa0'}}
       Progress
-    </nav>
-    <LandingPage/>
+    </nav> -->
+    <div id="body">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -15,31 +16,29 @@ import Header from "./components/Header.vue";
 import LandingPage from './components/LandingPage.vue'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    LandingPage
-  }
-}
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
 #body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: "black";
-  background:rgb(243, 239, 239);
-  padding: 120px;
+  width: 100vw;
+  height: 80vh;
+}
+
+nav {
+  padding: 5px;
+  padding-bottom: 15px;
+  color: #2c3e50;
+  background: rgb(185, 222, 195);
 }
 
 nav {

@@ -1,43 +1,35 @@
 <template>
-   <div>
-    <header>
-      <h1>HOMEFIT+DIET</h1>
-      <h3>eat fit, keep fit</h3>
-    </header>
-
-
-    
+<header>
+    <div>
+      <span class="md-display-3"> HOMEFIT+DIET </span><br />
+      <span class="md-subheading"> eat fit, keep fit </span>
     </div>
-  
+  </header>
 </template>
 
 <script>
-
 export default {
-  
-  data(){
-    return{
-        
-    }
+  data() {
+    return {};
   },
-  props:
-  {
-    msg:{
-        type:String
-    }
-  }
- 
-  
-}
+  props: {
+    msg: {
+      type: String,
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-header{
-  background:rgb(185, 222, 195);
-  padding: 5px;
-  font-family: 'Avenir Black', 'Helvetica';
+header {
+  background: rgb(185, 222, 195);
+  width: 100vw;
+  height: 20vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
-
 </style>

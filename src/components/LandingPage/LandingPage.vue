@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div id="body">
+  <div id="page">
+    <div>
       <h2>WELCOME TO HOMEFIT+DIET!</h2>
       <h3>
         We aim to help you achieve your goals in fitness and dieting while you
@@ -16,32 +16,27 @@
       <br />
       <h3>Happy EATING FIT and KEEPING FIT!</h3>
     </div>
+    <md-button class="md-dense md-raised md-primary">Sign In</md-button>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "App",
-    components: {},
-  };
+export default {
+  name: "LandingPage",
+};
 </script>
 
-<style scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style>
+#page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #2c3e50;
-}
-
-#body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: rgb(121, 212, 145);
-  background: rgb(243, 239, 239);
-  padding: 120px;
+  background-color: rgb(243, 239, 239);
+  font-size: 15px;
 }
 </style>
