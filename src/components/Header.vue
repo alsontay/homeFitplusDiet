@@ -1,11 +1,14 @@
 <template>
-   <div>
-    <header>
-      <h1>HOMEFIT+DIET</h1>
-      <h3>eat fit, keep fit</h3>
-    </header>
+  <header>
+    <div>
+      <span class="md-display-3">
+        HOMEFIT+DIET
+      </span><br />
+      <span class="md-subheading">
+        eat fit, keep fit
+      </span>
     </div>
-  
+  </header>
 </template>
 
 <script>
@@ -32,6 +35,12 @@ export default {
 <style scoped>
 header{
   background:rgb(185, 222, 195);
-  padding: 10px;
+  width: 100vw;
+  height: 20vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 </style>
