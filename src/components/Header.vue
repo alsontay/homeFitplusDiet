@@ -4,6 +4,9 @@
       <h1>HOMEFIT+DIET</h1>
       <h3>eat fit, keep fit</h3>
     </header>
+
+
+    
     </div>
   
 </template>
@@ -32,6 +35,9 @@ export default {
 <style scoped>
 header{
   background:rgb(185, 222, 195);
-  padding: 10px;
+  padding: 5px;
+  font-family: 'Avenir Black', 'Helvetica';
 }
+
+
 </style>
