@@ -1,10 +1,8 @@
 import LandingPage from "./components/LandingPage/LandingPage.vue";
 import SignInPage from "./components/SignInPage/SignInPage.vue";
 import SignUpPage from "./components/SignUpPage/SignUpPage.vue";
+import Error404 from "./components/Error404/Error404.vue";
 
-/**
- * Array of url routes.
- */
 export const routes = [
   {
     path: "/",
@@ -18,7 +16,13 @@ export const routes = [
     path: "/signup",
     component: SignUpPage,
   },
-  // { path: '/signin', component:  },
-  // { path: '/signup', component:  },
-  // { path: '/home', component:  },
+  /**
+   * ================================
+   * ADD ALL ROUTES ABOVE THIS ROUTE
+   * ================================
+   */
+  {
+    path: "*",
+    component: Error404,
+  },
 ];
