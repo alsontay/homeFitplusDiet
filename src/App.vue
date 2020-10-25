@@ -1,30 +1,28 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-  methods: {
-    goBack() {
-      window.history.length > 1 ? this.$router.go(-1) : this.$router.push("/");
-    },
-  },
+  name: "app",
+  components: {},
 };
 </script>
 
 <style lang="scss">
-@import "./assets/main.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
 </style>
 
 <style>
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
-  height: 100vh;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
 }
 
 nav {
