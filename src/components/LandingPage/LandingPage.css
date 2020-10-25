@@ -1,0 +1,51 @@
+.page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(243, 239, 239);
+}
+
+.body {
+  overflow: hidden;
+  display: flex;
+  max-width: 80%;
+}
+
+.container {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logobox {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 40px;
+}
+
+.title {
+  width: 100%;
+  font-family: "Caveat", cursive;
+}
+
+.box {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionbutton {
+  margin: 0px;
+  min-width: 45%;
+}

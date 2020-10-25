@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="icon" href="/images/logo.png">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -16,4 +18,11 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <style>
+    @import "~vue-material/dist/theme/engine";
+    @include md-register-theme("default", (
+      primary: #3fffbe, // The primary color of your brand
+      accent: #1a11e8 // The secondary color of your brand
+    ));
+  </style>
 </html>

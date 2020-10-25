@@ -1,22 +1,49 @@
 <template>
-  <div id="page">
-    <div>
-      <h2>WELCOME TO HOMEFIT+DIET!</h2>
-      <h3>
-        We aim to help you achieve your goals in fitness and dieting while you
-        are stuck at home!
-      </h3>
-      <h3>
-        Our fitness and diet plans are crafted by an algorithm designed by
-        professional coaches and nutritionists.
-      </h3>
-      <h3>
-        So if you stuck to the plans, we guarantee that you will see results!
-      </h3>
-      <br />
-      <h3>Happy EATING FIT and KEEPING FIT!</h3>
+  <div class="page">
+    <div class="body">
+      <div class="container">
+        <div class="logobox">
+          <img
+            src="/images/logo.png"
+            alt="logo"
+            width="200"
+            height="200"
+            class="logo md-large-hide"
+          />
+          <div class="title">
+            <span class="md-display-3"> HOMEFIT+DIET </span><br /><br />
+            <span class="md-display-1"> Eat Fit, Keep Fit </span>
+          </div>
+        </div>
+        <div class="box">
+          <span class="md-body-1">
+            We aim to help you achieve your goals in fitness and dieting while
+            you are stuck at home! Our fitness and diet plans are crafted by an
+            algorithm designed by professional coaches and nutritionists. So if
+            you stick to the plans, we guarantee that you will see results!
+            <br /><br />
+            Happy EATING FIT and KEEPING FIT!
+          </span>
+        </div>
+        <div class="box">
+          <md-button
+            class="md-primary md-raised md-lg actionbutton"
+            to="/signup"
+          >
+            Sign Up
+          </md-button>
+          <md-button
+            class="md-primary md-raised md-lg actionbutton"
+            to="/login"
+          >
+            Login
+          </md-button>
+        </div>
+      </div>
+      <div class="container">
+        <img src="/images/undraw_pilates_gpdb.svg" class="md-medium-hide" />
+      </div>
     </div>
-    <md-button class="md-dense md-raised md-primary">Sign In</md-button>
   </div>
 </template>
 
@@ -26,17 +53,6 @@ export default {
 };
 </script>
 
-<style>
-#page {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: rgb(243, 239, 239);
-  font-size: 15px;
-}
+<style scoped>
+@import "./LandingPage.css";
 </style>
