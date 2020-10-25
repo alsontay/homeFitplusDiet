@@ -1,24 +1,26 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Vuex from "vuex";
-import VueMaterial from "vue-material";
-import "vue-material/dist/vue-material.css";
-import App from "./App.vue";
-import { routes } from "./routes";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbvue/lib/css/mdb.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-Vue.use(VueRouter);
-Vue.use(Vuex);
-Vue.use(VueMaterial);
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import firebase from "./firebase";
+import * as mdbvue from "mdbvue";
+
+for (const component in mdbvue) {
+  Vue.component(component, mdbvue[component]);
+}
 
 Vue.config.productionTip = false;
 
-const router = new VueRouter({
-  mode: "history",
-  base: __dirname,
-  routes,
+firebase.auth().onAuthStateChanged((user) => {
+  store.dispatch("fetchUser", user);
 });
 
 new Vue({
-  render: (h) => h(App),
+  store,
   router,
+  render: (h) => h(App),
 }).$mount("#app");
