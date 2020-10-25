@@ -25,7 +25,7 @@ export default {
   color: #2c3e50;
 }
 
-nav {
+/* nav {
   padding: 5px;
   padding-bottom: 15px;
   color: #2c3e50;
@@ -37,5 +37,5 @@ nav {
   padding-bottom: 15px;
   color: #2c3e50;
   background: rgb(185, 222, 195);
-}
+} */
 </style>
