@@ -62,7 +62,7 @@
         </section>
       </section>
     </div>
-    <form>
+    <form @submit="login">
       <mdb-modal
         full-height
         position="right"
@@ -80,7 +80,12 @@
                 <mdb-icon far icon="envelope" />
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Email"
+              v-model="loginData.data.email"
+            />
           </div>
           <div class="input-group">
             <div class="input-group-prepend">
@@ -92,17 +97,19 @@
               type="password"
               class="form-control"
               placeholder="Password"
+              v-model="loginData.data.password"
             />
           </div>
         </mdb-modal-body>
-        <mdb-modal-footer>
-          <mdb-btn
-            block
-            color="default"
-            @click.native="showLogin = false"
-            type="submit"
-            >Login</mdb-btn
+        <mdb-modal-footer class="center">
+          <div
+            v-if="loginData.error"
+            class="alert alert-danger"
+            id="modal-input"
           >
+            {{ loginData.error }}
+          </div>
+          <mdb-btn block color="default" type="submit">Login</mdb-btn>
           <mdb-btn
             block
             color="blue-grey"
@@ -113,7 +120,7 @@
         </mdb-modal-footer>
       </mdb-modal>
     </form>
-    <form>
+    <form @submit="signUp">
       <mdb-modal
         full-height
         position="right"
@@ -131,7 +138,12 @@
                 <mdb-icon icon="user" />
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Full Name" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Full Name"
+              v-model="signupData.data.name"
+            />
           </div>
           <div class="input-group" id="modal-input">
             <div class="input-group-prepend">
@@ -139,7 +151,12 @@
                 <mdb-icon far icon="envelope" />
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Email"
+              v-model="signupData.data.email"
+            />
           </div>
           <div class="input-group" id="modal-input">
             <div class="input-group-prepend">
@@ -151,6 +168,7 @@
               type="password"
               class="form-control"
               placeholder="Password"
+              v-model="signupData.data.password"
             />
           </div>
           <div class="input-group">
@@ -163,17 +181,19 @@
               type="password"
               class="form-control"
               placeholder="Confirm Password"
+              v-model="signupData.data.cfmPassword"
             />
           </div>
         </mdb-modal-body>
-        <mdb-modal-footer>
-          <mdb-btn
-            block
-            color="default"
-            @click.native="showSignup = false"
-            type="submit"
-            >Sign Up</mdb-btn
+        <mdb-modal-footer class="center">
+          <div
+            v-if="signupData.error"
+            class="alert alert-danger"
+            id="modal-input"
           >
+            {{ signupData.error }}
+          </div>
+          <mdb-btn block color="default" type="submit">Sign Up</mdb-btn>
           <mdb-btn
             block
             color="blue-grey"
@@ -188,14 +208,61 @@
 </template>
 
 <script>
+import firebase from "../firebase";
+
 export default {
   name: "LandingPage",
   components: {},
   data() {
     return {
+      loginData: {
+        data: {
+          email: "",
+          password: "",
+        },
+        error: null,
+      },
+      signupData: {
+        data: {
+          name: "",
+          email: "",
+          password: "",
+          cfmPassword: "",
+        },
+        error: null,
+      },
       showLogin: false,
       showSignup: false,
     };
+  },
+  methods: {
+    async login(event) {
+      event.preventDefault();
+      const { email, password } = this.loginData.data;
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+          this.$router.push("/home");
+        })
+        .catch((error) => (this.loginData.error = error.message));
+    },
+    async signUp(event) {
+      event.preventDefault();
+      const { name, email, password, cfmPassword } = this.signupData.data;
+      if (name === "") return (this.signupData.error = "Please add your name");
+      if (cfmPassword !== password)
+        return (this.signupData.error = "Passwords do not match");
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then((data) => {
+          data.user.updateProfile({ displayName: name }).then(() => {
+            this.$router.push("/home");
+          });
+        })
+        .catch((error) => (this.signupData.error = error.message));
+    },
   },
 };
 </script>
