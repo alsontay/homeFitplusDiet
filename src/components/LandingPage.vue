@@ -243,7 +243,7 @@ export default {
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then(() => {
-          this.$router.push("/home");
+          this.$router.push(this.$route.query.redirect || "/home");
         })
         .catch((error) => (this.loginData.error = error.message));
     },
@@ -258,7 +258,7 @@ export default {
         .createUserWithEmailAndPassword(email, password)
         .then((data) => {
           data.user.updateProfile({ displayName: name }).then(() => {
-            this.$router.push("/home");
+            this.$router.push(this.$route.query.redirect || "/home");
           });
         })
         .catch((error) => (this.signupData.error = error.message));
