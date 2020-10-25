@@ -80,7 +80,12 @@
                 <mdb-icon far icon="envelope" />
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" v-model="loginData.data.email" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Email"
+              v-model="loginData.data.email"
+            />
           </div>
           <div class="input-group">
             <div class="input-group-prepend">
@@ -97,13 +102,14 @@
           </div>
         </mdb-modal-body>
         <mdb-modal-footer class="center">
-          <div v-if="loginData.error" class="alert alert-danger" id="modal-input">{{loginData.error}}</div>
-          <mdb-btn
-            block
-            color="default"
-            type="submit"
-            >Login</mdb-btn
+          <div
+            v-if="loginData.error"
+            class="alert alert-danger"
+            id="modal-input"
           >
+            {{ loginData.error }}
+          </div>
+          <mdb-btn block color="default" type="submit">Login</mdb-btn>
           <mdb-btn
             block
             color="blue-grey"
@@ -132,7 +138,12 @@
                 <mdb-icon icon="user" />
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Full Name" v-model="signupData.data.name" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Full Name"
+              v-model="signupData.data.name"
+            />
           </div>
           <div class="input-group" id="modal-input">
             <div class="input-group-prepend">
@@ -140,7 +151,12 @@
                 <mdb-icon far icon="envelope" />
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" v-model="signupData.data.email" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Email"
+              v-model="signupData.data.email"
+            />
           </div>
           <div class="input-group" id="modal-input">
             <div class="input-group-prepend">
@@ -170,13 +186,14 @@
           </div>
         </mdb-modal-body>
         <mdb-modal-footer class="center">
-          <div v-if="signupData.error" class="alert alert-danger" id="modal-input">{{signupData.error}}</div>
-          <mdb-btn
-            block
-            color="default"
-            type="submit"
-            >Sign Up</mdb-btn
+          <div
+            v-if="signupData.error"
+            class="alert alert-danger"
+            id="modal-input"
           >
+            {{ signupData.error }}
+          </div>
+          <mdb-btn block color="default" type="submit">Sign Up</mdb-btn>
           <mdb-btn
             block
             color="blue-grey"
@@ -201,18 +218,18 @@ export default {
       loginData: {
         data: {
           email: "",
-          password: ""
+          password: "",
         },
-        error: null
+        error: null,
       },
       signupData: {
         data: {
           name: "",
           email: "",
           password: "",
-          cfmPassword: ""
-        }, 
-        error: null
+          cfmPassword: "",
+        },
+        error: null,
       },
       showLogin: false,
       showSignup: false,
@@ -222,25 +239,31 @@ export default {
     async login(event) {
       event.preventDefault();
       const { email, password } = this.loginData.data;
-      firebase.auth().signInWithEmailAndPassword(email, password)
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
         .then(() => {
-          this.$router.push('/home');
-        }).catch((error) => this.loginData.error = error.message)
+          this.$router.push("/home");
+        })
+        .catch((error) => (this.loginData.error = error.message));
     },
     async signUp(event) {
       event.preventDefault();
       const { name, email, password, cfmPassword } = this.signupData.data;
-      if (name === "") return this.signupData.error = "Please add your name";
-      if (cfmPassword !== password) return this.signupData.error = "Passwords do not match";
-      firebase.auth().createUserWithEmailAndPassword(email, password)
+      if (name === "") return (this.signupData.error = "Please add your name");
+      if (cfmPassword !== password)
+        return (this.signupData.error = "Passwords do not match");
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
         .then((data) => {
-          data.user.updateProfile({displayName: name})
-            .then(() => {
-              this.$router.push('/home');
-            });
-        }).catch((error) => this.signupData.error = error.message);
+          data.user.updateProfile({ displayName: name }).then(() => {
+            this.$router.push("/home");
+          });
+        })
+        .catch((error) => (this.signupData.error = error.message));
     },
-  }
+  },
 };
 </script>
 

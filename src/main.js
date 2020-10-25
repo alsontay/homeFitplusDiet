@@ -17,7 +17,7 @@ Vue.config.productionTip = false;
 
 Vue.config.errorHandler = (error, vm, info) => {
   console.error(error.message);
-}
+};
 
 firebase.auth().onAuthStateChanged((user) => {
   store.dispatch("fetchUser", user);
