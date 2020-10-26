@@ -250,7 +250,7 @@ export default {
     async signUp(event) {
       event.preventDefault();
       const { name, email, password, cfmPassword } = this.signupData.data;
-      if (name === "") return (this.signupData.error = "Please add your name");
+      if (name === "") return (this.signupData.error = "Please type your name");
       if (cfmPassword !== password)
         return (this.signupData.error = "Passwords do not match");
       firebase
@@ -258,7 +258,7 @@ export default {
         .createUserWithEmailAndPassword(email, password)
         .then((data) => {
           data.user.updateProfile({ displayName: name }).then(() => {
-            this.$router.push(this.$route.query.redirect || "/home");
+            this.$router.push(this.$route.query.redirect || "/profile");
           });
         })
         .catch((error) => (this.signupData.error = error.message));
