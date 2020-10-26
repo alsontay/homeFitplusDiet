@@ -26,6 +26,10 @@
                             <p>
                                 Indie music, skiing and hiking. I love the great outdoors.
                             </p>
+                            <h6>Full Name</h6>
+                            <p>
+                                Jane
+                                </p>
                         </div>
                     </div>
                     <!--/row-->
