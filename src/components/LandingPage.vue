@@ -257,9 +257,14 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then((data) => {
-          data.user.updateProfile({ displayName: name }).then(() => {
-            this.$router.push(this.$route.query.redirect || "/profile");
-          });
+          data.user.updateProfile({ displayName: name })
+            .then(() => {
+              firebase.firestore().collection("users").doc(data.user.uid).set({
+                name,
+                email
+              })
+              .then(() => this.$router.push(this.$route.query.redirect || "/profile"));
+            });
         })
         .catch((error) => (this.signupData.error = error.message));
     },
