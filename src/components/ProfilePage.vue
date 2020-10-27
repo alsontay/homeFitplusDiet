@@ -47,7 +47,11 @@
                   >Full Name</label
                 >
                 <div class="col-lg-9">
-                  <input class="form-control" type="text" v-model = "info.data.name"/>
+                  <input
+                    class="form-control"
+                    type="text"
+                    v-model="info.data.name"
+                  />
                 </div>
               </div>
               <div class="form-group row">
@@ -55,7 +59,11 @@
                   >Email</label
                 >
                 <div class="col-lg-9">
-                  <input class="form-control" type="email" v-model = "info.data.email"/>
+                  <input
+                    class="form-control"
+                    type="email"
+                    v-model="info.data.email"
+                  />
                 </div>
               </div>
               <div class="form-group row">
@@ -63,10 +71,17 @@
                   >Sex</label
                 >
                 <div class="col-lg-9">
-                  <select id="form-control" class="form-control" size="0" v-model = "info.data.sex">
-                    <option value="Male" id = "male">Male</option>
-                    <option value="Female" id = "female">Female</option>
-                    <option value="NIL" id = "prefernottosay">Prefer Not to Answer</option>
+                  <select
+                    id="form-control"
+                    class="form-control"
+                    size="0"
+                    v-model="info.data.sex"
+                  >
+                    <option value="Male" id="male">Male</option>
+                    <option value="Female" id="female">Female</option>
+                    <option value="NIL" id="prefernottosay">
+                      Prefer Not to Answer
+                    </option>
                   </select>
                 </div>
               </div>
@@ -75,7 +90,12 @@
                   >Date of Birth</label
                 >
                 <div class="col-lg-9">
-                  <input class="form-control" type="date" min="1940-01-01" v-model = "info.data.dob"/>
+                  <input
+                    class="form-control"
+                    type="date"
+                    min="1940-01-01"
+                    v-model="info.data.dob"
+                  />
                 </div>
               </div>
               <div class="form-group row">
@@ -83,7 +103,13 @@
                   >Weight(kg)</label
                 >
                 <div class="col-lg-9">
-                  <input class="form-control" type="number" min="0" max="200" v-model = "info.data.weight" />
+                  <input
+                    class="form-control"
+                    type="number"
+                    min="0"
+                    max="200"
+                    v-model="info.data.weight"
+                  />
                 </div>
               </div>
               <div class="form-group row">
@@ -96,7 +122,7 @@
                     type="number"
                     min="80"
                     max="250"
-                    v-model = "info.data.height"
+                    v-model="info.data.height"
                   />
                 </div>
               </div>
@@ -105,7 +131,12 @@
                   >Goals</label
                 >
                 <div class="col-lg-9">
-                  <select id="form-control" class="form-control" size="0" v-model = "info.data.goal">
+                  <select
+                    id="form-control"
+                    class="form-control"
+                    size="0"
+                    v-model="info.data.goal"
+                  >
                     <option value="1">Placeholder</option>
                     <option value="2">Placeholder</option>
                     <option value="3">Placeholder</option>
@@ -117,7 +148,12 @@
                   >Diet Type</label
                 >
                 <div class="col-lg-9">
-                  <select id="form-control" class="form-control" size="0" v-model = "info.data.diet">
+                  <select
+                    id="form-control"
+                    class="form-control"
+                    size="0"
+                    v-model="info.data.diet"
+                  >
                     <option value="nopreference">No Preference</option>
                     <option value="vegetarian">Vegetarian</option>
                     <option value="vegan">Vegan</option>
@@ -133,28 +169,52 @@
                 >
                 <div class="col-lg-9">
                   <div class="checkboxes">
-                    <input type="checkbox" id="none" name="none" value="none"  v-model = "info.data.intolerance"/>
+                    <input
+                      type="checkbox"
+                      id="none"
+                      name="none"
+                      value="none"
+                      v-model="info.data.intolerance"
+                    />
                     <label for="none"> None</label>
                     <input
                       type="checkbox"
                       id="diary"
                       name="diary"
                       value="diary"
-                      v-model = "info.data.intolerance"
+                      v-model="info.data.intolerance"
                     />
                     <label for="diary"> Dairy </label>
-                    <input type="checkbox" id="nuts" name="nuts" value="nuts" v-model = "info.data.intolerance" />
+                    <input
+                      type="checkbox"
+                      id="nuts"
+                      name="nuts"
+                      value="nuts"
+                      v-model="info.data.intolerance"
+                    />
                     <label for="nuts"> Nuts</label>
-                    <input type="checkbox" id="soy" name="soy" value="soy" v-model = "info.data.intolerance"/>
+                    <input
+                      type="checkbox"
+                      id="soy"
+                      name="soy"
+                      value="soy"
+                      v-model="info.data.intolerance"
+                    />
                     <label for="soy"> Soy</label><br />
-                    <input type="checkbox" id="egg" name="egg" value="egg" v-model = "info.data.intolerance"/>
+                    <input
+                      type="checkbox"
+                      id="egg"
+                      name="egg"
+                      value="egg"
+                      v-model="info.data.intolerance"
+                    />
                     <label for="egg"> Egg </label>
                     <input
                       type="checkbox"
                       id="seafood"
                       name="seafood"
                       value="seafood"
-                      v-model = "info.data.intolerance"
+                      v-model="info.data.intolerance"
                     />
                     <label for="seafood"> Seafood</label>
                     <input
@@ -162,7 +222,7 @@
                       id="shellfish"
                       name="shellfish"
                       value="shellfish"
-                      v-model = "info.data.intolerance"
+                      v-model="info.data.intolerance"
                     />
                     <label for="seafood"> Shellfish</label>
                     <input
@@ -170,19 +230,30 @@
                       id="gluten"
                       name="gluten"
                       value="gluten"
-                      v-model = "info.data.intolerance"
+                      v-model="info.data.intolerance"
                     />
                     <label for="gluten"> Gluten</label>
                   </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label"></label>
-                  <div class="col-lg-9">
-                    <input type="reset" class="btn btn-secondary" value="Cancel">
-                    <input type="button" class="btn btn-primary" v-on:click.prevent.once="updateInformation" value="Save Changes">
-                  </div>
+                <label
+                  class="col-lg-3 col-form-label form-control-label"
+                ></label>
+                <div class="col-lg-9">
+                  <input
+                    type="reset"
+                    class="btn btn-secondary"
+                    value="Cancel"
+                  />
+                  <input
+                    type="button"
+                    class="btn btn-primary"
+                    v-on:click.prevent.once="updateInformation"
+                    value="Save Changes"
+                  />
                 </div>
+              </div>
             </form>
           </div>
           <div class="tab-pane" id="account"></div>
@@ -205,64 +276,64 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import firebase from '../firebase.js'
+import { mapGetters } from "vuex";
+import firebase from "../firebase.js";
 
 export default {
   name: "ProfilePage",
   computed: {
     ...mapGetters({
-      user: "user"
-    })
-  },  
+      user: "user",
+    }),
+  },
   data() {
     return {
       info: {
         data: {
-        name: '',
-        email: '',
-        sex: '',
-        dob: '',
-        weight: '',
-        height: '',
-        goal: '',
-        diet: '',
-        intolerance: [],
-        }
-      }
-    }
+          name: "",
+          email: "",
+          sex: "",
+          dob: "",
+          weight: "",
+          height: "",
+          goal: "",
+          diet: "",
+          intolerance: [],
+        },
+      },
+    };
   },
   methods: {
-    updateInformation: function(){
+    updateInformation: function () {
       const userid = this.user.data.id;
       console.log(userid);
       console.log(this.info.data);
       firebase.firestore().collection("users").doc(userid).set(this.info.data);
-    }
+    },
   },
-  mounted(){
+  mounted() {
     var docRef = firebase
-        .firestore()
-        .collection("users")
-        .doc(this.user.data.id);
+      .firestore()
+      .collection("users")
+      .doc(this.user.data.id);
     let curr = this.info.data;
-      docRef.get().then(function (doc) {
-        if (doc.exists) {
-          var db = doc.data();
-          curr.name = db.name;
-          curr.email = db.email;
-          curr.sex = db.sex;
-          curr.dob = db.dob;
-          curr.height = db.height;
-          curr.weight = db.weight;
-          curr.goal = db.goal;
-          curr.diet = db.diet;
-          curr.intolerance = db.intolerance;
-          //console.log(curr)
-        }
-      });
-      console.log(curr)
-  }
+    docRef.get().then(function (doc) {
+      if (doc.exists) {
+        var db = doc.data();
+        curr.name = db.name;
+        curr.email = db.email;
+        curr.sex = db.sex;
+        curr.dob = db.dob;
+        curr.height = db.height;
+        curr.weight = db.weight;
+        curr.goal = db.goal;
+        curr.diet = db.diet;
+        curr.intolerance = db.intolerance;
+        //console.log(curr)
+      }
+    });
+    console.log(curr);
+  },
 };
 </script>
 
