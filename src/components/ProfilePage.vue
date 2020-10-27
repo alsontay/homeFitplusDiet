@@ -83,7 +83,13 @@
                   >Weight(kg)</label
                 >
                 <div class="col-lg-9">
-                  <input class="form-control" type="number" min="0" max="200" />
+                  <input
+                    class="form-control"
+                    type="number"
+                    min="0"
+                    max="200"
+                    v-model="lctestUserInfo.data.weight"
+                  />
                 </div>
               </div>
               <div class="form-group row">
@@ -96,6 +102,7 @@
                     type="number"
                     min="80"
                     max="250"
+                    v-model="lctestUserInfo.data.height"
                   />
                 </div>
               </div>
@@ -171,6 +178,9 @@
                   </div>
                 </div>
               </div>
+              <br />
+              <mdb-btn v-on:click="updateInfo()"> oi </mdb-btn>
+              <mdb-btn v-on:click="fetchInfo()"> debug </mdb-btn>
             </form>
           </div>
           <div class="tab-pane" id="account"></div>
@@ -193,8 +203,64 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import firebase from "../firebase.js";
 export default {
   name: "ProfilePage",
+  computed: {
+    // map this.user to this.$store.getters.user
+    ...mapGetters({
+      user: "user",
+    }),
+  },
+  data() {
+    return {
+      lctestUserInfo: {
+        data: {
+          height: "",
+          weight: "",
+        },
+        error: null,
+      },
+    };
+  },
+  methods: {
+    hello() {
+      console.log(this.user.data.id);
+    },
+    updateInfo() {
+      //this.fetchInfo()
+      console.log(this.lctestUserInfo.data);
+      firebase
+        .firestore()
+        .collection("lctest")
+        .doc(this.user.data.id)
+        .update(this.lctestUserInfo.data);
+    },
+    fetchInfo() {
+      var docRef = firebase
+        .firestore()
+        .collection("lctest")
+        .doc(this.user.data.id);
+      let curr = this.lctestUserInfo.data;
+      docRef.get().then(function (doc) {
+        if (doc.exists) {
+          var db = doc.data();
+          //console.log(this.lctestUserInfo.data.height)
+          curr.height = db.height;
+          curr.weight = db.weight;
+          //console.log(curr)
+        }
+      });
+      console.log(curr);
+    },
+    setID() {
+      this.lctestUserInfo.data.id = this.user.data.id;
+    },
+  },
+  mounted: function () {
+    this.fetchInfo();
+  },
 };
 </script>
 
