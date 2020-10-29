@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user.loggedIn">
+  <div v-if="user.loggedIn" class="page">
     <mdb-navbar
       style="z-index: 0"
       expand="large"
@@ -66,6 +66,13 @@
         <router-view />
       </transition>
     </main>
+
+    <div class="footer-copyright text-center py-3">
+      <mdb-container fluid>
+          &copy; 2020 Goal Diggers
+      </mdb-container>
+      </div>
+
   </div>
 </template>
 
@@ -101,6 +108,16 @@ export default {
 </script>
 
 <style scoped>
+  .page {
+  background-image: url("https://i.pinimg.com/originals/49/a0/35/49a0350f22e49907e0424d37ff872f09.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-copyright {
+  background-color: white;
+}
 #title {
   font-family: "Caveat", cursive;
 }
