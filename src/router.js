@@ -4,7 +4,8 @@ import Router from "vue-router";
 import MainLayout from "./layouts/MainLayout.vue";
 import LandingPage from "./components/LandingPage.vue";
 import HomePage from "./components/HomePage.vue";
-import PlanPage from "./components/PlanPage.vue";
+import FitnessPage from "./components/FitnessPage.vue";
+import DietPage from "./components/DietPage.vue";
 import MenuPage from "./components/MenuPage.vue";
 import CalorieTrackerPage from "./components/CalorieTrackerPage.vue";
 import MonthlyReportPage from "./components/MonthlyReportPage.vue";
@@ -52,10 +53,17 @@ export default new Router({
           },
         },
         {
-          path: "/plan",
-          component: PlanPage,
+          path: "/fitnessplan",
+          component: FitnessPage,
           meta: {
-            title: "Plan",
+            title: "FitnessPlan",
+          },
+        },
+        {
+          path: "/dietplan",
+          component: DietPage,
+          meta: {
+            title: "DietPlan",
           },
         },
         {
