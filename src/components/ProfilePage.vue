@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row my-2">
       <div class="col-lg-8 order-lg-2">
-        <ul class="nav nav-tabs">
+        <ul id="mytabs" class="nav nav-tabs">
           <li class="nav-item">
             <a
               href=""
@@ -137,9 +137,11 @@
                     size="0"
                     v-model="info.data.goal"
                   >
-                    <option value="1">Placeholder</option>
-                    <option value="2">Placeholder</option>
-                    <option value="3">Placeholder</option>
+                    <option value="fithealthy">
+                      Keep Fit and Live Healthy
+                    </option>
+                    <option value="loseweight">Lose Weight</option>
+                    <option value="muscles">Build Muscles</option>
                   </select>
                 </div>
               </div>
@@ -278,6 +280,7 @@
 <script>
 import { mapGetters } from "vuex";
 import firebase from "../firebase.js";
+import $ from "jquery";
 
 export default {
   name: "ProfilePage",
