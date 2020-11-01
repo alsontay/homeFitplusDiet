@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mdb-row id="title-text" >
+    <mdb-row id="title-text">
       <p>
         CALORIE TRACKER <br />
         Keep track of your calorie count here!
@@ -19,10 +19,15 @@
     <div class="form-group row" id="inputfields">
       <label id="label-text">Date of Logging</label>
       <div class="col-lg-2">
-        <input class="form-control" type="date" min="1940-01-01" v-model = "calcount.date"/>
+        <input
+          class="form-control"
+          type="date"
+          min="1940-01-01"
+          v-model="calcount.date"
+        />
       </div>
     </div>
-    <div id="buttonstyle" >
+    <div id="buttonstyle">
       <mdb-btn block color="default" type="submit">Submit</mdb-btn>
     </div>
   </div>
@@ -42,8 +47,6 @@ export default {
         lunchvalue: 0,
         dinnvalue: 0,
         date: "",
-        
-        
       },
     };
   },
@@ -57,7 +60,7 @@ export default {
 
 #buttonstyle {
   width: 10%;
-  padding:10px;
+  padding: 10px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;

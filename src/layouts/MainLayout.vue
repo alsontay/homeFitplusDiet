@@ -1,7 +1,7 @@
 <template>
   <div v-if="user.loggedIn" class="page">
     <mdb-navbar
-      style="z-index: 0"
+      style="z-index: 100"
       expand="large"
       dark
       color="default"
@@ -14,17 +14,36 @@
             ><mdb-icon icon="home" />Home</mdb-nav-item
           >
         </router-link>
-        <router-link to="/plan">
-          <mdb-nav-item id="navmenu-icon"
-            ><mdb-icon icon="chalkboard-teacher" />Fitness/Diet
-            Plan</mdb-nav-item
-          >
-        </router-link>
         <router-link to="/menu">
           <mdb-nav-item id="navmenu-icon"
             ><mdb-icon icon="utensils" />Menu</mdb-nav-item
           >
         </router-link>
+        <mdb-dropdown tag="li" class="nav-item" end>
+          <mdb-dropdown-toggle
+            tag="a"
+            navLink
+            color="default"
+            slot="toggle"
+            waves-fixed
+            icon="chalkboard-teacher"
+            >Fitness/Diet Plan</mdb-dropdown-toggle
+          >
+          <mdb-dropdown-menu color="default">
+            <router-link to="/fitnessplan">
+              <mdb-dropdown-item
+                ><mdb-icon icon="user" id="navmenu-icon" />Fitness
+                Plan</mdb-dropdown-item
+              >
+            </router-link>
+            <router-link to="/dietplan">
+              <mdb-dropdown-item
+                ><mdb-icon icon="user" id="navmenu-icon" />Diet
+                Plan</mdb-dropdown-item
+              >
+            </router-link>
+          </mdb-dropdown-menu>
+        </mdb-dropdown>
         <router-link to="/calorie-tracker">
           <mdb-nav-item id="navmenu-icon"
             ><mdb-icon icon="search" />Calorie Tracker</mdb-nav-item

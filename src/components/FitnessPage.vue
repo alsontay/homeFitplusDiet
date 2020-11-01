@@ -1,10 +1,10 @@
 <template>
-  <div>Hi, This is the fitness/diet plan page.</div>
+  <div>Hi, This is the fitness plan page.</div>
 </template>
 
 <script>
 export default {
-  name: "PlanPage",
+  name: "FitnessPage",
 };
 </script>
 
