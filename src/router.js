@@ -8,7 +8,7 @@ import PlanPage from "./components/PlanPage.vue";
 import MenuPage from "./components/MenuPage.vue";
 import CalorieTrackerPage from "./components/CalorieTrackerPage.vue";
 import MonthlyReportPage from "./components/MonthlyReportPage.vue";
-import ProfilePage from "./components/ProfilePage.vue";
+import ProfilePage from "./components/ProfilePage/index.vue";
 import Error404 from "./components/Error404.vue";
 
 Vue.use(Router);
