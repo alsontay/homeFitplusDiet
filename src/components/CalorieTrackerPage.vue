@@ -77,6 +77,30 @@ export default {
       alert("Calorie Counts Updated!");
     },
   },
+  mounted () {
+    // Automatically sets the calender date to today
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '-' + dd;
+    this.calcount.data.date = today;
+    // Sets Existing DB data to the fields
+    var docRef = firebase
+      .firestore()
+      .collection("calories")
+      .doc(this.user.data.id);
+    let curr = this.calcount.data;
+    docRef.get().then(function (doc) {
+      if (doc.exists) {
+        var db = doc.data()[`${today}`].consume;
+        curr.values.bfast = db.bfast;
+        curr.values.lunch = db.lunch;
+        curr.values.dinner = db.dinnr;
+      }
+    });
+    //console.log(curr);
+  }
  
 };
 
