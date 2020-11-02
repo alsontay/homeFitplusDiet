@@ -96,7 +96,7 @@ export default {
         var db = doc.data()[`${today}`].consume;
         curr.values.bfast = db.bfast;
         curr.values.lunch = db.lunch;
-        curr.values.dinner = db.dinnr;
+        curr.values.dinnr = db.dinnr;
       }
     });
     //console.log(curr);
