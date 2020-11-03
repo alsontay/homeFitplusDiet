@@ -341,19 +341,19 @@ export default {
       stories: [
         {
           title: "Trusted fitness & nutrition website",
-          img: ["/images/User1.jpg"],
+          img: "/images/User1.jpg",
           text:
             "Homefit+diet provided me with fitness and nutrition plans to stay healthy during the circuit breaker period!",
         },
         {
           title: "Trusted fitness & nutrition website",
-          img: ["/images/User2.jpg"],
+          img: "/images/User2.jpg",
           text:
             "Homefit+diet provided me with fitness and nutrition plans to stay healthy during the circuit breaker period!",
         },
         {
           title: "Trusted fitness & nutrition website",
-          img: ["/images/User3.jpg"],
+          img: "/images/User3.jpg",
           text:
             "Homefit+diet provided me with fitness and nutrition plans to stay healthy during the circuit breaker period!",
         },
