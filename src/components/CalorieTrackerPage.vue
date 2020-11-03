@@ -28,7 +28,13 @@
       </div>
     </div>
     <div id="buttonstyle">
-      <mdb-btn block color="default" type="submit" v-on:click="updateInformation()">Submit</mdb-btn>
+      <mdb-btn
+        block
+        color="default"
+        type="submit"
+        v-on:click="updateInformation()"
+        >Submit</mdb-btn
+      >
     </div>
   </div>
 </template>
@@ -36,7 +42,7 @@
 <script>
 import { mdbInput } from "mdbvue";
 import { mapGetters } from "vuex";
-import firebase from '../firebase.js';
+import firebase from "../firebase.js";
 
 export default {
   name: "CalorieTrackerPage",
@@ -47,43 +53,43 @@ export default {
     ...mapGetters({
       user: "user",
     }),
-  },  
+  },
   data() {
     return {
       calcount: {
-          data: {
-            values: {
-              bfast: 0,
-              lunch: 0,
-              dinnr: 0,
-            },
+        data: {
+          values: {
+            bfast: 0,
+            lunch: 0,
+            dinnr: 0,
+          },
           date: "",
-          }
+        },
       },
     };
   },
   methods: {
-    async updateInformation () {
-      const userid = this.user.data.id
-      var update = {}
-      update[`${this.calcount.data.date}.consume`] = this.calcount.data.values
-      const db = firebase.firestore().collection("calories").doc(userid)
-      const db2 = await db.get()
+    async updateInformation() {
+      const userid = this.user.data.id;
+      var update = {};
+      update[`${this.calcount.data.date}.consume`] = this.calcount.data.values;
+      const db = firebase.firestore().collection("calories").doc(userid);
+      const db2 = await db.get();
       if (db2.exists) {
-        db.update(update)
+        db.update(update);
       } else {
-        db.consume.set(this.calcount.data.values)
+        db.consume.set(this.calcount.data.values);
       }
       alert("Calorie Counts Updated!");
     },
   },
-  mounted () {
+  mounted() {
     // Automatically sets the calender date to today
     var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
     var yyyy = today.getFullYear();
-    today = yyyy + '-' + mm + '-' + dd;
+    today = yyyy + "-" + mm + "-" + dd;
     this.calcount.data.date = today;
     // Sets Existing DB data to the fields
     var docRef = firebase
@@ -100,10 +106,8 @@ export default {
       }
     });
     //console.log(curr);
-  }
- 
+  },
 };
-
 </script>
 
 <style scoped>
