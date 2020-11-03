@@ -92,9 +92,9 @@
               size="0"
               v-model="info.data.goal"
             >
-              <option value="1">Placeholder</option>
-              <option value="2">Placeholder</option>
-              <option value="3">Placeholder</option>
+              <option value="fithealthy">Eat Fit, Keep Fit</option>
+              <option value="loseweight">Lose Weight</option>
+              <option value="muscles">Build Muscles</option>
             </select>
           </div>
         </div>
@@ -192,6 +192,79 @@
           </div>
         </div>
         <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label"
+            >Existing Conditions</label
+          >
+          <div class="col-lg-9">
+            <div class="checkboxes">
+              <input
+                type="checkbox"
+                id="none"
+                name="none"
+                value="none"
+                v-model="info.data.condition"
+              />
+              <label for="none"> None </label>
+              <input
+                type="checkbox"
+                id="diabetes"
+                name="diabetes"
+                value="diabetes"
+                v-model="info.data.condition"
+              />
+              <label for="diabetes"> Diabetes mellitus </label>
+              <input
+                type="checkbox"
+                id="hypoglycemia"
+                name="hypoglycemia"
+                value="hypoglycemia"
+                v-model="info.data.condition"
+              />
+              <label for="hypoglycemia"> Hypoglycemia </label><br />
+              <input
+                type="checkbox"
+                id="heart"
+                name="heart"
+                value="heart"
+                v-model="info.data.condition"
+              />
+              <label for="heart"> Heart Disease/Hyperlipidaemia </label><br />
+              <input
+                type="checkbox"
+                id="hypertension"
+                name="hypertension"
+                value="hypertension"
+                v-model="info.data.condition"
+              />
+              <label for="hypertension"> Hypertension </label>
+              <input
+                type="checkbox"
+                id="hypotension"
+                name="hypotension"
+                value="hypotension"
+                v-model="info.data.condition"
+              />
+              <label for="hypotension"> Hypotension </label> <br />
+              <input
+                type="checkbox"
+                id="osteoporosis"
+                name="osteoporosis"
+                value="osteoporosis"
+                v-model="info.data.condition"
+              />
+              <label for="osteoporosis"> Osteoporosis </label>
+              <input
+                type="checkbox"
+                id="anaemia"
+                name="anaemia"
+                value="anaemia"
+                v-model="info.data.condition"
+              />
+              <label for="anaemia"> Anaemia </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
           <div class="col-lg-12 d-flex justify-content-end">
             <input
               type="button"
@@ -230,6 +303,7 @@ export default {
           goal: "",
           diet: "",
           intolerance: [],
+          condition: [],
         },
       },
     };
@@ -260,6 +334,7 @@ export default {
         curr.goal = db.goal;
         curr.diet = db.diet;
         curr.intolerance = db.intolerance;
+        curr.condition = db.condition;
         //console.log(curr)
       }
     });
