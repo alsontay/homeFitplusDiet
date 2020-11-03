@@ -44,6 +44,7 @@ export default {
           responsive: true,
           maintainAspectRatio: false
       },
+      wow: []
     }
   },
   
@@ -56,7 +57,6 @@ export default {
   methods: {
     fetchItems: function() {
         var docref = firebase.firestore().collection("calories").doc(this.user.data.id)
-        //var today = this.date
         var chartdata = this.chartdata
         docref.get().then( function (doc) {
           if (doc.exists) {
@@ -87,6 +87,7 @@ export default {
   },
 
   mounted () {
+    //console.log(this.chartdata.labels)
     this.renderChart(this.chartdata, this.options);
   }
 }

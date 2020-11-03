@@ -6,14 +6,16 @@
     </mdb-row>
     <mdb-container>
       <mdb-row>
-        <div id="chart-bg-1">
         <mdb-col>
+          <mdb-card class="chart-bg">
           <h4> Calorie Consumption </h4>
           <calorie-chart> </calorie-chart>
+          </mdb-card>
         </mdb-col>
-        </div>
         <mdb-col>
+          <mdb-card class="chart-bg">
           <h4> Second Chart </h4>
+          </mdb-card>
         </mdb-col>
       </mdb-row>
     </mdb-container>
@@ -65,8 +67,7 @@ h4 {
   font-weight: 250;
 }
 
-#chart-bg-1 {
+.chart-bg {
   padding: 15px;
-  background-color: "grey";
 }
 </style>
