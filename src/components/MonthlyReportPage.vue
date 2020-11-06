@@ -1,20 +1,23 @@
 <template>
   <div>
     <mdb-row id="title-text">
-        <h2> Monthly Report </h2>
-        <h3> Hello {{this.user.data.displayName}}, here's your progress over the past 30 entries!</h3>
+      <h2>Monthly Report</h2>
+      <h3>
+        Hello {{ this.user.data.displayName }}, here's your progress over the
+        past 30 entries!
+      </h3>
     </mdb-row>
     <mdb-container>
       <mdb-row>
         <mdb-col>
           <mdb-card class="chart-bg">
-          <h4> Calorie Consumption </h4>
-          <calorie-chart> </calorie-chart>
+            <h4>Calorie Consumption</h4>
+            <calorie-chart> </calorie-chart>
           </mdb-card>
         </mdb-col>
         <mdb-col>
           <mdb-card class="chart-bg">
-          <h4> Second Chart </h4>
+            <h4>Second Chart</h4>
           </mdb-card>
         </mdb-col>
       </mdb-row>
@@ -35,7 +38,7 @@ export default {
     ...mapGetters({
       user: "user",
     }),
-  }
+  },
 };
 </script>
 
