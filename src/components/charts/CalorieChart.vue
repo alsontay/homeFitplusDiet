@@ -9,10 +9,9 @@ import Chart from "./CalorieChart.js";
 
 export default {
   components: {
-    Chart
-  }
+    Chart,
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>
