@@ -32,8 +32,8 @@
               size="0"
               v-model="info.data.sex"
             >
-              <option value="Male" id="male">Male</option>
-              <option value="Female" id="female">Female</option>
+              <option value="M" id="male">Male</option>
+              <option value="F" id="female">Female</option>
               <option value="NIL" id="prefernottosay">
                 Prefer Not to Answer
               </option>
