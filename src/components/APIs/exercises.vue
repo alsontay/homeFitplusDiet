@@ -12,9 +12,16 @@ export default {
   data() {
     return {
       d1: {},
+      equipmentid: "", //contain equipment that the person has checkbox or sth
       requeststring: "https://wger.de/api/v2/exercise/?language=2",
     };
   },
+  methods: {
+    requestStringMaker: function () {
+      var equipmentString = "&equipment=" + this.equipmentid;
+    },
+  },
+
   mounted() {
     axios.get(this.requeststring).then((response) => {
       console.log("Response==>");

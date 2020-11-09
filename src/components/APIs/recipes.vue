@@ -212,11 +212,15 @@ export default {
     dinnerrequestStringMaker: function () {
       let curr = this.info.data;
       const dob = curr.dob;
+
       console.log(dob);
       const today = new Date();
       const age =
         (today - new Date(dob.slice(0, 4), dob.slice(5, 7), dob.slice(8, 10))) /
         (1000 * 60 * 60 * 24 * 365);
+
+      // const category = age < 18 ? 1 : age < 30 ? 2 : age < 50 ? 3 : 4;
+      // const ageGroup = `agegroup${category}`;
       var agegroup = "";
       if (age < 18) {
         agegroup = "agegroup1";
@@ -236,8 +240,7 @@ export default {
       var restrictions = {};
       restrictions["maxCalories"] = calorie;
       const condition = curr.condition;
-      var x;
-      for (x of condition) {
+      for (let x of condition) {
         if (x == "none") {
           break;
         } else if (x == "diabetes") {
