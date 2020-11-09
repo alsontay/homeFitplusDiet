@@ -1,7 +1,7 @@
 <template>
-  <div v-if="user.loggedIn">
+  <div v-if="user.loggedIn" class="page">
     <mdb-navbar
-      style="z-index: 0"
+      style="z-index: 100"
       expand="large"
       dark
       color="default"
@@ -14,17 +14,36 @@
             ><mdb-icon icon="home" />Home</mdb-nav-item
           >
         </router-link>
-        <router-link to="/plan">
-          <mdb-nav-item id="navmenu-icon"
-            ><mdb-icon icon="chalkboard-teacher" />Fitness/Diet
-            Plan</mdb-nav-item
-          >
-        </router-link>
         <router-link to="/menu">
           <mdb-nav-item id="navmenu-icon"
             ><mdb-icon icon="utensils" />Menu</mdb-nav-item
           >
         </router-link>
+        <mdb-dropdown tag="li" class="nav-item" end>
+          <mdb-dropdown-toggle
+            tag="a"
+            navLink
+            color="default"
+            slot="toggle"
+            waves-fixed
+            icon="chalkboard-teacher"
+            >Fitness/Diet Plan</mdb-dropdown-toggle
+          >
+          <mdb-dropdown-menu color="default">
+            <router-link to="/fitnessplan">
+              <mdb-dropdown-item
+                ><mdb-icon icon="user" id="navmenu-icon" />Fitness
+                Plan</mdb-dropdown-item
+              >
+            </router-link>
+            <router-link to="/dietplan">
+              <mdb-dropdown-item
+                ><mdb-icon icon="user" id="navmenu-icon" />Diet
+                Plan</mdb-dropdown-item
+              >
+            </router-link>
+          </mdb-dropdown-menu>
+        </mdb-dropdown>
         <router-link to="/calorie-tracker">
           <mdb-nav-item id="navmenu-icon"
             ><mdb-icon icon="search" />Calorie Tracker</mdb-nav-item
@@ -66,6 +85,12 @@
         <router-view />
       </transition>
     </main>
+
+    <div class="footer-copyright text-center py-3">
+      <mdb-container fluid class="fixed-bottom">
+        &copy; 2020 Goal Diggers
+      </mdb-container>
+    </div>
   </div>
 </template>
 
@@ -101,6 +126,21 @@ export default {
 </script>
 
 <style scoped>
+.page {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fixed-bottom {
+  background-color: white;
+  width: 100%;
+  bottom: 0;
+}
 #title {
   font-family: "Caveat", cursive;
 }
