@@ -21,6 +21,10 @@
           </mdb-card>
         </mdb-col>
       </mdb-row>
+      <mdb-row id="disclaimer">
+        If the chart does not load, resize your window and it should be loaded.
+        There's some bug with vue-chart.js :(
+      </mdb-row>
     </mdb-container>
   </div>
 </template>
@@ -38,6 +42,11 @@ export default {
     ...mapGetters({
       user: "user",
     }),
+  },
+  mounted() {
+    setTimeout(function () {
+      window.dispatchEvent(new Event("resize"));
+    }, 2000);
   },
 };
 </script>
@@ -72,5 +81,15 @@ h4 {
 
 .chart-bg {
   padding: 15px;
+}
+
+#disclaimer {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-family: "Roboto";
 }
 </style>

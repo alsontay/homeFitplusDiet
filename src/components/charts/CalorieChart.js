@@ -1,4 +1,4 @@
-import { Line } from "vue-chartjs";
+import { Line, mixins } from "vue-chartjs";
 import firebase from "../../firebase.js";
 import { mapGetters } from "vuex";
 
@@ -6,7 +6,7 @@ export default {
   extends: Line,
   data: function () {
     return {
-      date: "testing",
+      mixins: ["reactiveProp"],
       chartdata: {
         datasets: [
           {
@@ -48,7 +48,7 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
       },
-      wow: [],
+      wow: new Event("resize"),
     };
   },
 
@@ -85,6 +85,7 @@ export default {
             chartdata.labels.push(sortedKeys[counter]);
             chartdata.datasets[0].data.push(total);
             counter++;
+            window.dispatchEvent(new Event("resize"));
           }
         }
       });
@@ -96,7 +97,6 @@ export default {
   },
 
   mounted() {
-    //console.log(this.chartdata.labels)
     this.renderChart(this.chartdata, this.options);
   },
 };
