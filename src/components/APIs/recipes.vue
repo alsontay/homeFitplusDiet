@@ -93,7 +93,7 @@ export default {
           restrictions[k].toString();
       }
       const infostring =
-        "&number=6" +
+        "&number=3" +
         "&type=breakfast" +
         "&instructionsRequired=true" +
         "&addRecipeInformation=true";
@@ -168,7 +168,7 @@ export default {
           restrictions[k].toString();
       }
       const infostring =
-        "&number=6" +
+        "&number=3" +
         "&type=main%20course" +
         "&instructionsRequired=true" +
         "&addRecipeInformation=true";
@@ -243,7 +243,8 @@ export default {
           restrictions[k].toString();
       }
       const infostring =
-        "&number=6" +
+        "&number=3" +
+        "&offset=3" +
         "&type=main%20course" +
         "&instructionsRequired=true" +
         "&addRecipeInformation=true";

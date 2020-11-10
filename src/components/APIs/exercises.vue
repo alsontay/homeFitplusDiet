@@ -1,8 +1,6 @@
 <template>
   <div>
-    <li v-for="item in d1" v-bind:key="item">
-      {{ item }}
-    </li>
+    {{ exercises }}
   </div>
 </template>
 
@@ -11,22 +9,23 @@ import axios from "axios";
 export default {
   data() {
     return {
-      d1: {},
-      equipmentid: "", //contain equipment that the person has checkbox or sth
-      requeststring: "https://wger.de/api/v2/exercise/?language=2",
+      exercises: {},
+      equipmentid: 4, //contain equipment that the person has checkboxed or sth
+      requeststring: "https://wger.de/api/v2/exercise/?language=2&format=json",
     };
   },
   methods: {
     requestStringMaker: function () {
       var equipmentString = "&equipment=" + this.equipmentid;
+      return this.requeststring + equipmentString;
     },
   },
 
   mounted() {
-    axios.get(this.requeststring).then((response) => {
+    axios.get(this.requestStringMaker()).then((response) => {
       console.log("Response==>");
       console.log(response);
-      this.d1 = response.data;
+      this.exercises = response.data;
       console.log("Links==>");
       console.log(this.d1);
     });
