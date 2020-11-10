@@ -11,8 +11,10 @@ export default {
   components: {
     Chart,
   },
-  mounted () {
-    setTimeout(function() {window.dispatchEvent(new Event('resize'));}, 2000);
+  mounted() {
+    setTimeout(function () {
+      window.dispatchEvent(new Event("resize"));
+    }, 5000);
   },
 };
 </script>
