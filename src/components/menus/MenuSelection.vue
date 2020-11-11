@@ -1,7 +1,5 @@
 <template>
-  <div><app-recipes></app-recipes>
-  </div>
-  
+  <div><app-recipes></app-recipes></div>
 </template>
 
 <script>

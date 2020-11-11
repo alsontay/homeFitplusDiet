@@ -1,8 +1,7 @@
 <template>
   <div>
-  <menuView v-bind:recipes="recipes"></menuView>
+    <menuView v-bind:recipes="recipes"></menuView>
   </div>
-  
 </template>
 
 <script>
@@ -11,11 +10,11 @@ import { mapGetters } from "vuex";
 import firebase from "../../firebase.js";
 import breakfast from "../../assets/breakfast.json";
 import lunchdinner from "../../assets/lunchdinner.json";
-import MenuView from '../../components/menus/MenuView.vue';
+import MenuView from "../../components/menus/MenuView.vue";
 
 export default {
   components: {
-    'menuView': MenuView,
+    menuView: MenuView,
   },
   computed: {
     ...mapGetters({
