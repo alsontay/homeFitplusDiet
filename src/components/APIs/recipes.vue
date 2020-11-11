@@ -18,9 +18,7 @@ export default {
   data() {
     return {
       requeststring:
-        "https://api.spoonacular.com/recipes/complexSearch" +
-        "?apiKey=" +
-        "44f8119c2d3f4bbe84ac623d9d434620",
+        "https://api.spoonacular.com/recipes/complexSearch?apiKey=44f8119c2d3f4bbe84ac623d9d434620",
       bcalorie: breakfast,
       ldcalorie: lunchdinner,
       recipes: [],
@@ -45,33 +43,20 @@ export default {
   methods: {
     breakfastrequestStringMaker: function () {
       let curr = this.info.data;
-      const dob = curr.dob;
-      console.log(dob);
-      const today = new Date();
-      const age =
-        (today - new Date(dob.slice(0, 4), dob.slice(5, 7), dob.slice(8, 10))) /
-        (1000 * 60 * 60 * 24 * 365);
-      var agegroup = "";
-      if (age < 18) {
-        agegroup = "agegroup1";
-      } else if (age > 19 && age < 30) {
-        agegroup = "agegroup2";
-      } else if (age > 31 && age < 50) {
-        agegroup = "agegroup3";
-      } else {
-        agegroup = "agegroup4";
-      }
-      const bmi = curr.weight / (curr.height * curr.height);
-      const gender = curr.sex;
-      var calorie = this.bcalorie[agegroup][gender];
-      if (bmi > 25 || curr.goal == "loseweight") {
-        calorie *= 0.8;
-      }
-      var restrictions = {};
-      restrictions["maxCalories"] = calorie;
       const condition = curr.condition;
-      var x;
-      for (x of condition) {
+      const dob = curr.dob;
+      const age =
+        (new Date() -
+          new Date(dob.slice(0, 4), dob.slice(5, 7), dob.slice(8, 10))) /
+        (1000 * 60 * 60 * 24 * 365);
+      const category = age < 18 ? 1 : age < 30 ? 2 : age < 50 ? 3 : 4;
+      const ageGroup = "agegroup" + category.toString();
+      const bmi = curr.weight / ((curr.height / 100) * (curr.height / 100));
+      const gender = curr.sex;
+      var calorie = this.bcalorie[ageGroup][gender];
+      calorie = bmi > 25 || curr.goal == "loseweight" ? calorie * 0.8 : calorie;
+      var restrictions = { maxCalories: calorie };
+      for (let x of condition) {
         if (x == "none") {
           break;
         } else if (x == "diabetes") {
@@ -108,10 +93,10 @@ export default {
           restrictions[k].toString();
       }
       const infostring =
-        "&number=6" +
+        "&number=3" +
         "&type=breakfast" +
-        "&addRecipeInformation=true" +
-        "addRecipeNutrition=true";
+        "&instructionsRequired=true" +
+        "&addRecipeInformation=true";
       const finalstring =
         this.requeststring +
         infostring +
@@ -123,33 +108,20 @@ export default {
     },
     lunchrequestStringMaker: function () {
       let curr = this.info.data;
+      const condition = curr.condition;
       const dob = curr.dob;
-      console.log(dob);
-      const today = new Date();
       const age =
-        (today - new Date(dob.slice(0, 4), dob.slice(5, 7), dob.slice(8, 10))) /
+        (new Date() -
+          new Date(dob.slice(0, 4), dob.slice(5, 7), dob.slice(8, 10))) /
         (1000 * 60 * 60 * 24 * 365);
-      var agegroup = "";
-      if (age < 18) {
-        agegroup = "agegroup1";
-      } else if (age >= 19 && age < 30) {
-        agegroup = "agegroup2";
-      } else if (age >= 31 && age < 50) {
-        agegroup = "agegroup3";
-      } else {
-        agegroup = "agegroup4";
-      }
+      const category = age < 18 ? 1 : age < 30 ? 2 : age < 50 ? 3 : 4;
+      const ageGroup = "agegroup" + category.toString();
       const bmi = curr.weight / ((curr.height / 100) * (curr.height / 100));
       const gender = curr.sex;
-      var calorie = this.ldcalorie[agegroup][gender];
-      if (bmi > 25 || curr.goal == "loseweight") {
-        calorie = calorie * 0.8;
-      }
-      var restrictions = {};
-      restrictions["maxCalories"] = calorie;
-      const condition = curr.condition;
-      var x;
-      for (x of condition) {
+      var calorie = this.ldcalorie[ageGroup][gender];
+      calorie = bmi > 25 || curr.goal == "loseweight" ? calorie * 0.8 : calorie;
+      var restrictions = { maxCalories: calorie };
+      for (let x of condition) {
         if (x == "none") {
           break;
         } else if (x == "diabetes") {
@@ -196,10 +168,10 @@ export default {
           restrictions[k].toString();
       }
       const infostring =
-        "&number=6" +
-        "&type=maincourse" +
-        "&addRecipeInformation=true" +
-        "addRecipeNutrition=true";
+        "&number=3" +
+        "&type=main%20course" +
+        "&instructionsRequired=true" +
+        "&addRecipeInformation=true";
       const finalstring =
         this.requeststring +
         infostring +
@@ -211,33 +183,20 @@ export default {
     },
     dinnerrequestStringMaker: function () {
       let curr = this.info.data;
+      const condition = curr.condition;
       const dob = curr.dob;
-      console.log(dob);
-      const today = new Date();
       const age =
-        (today - new Date(dob.slice(0, 4), dob.slice(5, 7), dob.slice(8, 10))) /
+        (new Date() -
+          new Date(dob.slice(0, 4), dob.slice(5, 7), dob.slice(8, 10))) /
         (1000 * 60 * 60 * 24 * 365);
-      var agegroup = "";
-      if (age < 18) {
-        agegroup = "agegroup1";
-      } else if (age >= 19 && age < 30) {
-        agegroup = "agegroup2";
-      } else if (age >= 31 && age < 50) {
-        agegroup = "agegroup3";
-      } else {
-        agegroup = "agegroup4";
-      }
+      const category = age < 18 ? 1 : age < 30 ? 2 : age < 50 ? 3 : 4;
+      const ageGroup = "agegroup" + category.toString();
       const bmi = curr.weight / ((curr.height / 100) * (curr.height / 100));
       const gender = curr.sex;
-      var calorie = this.ldcalorie[agegroup][gender];
-      if (bmi > 25 || curr.goal == "loseweight") {
-        calorie = calorie * 0.8;
-      }
-      var restrictions = {};
-      restrictions["maxCalories"] = calorie;
-      const condition = curr.condition;
-      var x;
-      for (x of condition) {
+      var calorie = this.ldcalorie[ageGroup][gender];
+      calorie = bmi > 25 || curr.goal == "loseweight" ? calorie * 0.8 : calorie;
+      var restrictions = { maxCalories: calorie };
+      for (let x of condition) {
         if (x == "none") {
           break;
         } else if (x == "diabetes") {
@@ -284,10 +243,11 @@ export default {
           restrictions[k].toString();
       }
       const infostring =
-        "&number=6" +
-        "&type=maincourse" +
-        "&addRecipeInformation=true" +
-        "addRecipeNutrition=true";
+        "&number=3" +
+        "&offset=3" +
+        "&type=main%20course" +
+        "&instructionsRequired=true" +
+        "&addRecipeInformation=true";
       const finalstring =
         this.requeststring +
         infostring +
@@ -320,14 +280,15 @@ export default {
         console.log(curr);
       }
     });
-    // setTimeout(() => {axios.get(this.dinnerrequestStringMaker()).then((response) => {
-    //   console.log("Response==>");
-    //   console.log(response);
-    //   this.recipes = response.data.results;
-    //   console.log("Links==>");
-    //   console.log(this.recipes);
-    // });
-    // }, 2000);
+    setTimeout(() => {
+      axios.get(this.dinnerrequestStringMaker()).then((response) => {
+        console.log("Response==>");
+        console.log(response);
+        this.recipes = response.data.results;
+        console.log("Links==>");
+        console.log(this.recipes);
+      });
+    }, 2000);
   },
 };
 </script>

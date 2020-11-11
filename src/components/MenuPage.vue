@@ -26,7 +26,17 @@
     <mdb-btn type="submit" @click="onSubmit" color="default">Submit</mdb-btn>
     <br />
     {{ selectedIngred }}
+    <br>
+
+    <router-link to="/breakfastMenu"><button>BREAKFAST MENU</button></router-link>
+    <router-link to="/lunchMenu"><button>LUNCH MENU</button></router-link>
+    <router-link to="/dinnerMenu"><button>DINNER MENU</button></router-link>
+
+
   </div>
+  
+
+  
 </template>
 
 <script>
