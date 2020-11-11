@@ -1,52 +1,12 @@
-<template>
-	<div class="autocomplete">
-		<input
-			type="text"
-			@input="onChange"
-			v-model="search"
-			@keydown.down="onArrowDown"
-			@keydown.up="onArrowUp"
-			@keydown.enter="onEnter"
-		/>
-		<ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
-			<li class="loading" v-if="isLoading">Loading results...</li>
-			<li
-				v-else
-				v-for="(result, i) in results"
-				:key="i"
-				@click="setResult(result)"
-				class="autocomplete-result"
-				:class="{ 'is-active': i === arrowCounter }"
-			>
-				{{ result }}
-			</li>
-		</ul>
-	</div>
-</template>
-
 <script>
-// import Recipes from "./APIs/recipes.vue";
-// import ingredients from "../assets/top-1k-ingredients.csv";
-const fs = require("fs");
-import * as csv from "csv-parser";
+  export default {
+    name: 'autocomplete',
 
-export default {
-  name: "MenuPage",
-  // components: {
-  //   "app-recipes": Recipes
-  // },
-  props: {
+    props: {
       items: {
         type: Array,
         required: false,
-        default: () => {
-          const ingred = [];
-          fs.createReadStream("../assets/top-1k-ingredients.csv").pipe(csv(({separator:';'})))
-          .on('data', (data) => ingred.push(data))
-          .on('end', ()=> ingred
-          );
-          return ingred;
-        },
+        default: () => [],
       },
       isAsync: {
         type: Boolean,
@@ -67,9 +27,10 @@ export default {
 
     methods: {
       onChange() {
-
+        // Let's warn the parent that a change was made
         this.$emit('input', this.search);
 
+        // Is the data given by an outside ajax request?
         if (this.isAsync) {
           this.isLoading = true;
         } else {
@@ -120,7 +81,6 @@ export default {
         }
       },
     },
-
     mounted() {
       document.addEventListener('click', this.handleClickOutside)
     },
@@ -128,34 +88,68 @@ export default {
       document.removeEventListener('click', this.handleClickOutside)
     }
   };
-
-
 </script>
 
-<style scoped>
-.autocomplete {
-	position: relative;
-}
+<template>
+  <div class="autocomplete">
+    <input
+      type="text"
+      @input="onChange"
+      v-model="search"
+      @keydown.down="onArrowDown"
+      @keydown.up="onArrowUp"
+      @keydown.enter="onEnter"
+    />
+    <ul
+      id="autocomplete-results"
+      v-show="isOpen"
+      class="autocomplete-results"
+    >
+      <li
+        class="loading"
+        v-if="isLoading"
+      >
+        Loading results...
+      </li>
+      <li
+        v-else
+        v-for="(result, i) in results"
+        :key="i"
+        @click="setResult(result)"
+        class="autocomplete-result"
+        :class="{ 'is-active': i === arrowCounter }"
+      >
+        {{ result }}
+      </li>
+    </ul>
+  </div>
+</template>
 
-.autocomplete-results {
-	padding: 0;
-	margin: 0;
-	border: 1px solid #eeeeee;
-	height: 120px;
-	overflow: auto;
-	width: 100%;
-}
+<style>
+  .autocomplete {
+    position: relative;
+  }
 
-.autocomplete-result {
-	list-style: none;
-	text-align: left;
-	padding: 4px 2px;
-	cursor: pointer;
-}
+  .autocomplete-results {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eeeeee;
+    height: 120px;
+    overflow: auto;
+    width: 100%;
+  }
 
-.autocomplete-result.is-active,
-.autocomplete-result:hover {
-	background-color: #4aae9b;
-	color: white;
-}
+  .autocomplete-result {
+    list-style: none;
+    text-align: left;
+    padding: 4px 2px;
+    cursor: pointer;
+  }
+
+  .autocomplete-result.is-active,
+  .autocomplete-result:hover {
+    background-color: #4AAE9B;
+    color: white;
+  }
+
 </style>
