@@ -1,53 +1,19 @@
-<template>
-  <div class="autocomplete">
-    <input
-      id="textbox"
-      type="text"
-      @input="onChange"
-      v-model="search"
-      @keydown.down="onArrowDown"
-      @keydown.up="onArrowUp"
-      @keydown.enter="onEnter"
-      autocomplete="off"
-    />
-    <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
-      <li class="loading" v-if="isLoading">Loading results...</li>
-      <li
-        v-else
-        v-for="(result, i) in results"
-        :key="i"
-        @click="setResult(result)"
-        class="autocomplete-result"
-        :class="{ 'is-active': i === arrowCounter }"
-      >
-        {{ result }}
-      </li>
-    </ul>
-    <mdb-btn type="submit" @click="onSubmit" color="default">Submit</mdb-btn>
-    <br />
-    {{ selectedIngred }}
-    <br>
-
-    <router-link to="/breakfastMenu"><button>BREAKFAST MENU</button></router-link>
-    <router-link to="/lunchMenu"><button>LUNCH MENU</button></router-link>
-    <router-link to="/dinnerMenu"><button>DINNER MENU</button></router-link>
-
-
-  </div>
-  
-
-  
-</template>
-
 <script>
-// import Recipes from "./APIs/recipes.vue";
-import ingredients from "../assets/new_ingredients.json";
-
 export default {
-  name: "MenuPage",
-  // components: {
-  //   "app-recipes": Recipes
-  // },
+  name: "autocomplete",
+
+  props: {
+    items: {
+      type: Array,
+      required: false,
+      default: () => [],
+    },
+    isAsync: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
 
   data() {
     return {
@@ -56,15 +22,15 @@ export default {
       search: "",
       isLoading: false,
       arrowCounter: 0,
-      items: ingredients,
-      selectedIngred: [],
     };
   },
 
   methods: {
     onChange() {
+      // Let's warn the parent that a change was made
       this.$emit("input", this.search);
 
+      // Is the data given by an outside ajax request?
       if (this.isAsync) {
         this.isLoading = true;
       } else {
@@ -95,17 +61,9 @@ export default {
       }
     },
     onEnter() {
-      // if not pointing to autocomplete, don't do anything to search input
-      if (!this.results[this.arrowCounter]) return;
       this.search = this.results[this.arrowCounter];
       this.isOpen = false;
       this.arrowCounter = -1;
-    },
-    onSubmit() {
-      // event.preventDefault();
-      this.selectedIngred.push(this.search);
-      this.search = "";
-      console.log(this.selectedIngred);
     },
     handleClickOutside(evt) {
       if (!this.$el.contains(evt.target)) {
@@ -116,13 +74,13 @@ export default {
   },
   watch: {
     items: function (val, oldValue) {
+      // actually compare them
       if (val.length !== oldValue.length) {
         this.results = val;
         this.isLoading = false;
       }
     },
   },
-
   mounted() {
     document.addEventListener("click", this.handleClickOutside);
   },
@@ -132,13 +90,33 @@ export default {
 };
 </script>
 
-<style scoped>
-#textbox {
-  padding: 10px;
-  margin-top: 20px;
-  height: 50px;
-  width: 300px;
-}
+<template>
+  <div class="autocomplete">
+    <input
+      type="text"
+      @input="onChange"
+      v-model="search"
+      @keydown.down="onArrowDown"
+      @keydown.up="onArrowUp"
+      @keydown.enter="onEnter"
+    />
+    <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
+      <li class="loading" v-if="isLoading">Loading results...</li>
+      <li
+        v-else
+        v-for="(result, i) in results"
+        :key="i"
+        @click="setResult(result)"
+        class="autocomplete-result"
+        :class="{ 'is-active': i === arrowCounter }"
+      >
+        {{ result }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<style>
 .autocomplete {
   position: relative;
 }
@@ -149,6 +127,7 @@ export default {
   border: 1px solid #eeeeee;
   height: 120px;
   overflow: auto;
+  width: 100%;
 }
 
 .autocomplete-result {
