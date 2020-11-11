@@ -1,5 +1,7 @@
 <template>
-  <div>{{ recipes }}</div>
+  <div>
+    <menuView v-bind:recipes="recipes"></menuView>
+  </div>
 </template>
 
 <script>
@@ -8,8 +10,12 @@ import { mapGetters } from "vuex";
 import firebase from "../../firebase.js";
 import breakfast from "../../assets/breakfast.json";
 import lunchdinner from "../../assets/lunchdinner.json";
+import MenuView from "../../components/menus/MenuView.vue";
 
 export default {
+  components: {
+    menuView: MenuView,
+  },
   computed: {
     ...mapGetters({
       user: "user",
@@ -18,7 +24,7 @@ export default {
   data() {
     return {
       requeststring:
-        "https://api.spoonacular.com/recipes/complexSearch?apiKey=44f8119c2d3f4bbe84ac623d9d434620",
+        "https://api.spoonacular.com/recipes/complexSearch?apiKey=178df41563e84c7c87b95a138ab8b70d",
       bcalorie: breakfast,
       ldcalorie: lunchdinner,
       recipes: [],

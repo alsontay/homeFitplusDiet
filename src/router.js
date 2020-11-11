@@ -11,12 +11,9 @@ import CalorieTrackerPage from "./components/CalorieTrackerPage.vue";
 import MonthlyReportPage from "./components/MonthlyReportPage.vue";
 import ProfilePage from "./components/ProfilePage/index.vue";
 import Error404 from "./components/Error404.vue";
-import BreakfastMenu from "./components/menus/BreakfastMenu.vue";
-import LunchMenu from "./components/menus/LunchMenu.vue";
-import DinnerMenu from "./components/menus/DinnerMenu.vue";
-import Breakfast from "./components/menus/Breakfast.vue";
-import Lunch from "./components/menus/Lunch.vue";
-import Dinner from "./components/menus/Dinner.vue";
+import MenuView from "./components/menus/MenuView.vue";
+import MenuSelected from "./components/menus/MenuSelected.vue";
+import MenuSelection from "./components/menus/MenuSelection.vue";
 
 Vue.use(Router);
 
@@ -101,47 +98,26 @@ export default new Router({
           },
         },
         {
-          path: "/breakfastMenu",
-          component: BreakfastMenu,
+          path: "/menuSelected",
+          component: MenuSelected,
           meta: {
-            title: "BreakfastMenu",
+            title: "MenuSelected",
           },
         },
         {
-          path: "/LunchMenu",
-          component: LunchMenu,
+          path: "/menuSelection",
+          component: MenuSelection,
           meta: {
-            title: "LunchMenu",
+            title: "MenuSelection",
           },
         },
         {
-          path: "/dinnerMenu",
-          component: DinnerMenu,
+          path: "/menuView",
+          component: MenuView,
           meta: {
-            title: "DinnerMenu",
+            title: "MenuView",
           },
         },
-        {
-          path: "/breakfast",
-          component: Breakfast,
-          meta: {
-            title: "Breakfast",
-          },
-        },
-        {
-          path: "/lunch",
-          component: Lunch,
-          meta: {
-            title: "Lunch",
-          },
-        },
-        {
-          path: "/dinner",
-          component: Dinner,
-          meta: {
-            title: "Dinner",
-          },
-        }
 
         /**
          * ===========================
