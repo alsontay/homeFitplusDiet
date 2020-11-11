@@ -11,6 +11,12 @@ import CalorieTrackerPage from "./components/CalorieTrackerPage.vue";
 import MonthlyReportPage from "./components/MonthlyReportPage.vue";
 import ProfilePage from "./components/ProfilePage/index.vue";
 import Error404 from "./components/Error404.vue";
+import BreakfastMenu from "./components/menus/BreakfastMenu.vue";
+import LunchMenu from "./components/menus/LunchMenu.vue";
+import DinnerMenu from "./components/menus/DinnerMenu.vue";
+import Breakfast from "./components/menus/Breakfast.vue";
+import Lunch from "./components/menus/Lunch.vue";
+import Dinner from "./components/menus/Dinner.vue";
 
 Vue.use(Router);
 
@@ -94,6 +100,49 @@ export default new Router({
             title: "Profile",
           },
         },
+        {
+          path: "/breakfastMenu",
+          component: BreakfastMenu,
+          meta: {
+            title: "BreakfastMenu",
+          },
+        },
+        {
+          path: "/LunchMenu",
+          component: LunchMenu,
+          meta: {
+            title: "LunchMenu",
+          },
+        },
+        {
+          path: "/dinnerMenu",
+          component: DinnerMenu,
+          meta: {
+            title: "DinnerMenu",
+          },
+        },
+        {
+          path: "/breakfast",
+          component: Breakfast,
+          meta: {
+            title: "Breakfast",
+          },
+        },
+        {
+          path: "/lunch",
+          component: Lunch,
+          meta: {
+            title: "Lunch",
+          },
+        },
+        {
+          path: "/dinner",
+          component: Dinner,
+          meta: {
+            title: "Dinner",
+          },
+        }
+
         /**
          * ===========================
          * ADD ALL SECURED ROUTES HERE
