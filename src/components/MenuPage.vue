@@ -1,32 +1,31 @@
 <template>
   <div class="autocomplete">
-    
-      <input id = "textbox"
-        type="text"
-        @input="onChange"
-        v-model="search"
-        @keydown.down="onArrowDown"
-        @keydown.up="onArrowUp"
-        @keydown.enter="onEnter"
-        autocomplete="off"
-      />
-      <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
-        <li class="loading" v-if="isLoading">Loading results...</li>
-        <li
-          v-else
-          v-for="(result, i) in results"
-          :key="i"
-          @click="setResult(result)"
-          class="autocomplete-result"
-          :class="{ 'is-active': i === arrowCounter }"
-        >
-          {{ result }}
-        </li>
-      </ul>
-      <mdb-btn type="submit" @click="onSubmit" color="default">Submit</mdb-btn>
-      <br>
-      {{selectedIngred}}
-    
+    <input
+      id="textbox"
+      type="text"
+      @input="onChange"
+      v-model="search"
+      @keydown.down="onArrowDown"
+      @keydown.up="onArrowUp"
+      @keydown.enter="onEnter"
+      autocomplete="off"
+    />
+    <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
+      <li class="loading" v-if="isLoading">Loading results...</li>
+      <li
+        v-else
+        v-for="(result, i) in results"
+        :key="i"
+        @click="setResult(result)"
+        class="autocomplete-result"
+        :class="{ 'is-active': i === arrowCounter }"
+      >
+        {{ result }}
+      </li>
+    </ul>
+    <mdb-btn type="submit" @click="onSubmit" color="default">Submit</mdb-btn>
+    <br />
+    {{ selectedIngred }}
   </div>
 </template>
 
@@ -34,13 +33,11 @@
 // import Recipes from "./APIs/recipes.vue";
 import ingredients from "../assets/new_ingredients.json";
 
-
 export default {
   name: "MenuPage",
   // components: {
   //   "app-recipes": Recipes
   // },
-
 
   data() {
     return {
@@ -89,7 +86,7 @@ export default {
     },
     onEnter() {
       // if not pointing to autocomplete, don't do anything to search input
-      if (! this.results[this.arrowCounter]) return;
+      if (!this.results[this.arrowCounter]) return;
       this.search = this.results[this.arrowCounter];
       this.isOpen = false;
       this.arrowCounter = -1;
@@ -116,8 +113,6 @@ export default {
     },
   },
 
-
-
   mounted() {
     document.addEventListener("click", this.handleClickOutside);
   },
@@ -128,10 +123,10 @@ export default {
 </script>
 
 <style scoped>
-#textbox{
+#textbox {
   padding: 10px;
   margin-top: 20px;
-  height:50px;
+  height: 50px;
   width: 300px;
 }
 .autocomplete {
@@ -144,7 +139,6 @@ export default {
   border: 1px solid #eeeeee;
   height: 120px;
   overflow: auto;
-  
 }
 
 .autocomplete-result {
