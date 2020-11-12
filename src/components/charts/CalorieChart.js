@@ -85,11 +85,13 @@ export default {
             chartdata.labels.push(sortedKeys[counter]);
             chartdata.datasets[0].data.push(total);
             counter++;
-            window.dispatchEvent(new Event("resize"));
           }
         }
       });
     },
+    async render () {
+      this.renderChart(this.chartdata, this.options);
+    }
   },
 
   created() {
@@ -97,6 +99,6 @@ export default {
   },
 
   mounted() {
-    this.renderChart(this.chartdata, this.options);
+    setTimeout(this.render, 500);
   },
 };

@@ -267,7 +267,7 @@ export default {
   mounted() {
     var docRef = firebase
       .firestore()
-      .collection("users")
+      .collection("userinfo")
       .doc(this.user.data.id);
     let curr = this.info.data;
     docRef.get().then(function (doc) {
