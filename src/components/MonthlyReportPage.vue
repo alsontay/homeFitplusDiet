@@ -22,8 +22,8 @@
         </mdb-col>
       </mdb-row>
       <mdb-row id="disclaimer">
-        If the chart does not load, resize your window and it should be loaded.
-        There's some bug with vue-chart.js :(
+        It takes a while (~500ms) for the server to fetch your calorie data, so please be patient :) <br />
+        If you visit this page too often too quickly, it might fail to load too as firestore will give errors.
       </mdb-row>
     </mdb-container>
   </div>
@@ -46,7 +46,7 @@ export default {
   mounted() {
     setTimeout(function () {
       window.dispatchEvent(new Event("resize"));
-    }, 2000);
+    }, 5000);
   },
 };
 </script>
