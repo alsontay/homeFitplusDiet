@@ -61,14 +61,12 @@ export default {
       if (this.isAsync) {
         this.isLoading = true;
       } else {
-
         this.filterResults();
         this.isOpen = true;
       }
     },
 
     filterResults() {
-
       this.results = this.items.filter((item) => {
         return item.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
       });
