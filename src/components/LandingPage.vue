@@ -1,14 +1,16 @@
 <template>
   <div>
     <div class="landing-page center">
+      <div class="rgba-grey-slight py-4 px-4">
+          <div class="rgba-teal-slight py-5 px-4">
       <section id="section">
         <section class="center">
           <div id="section-card">
-            <mdb-row style="overflow-x: hidden">
-              <mdb-col lg="5" id="title-image">
+            <mdb-row class="mt-5" style="overflow-x: hidden">
+              <mdb-col lg="6" id="title-image">
                 <mdb-view src="/images/undraw_pilates_gpdb.svg" alt="Pilates" />
               </mdb-col>
-              <mdb-col lg="7">
+              <mdb-col lg="6">
                 <mdb-row>
                   <mdb-col col="3" lg="3" id="title">
                     <img
@@ -26,41 +28,40 @@
                   </mdb-col>
                 </mdb-row>
                 <mdb-row id="title-text">
-                  <p class="text-justify">
-                    We aim to help you achieve your goals in fitness and dieting
-                    while you are stuck at home! Our fitness and diet plans are
-                    crafted by an algorithm designed by professional coaches and
-                    nutritionists. So if you stick to the plans, we guarantee
-                    that you will see results!
-                    <br /><br />
-                    Happy EATING FIT and KEEPING FIT!
+                  <p class="subheader text-justify-center">
+                    COVID-19 has caused us to be stuck at home and limited our
+                  physical activity and food options.
+                  <br />
+                  But fret not! <br />
+                  Homefit+diet is here to help you EAT FIT and KEEP FIT, all
+                  within the comforts of your own home!
+                  <br />
+                  Join us now! <br />
                   </p>
                 </mdb-row>
                 <mdb-row>
-                  <mdb-col col="6" id="title-actions">
+                <mdb-col>
+                  <mdb-btn class="stbtn" @click.native="showSignup = true" color="default"
+                    >START</mdb-btn
+                  >
+                  <p>
+                    Already have an account?
                     <mdb-btn
-                      block
-                      color="default"
-                      @click.native="showSignup = true"
-                    >
-                      Sign Up
-                    </mdb-btn>
-                  </mdb-col>
-                  <mdb-col col="6" id="title-actions">
-                    <mdb-btn
-                      block
-                      color="default"
                       @click.native="showLogin = true"
+                      class="lgnbtn"
+                      color=""
+                      >Login</mdb-btn
                     >
-                      Login
-                    </mdb-btn>
-                  </mdb-col>
+                  </p>
+                </mdb-col>
                 </mdb-row>
               </mdb-col>
             </mdb-row>
           </div>
         </section>
       </section>
+      </div>
+      </div>
     </div>
     <form @submit="login">
       <mdb-modal
@@ -288,6 +289,31 @@ export default {
   background-color: rgb(243, 239, 239);
 }
 
+h2 {
+  font-size: 30pt;
+}
+.subheader {
+  font-size: 16pt;
+  font-family: calibri;
+}
+
+.stbtn {
+  font-size: 20pt;
+  font-family: roboto;
+  color: white;
+  padding-left: 30pt;
+  padding-right: 30pt;
+}
+
+.lgnbtn {
+  color: blue;
+  font-size: 12pt;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .center {
   display: flex;
   flex-direction: column;
@@ -297,7 +323,7 @@ export default {
 
 #section {
   padding: 15px;
-  max-width: 1300px;
+  max-width: 1500px;
 }
 
 #section-card {
@@ -305,9 +331,11 @@ export default {
   max-width: 90%;
 }
 
+
 #logo {
-  margin: 15px;
+  margin: 10px;
   max-width: 100px;
+
 }
 
 #title {
