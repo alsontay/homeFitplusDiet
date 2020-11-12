@@ -1,85 +1,34 @@
 <template>
-  <div>
-    <h1>
-      For Functionality only, Can choose to use a nicer way to present using
-      bootstrap
-    </h1>
-    <form role="form">
-      <h2>Hello select meal type</h2>
-      <label class="col-lg-3 col-form-label form-control-label"
-        >Choose your meal type</label
+  <div class="autocomplete">
+    <input
+      id="textbox"
+      type="text"
+      @input="onChange"
+      v-model="search"
+      @keydown.down="onArrowDown"
+      @keydown.up="onArrowUp"
+      @keydown.enter="onEnter"
+      autocomplete="off"
+    />
+    <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
+      <li class="loading" v-if="isLoading">Loading results...</li>
+      <li
+        v-else
+        v-for="(result, i) in results"
+        :key="i"
+        @click="setResult(result)"
+        class="autocomplete-result"
+        :class="{ 'is-active': i === arrowCounter }"
       >
-      <select
-        id="form-control"
-        class="form-control"
-        size="0"
-        v-model="mealtype"
-      >
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
-      </select>
-      <h2>Choose your cuisine preference</h2>
-      <label class="col-lg-3 col-form-label form-control-label">Cuisine</label>
+        {{ result }}
+      </li>
+    </ul>
+    <mdb-btn type="submit" @click="onSubmit" color="default">Submit</mdb-btn>
+    <br />
+    {{ selectedIngred }}
+    <br />
 
-      <select id="form-control" class="form-control" size="0" v-model="cuisine">
-        <option value="nopreference">No Preference</option>
-        <option value="american">American</option>
-        <option value="british">British</option>
-        <option value="chinese">Chinese</option>
-        <option value="french">French</option>
-        <option value="greek">Greek</option>
-        <option value="indian">Indian</option>
-        <option value="italian">Italian</option>
-        <option value="japanese">Japanese</option>
-        <option value="korean">Korean</option>
-        <option value="mexican">Mexican</option>
-        <option value="middle%20eastern">Middle Eastern</option>
-        <option value="spanish">Spanish</option>
-        <option value="thai">Thai</option>
-      </select>
-
-
-      <h2>Choose your available ingredients</h2>
-      <div class="autocomplete">
-        <input
-          id="textbox"
-          type="text"
-          @input="onChange"
-          v-model="search"
-          @keydown.down="onArrowDown"
-          @keydown.up="onArrowUp"
-          @keydown.enter="onEnter"
-          autocomplete="off"
-        />
-        <ul
-          id="autocomplete-results"
-          v-show="isOpen"
-          class="autocomplete-results"
-        >
-          <li class="loading" v-if="isLoading">Loading results...</li>
-          <li
-            v-else
-            v-for="(result, i) in results"
-            :key="i"
-            @click="setResult(result)"
-            class="autocomplete-result"
-            :class="{ 'is-active': i === arrowCounter }"
-          >
-            {{ result }}
-          </li>
-        </ul>
-        <mdb-btn type="submit" @click="onSubmit" color="default"
-          >Add to Ingredient List</mdb-btn
-        >
-        <br />
-        {{ selectedIngred }}
-        <br />
-        <router-link to="/MenuSelection"
-          ><button>GO TO MENU</button></router-link
-        >
-      </div>
-    </form>
+    <router-link to="/MenuSelection"><button>GO TO MENU</button></router-link>
   </div>
 </template>
 
@@ -89,11 +38,12 @@ import ingredients from "../assets/new_ingredients.json";
 
 export default {
   name: "MenuPage",
+  // components: {
+  //   "app-recipes": Recipes
+  // },
 
   data() {
     return {
-      mealtype: "",
-      cuisine: "",
       isOpen: false,
       results: [],
       search: "",
