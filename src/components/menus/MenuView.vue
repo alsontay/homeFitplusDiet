@@ -71,9 +71,7 @@
                               NUTRIENTS:<br />
                               <p>
                                 Calories:
-                                {{
-                                  recipes[0].nutrition.nutrients[0].amount
-                                }}
+                                {{ recipes[0].nutrition.nutrients[0].amount }}
                                 kcal
                               </p>
                             </div>
@@ -172,9 +170,7 @@
                               NUTRIENTS:<br />
                               <p>
                                 Calories:
-                                {{
-                                  recipes[1].nutrition.nutrients[0].amount
-                                }}
+                                {{ recipes[1].nutrition.nutrients[0].amount }}
                                 kcal
                               </p>
                             </div>
@@ -273,9 +269,7 @@
                               NUTRIENTS:<br />
                               <p>
                                 Calories:
-                                {{
-                                  recipes[2].nutrition.nutrients[0].amount
-                                }}
+                                {{ recipes[2].nutrition.nutrients[0].amount }}
                                 kcal
                               </p>
                             </div>

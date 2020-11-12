@@ -8,7 +8,12 @@
             >Full Name</label
           >
           <div class="col-lg-9">
-            <input class="form-control" type="text" v-model="info.data.name" />
+            <input
+              class="form-control"
+              type="text"
+              v-model="info.data.name"
+              disabled="disabled"
+            />
           </div>
         </div>
         <div class="form-group row">
@@ -20,6 +25,7 @@
               class="form-control"
               type="email"
               v-model="info.data.email"
+              disabled="disabled"
             />
           </div>
         </div>

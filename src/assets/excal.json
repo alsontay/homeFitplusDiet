@@ -24,11 +24,11 @@
     },
 
     "4": {
-        "name": "Gym mat",
-        "comments": "Assume 60kg. Exercises include situp, push-up, burpees, etc, just varying by intensity",
-        "light": 3.2,
-        "medium": 4.6,
-        "intense": 6.1
+        "name": "Gym Mat",
+        "comments": "Since those workout collide with mat exercises, hence not used",
+        "light": 6.3,
+        "medium": 10.4,
+        "intense": 19.2
     },
 
     "5": {
@@ -49,10 +49,10 @@
 
     "7": {
         "name": "none (bodyweight)",
-        "comments": "Since those workout collide with mat exercises, treat this as run. Walk/Jog/Sprint.",
-        "light": 6.3,
-        "medium": 10.4,
-        "intense": 19.2
+        "comments": "Assume 60kg. Exercises include situp, push-up, burpees, etc, just varying by intensity",
+        "light": 3.2,
+        "medium": 4.6,
+        "intense": 6.1
     },
 
     "8" : {
