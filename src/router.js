@@ -141,7 +141,7 @@ export default new Router({
           meta: {
             title: "Dinner",
           },
-        }
+        },
 
         /**
          * ===========================
