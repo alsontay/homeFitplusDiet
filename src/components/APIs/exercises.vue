@@ -9,15 +9,21 @@ import axios from "axios";
 export default {
   data() {
     return {
-      exercises: {},
-      equipmentid: 4, //contain equipment that the person has checkboxed or sth
-      requeststring: "https://wger.de/api/v2/exercise/?language=2&format=json",
+      exercises: [],
+      equipmentlist: [7], //contain equipment that the person has checkboxed or sth
+      requeststring:
+        "https://wger.de/api/v2/exercise/?language=2&format=json&limit=5",
     };
   },
   methods: {
     requestStringMaker: function () {
-      var equipmentString = "&equipment=" + this.equipmentid;
-      return this.requeststring + equipmentString;
+      for (let id of this.equipmentlist) {
+        this.requeststring += "&equipment=" + id;
+      }
+      this.requeststring +=
+        "&offset=" + Math.floor((Math.random() * 100 + 1) / 5);
+      console.log(this.requeststring);
+      return this.requeststring;
     },
   },
 
