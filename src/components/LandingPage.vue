@@ -2,65 +2,71 @@
   <div>
     <div class="landing-page center">
       <div class="rgba-grey-slight py-4 px-4">
-          <div class="rgba-teal-slight py-5 px-4">
-      <section id="section">
-        <section class="center">
-          <div id="section-card">
-            <mdb-row class="mt-5" style="overflow-x: hidden">
-              <mdb-col lg="6" id="title-image">
-                <mdb-view src="/images/undraw_pilates_gpdb.svg" alt="Pilates" />
-              </mdb-col>
-              <mdb-col lg="6">
-                <mdb-row>
-                  <mdb-col col="3" lg="3" id="title">
-                    <img
-                      src="/images/logo.png"
-                      alt="logo"
-                      width="100%"
-                      id="logo"
+        <div class="rgba-teal-slight py-5 px-4">
+          <section id="section">
+            <section class="center">
+              <div id="section-card">
+                <mdb-row class="mt-5" style="overflow-x: hidden">
+                  <mdb-col lg="6" id="title-image">
+                    <mdb-view
+                      src="/images/undraw_pilates_gpdb.svg"
+                      alt="Pilates"
                     />
                   </mdb-col>
-                  <mdb-col col="9" lg="9" id="title">
-                    <h2 class="h2-responsive text-left">HOMEFIT+DIET</h2>
-                    <h5 class="h5-responsive text-left text-muted">
-                      Eat Fit, Keep Fit
-                    </h5>
+                  <mdb-col lg="6">
+                    <mdb-row>
+                      <mdb-col col="3" lg="3" id="title">
+                        <img
+                          src="/images/logo.png"
+                          alt="logo"
+                          width="100%"
+                          id="logo"
+                        />
+                      </mdb-col>
+                      <mdb-col col="9" lg="9" id="title">
+                        <h2 class="h2-responsive text-left">HOMEFIT+DIET</h2>
+                        <h5 class="h5-responsive text-left text-muted">
+                          Eat Fit, Keep Fit
+                        </h5>
+                      </mdb-col>
+                    </mdb-row>
+                    <mdb-row id="title-text">
+                      <p class="subheader text-justify-center">
+                        COVID-19 has caused us to be stuck at home and limited
+                        our physical activity and food options.
+                        <br />
+                        But fret not! <br />
+                        Homefit+diet is here to help you EAT FIT and KEEP FIT,
+                        all within the comforts of your own home!
+                        <br />
+                        Join us now! <br />
+                      </p>
+                    </mdb-row>
+                    <mdb-row>
+                      <mdb-col>
+                        <mdb-btn
+                          class="stbtn"
+                          @click.native="showSignup = true"
+                          color="default"
+                          >START</mdb-btn
+                        >
+                        <p>
+                          Already have an account?
+                          <mdb-btn
+                            @click.native="showLogin = true"
+                            class="lgnbtn"
+                            color=""
+                            >Login</mdb-btn
+                          >
+                        </p>
+                      </mdb-col>
+                    </mdb-row>
                   </mdb-col>
                 </mdb-row>
-                <mdb-row id="title-text">
-                  <p class="subheader text-justify-center">
-                    COVID-19 has caused us to be stuck at home and limited our
-                  physical activity and food options.
-                  <br />
-                  But fret not! <br />
-                  Homefit+diet is here to help you EAT FIT and KEEP FIT, all
-                  within the comforts of your own home!
-                  <br />
-                  Join us now! <br />
-                  </p>
-                </mdb-row>
-                <mdb-row>
-                <mdb-col>
-                  <mdb-btn class="stbtn" @click.native="showSignup = true" color="default"
-                    >START</mdb-btn
-                  >
-                  <p>
-                    Already have an account?
-                    <mdb-btn
-                      @click.native="showLogin = true"
-                      class="lgnbtn"
-                      color=""
-                      >Login</mdb-btn
-                    >
-                  </p>
-                </mdb-col>
-                </mdb-row>
-              </mdb-col>
-            </mdb-row>
-          </div>
-        </section>
-      </section>
-      </div>
+              </div>
+            </section>
+          </section>
+        </div>
       </div>
     </div>
     <form @submit="login">
@@ -331,11 +337,9 @@ h2 {
   max-width: 90%;
 }
 
-
 #logo {
   margin: 10px;
   max-width: 100px;
-
 }
 
 #title {

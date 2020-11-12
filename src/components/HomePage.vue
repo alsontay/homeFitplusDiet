@@ -3,7 +3,7 @@
     <div class="home-page">
       <mdb-container>
         <mdb-row class="justify-content-center mt-5">
-            <h1>EAT FIT, KEEP FIT</h1>
+          <h1>EAT FIT, KEEP FIT</h1>
         </mdb-row>
 
         <mdb-row>
@@ -212,5 +212,4 @@ h1 {
   font-size: 100pt;
   font-family: Impact;
 }
-
 </style>
