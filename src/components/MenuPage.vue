@@ -28,11 +28,7 @@
     {{ selectedIngred }}
     <br />
 
-    <router-link to="/breakfastMenu"
-      ><button>BREAKFAST MENU</button></router-link
-    >
-    <router-link to="/lunchMenu"><button>LUNCH MENU</button></router-link>
-    <router-link to="/dinnerMenu"><button>DINNER MENU</button></router-link>
+    <router-link to="/MenuSelection"><button>GO TO MENU</button></router-link>
   </div>
 </template>
 
@@ -65,14 +61,12 @@ export default {
       if (this.isAsync) {
         this.isLoading = true;
       } else {
-        // Let's  our flat array
         this.filterResults();
         this.isOpen = true;
       }
     },
 
     filterResults() {
-      // first uncapitalize all the things
       this.results = this.items.filter((item) => {
         return item.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
       });
@@ -99,7 +93,7 @@ export default {
       this.arrowCounter = -1;
     },
     onSubmit() {
-      // event.preventDefault();
+      if (this.search == "") return;
       this.selectedIngred.push(this.search);
       this.search = "";
       console.log(this.selectedIngred);
