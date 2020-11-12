@@ -313,13 +313,14 @@ export default {
       const userid = this.user.data.id;
       console.log(userid);
       console.log(this.info.data);
-      firebase.firestore().collection("users").doc(userid).set(this.info.data);
+      firebase.firestore().collection("userinfo").doc(userid).set(this.info.data);
+      alert("User profile information updated!");
     },
   },
   mounted() {
     var docRef = firebase
       .firestore()
-      .collection("users")
+      .collection("userinfo")
       .doc(this.user.data.id);
     let curr = this.info.data;
     docRef.get().then(function (doc) {

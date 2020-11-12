@@ -28,9 +28,7 @@
     {{ selectedIngred }}
     <br />
 
-    <router-link to="/MenuSelection"
-      ><button>GO TO MENU</button></router-link
-    >
+    <router-link to="/MenuSelection"><button>GO TO MENU</button></router-link>
   </div>
 </template>
 
