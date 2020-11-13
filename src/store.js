@@ -13,10 +13,12 @@ export default new Vuex.Store({
       choice: null,
       ingredients: null,
       cuisine: null,
+      tempCalIn: null,
     },
     exercise: {
       equipments: null,
       intensity: null,
+      tempCalOut: null,
     },
   },
   getters: {

@@ -226,7 +226,7 @@ export default {
     setTimeout(() => {
       var finalrequeststring =
         this.mealtype == "breakfast"
-          ? this.breakfastrequestStringMaker()
+          ? this.brequestStringMaker()
           : this.ldrequestStringMaker();
 
       axios.get(finalrequeststring).then((response) => {

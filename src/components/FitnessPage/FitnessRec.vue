@@ -1,5 +1,5 @@
 <template>
-  <h1>THIS FITNESS REC</h1>
+  <h1>Here are the recommended workout routines for you!</h1>
 </template>
 <script>
 import { mapGetters } from "vuex";
