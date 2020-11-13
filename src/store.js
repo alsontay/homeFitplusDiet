@@ -13,12 +13,18 @@ export default new Vuex.Store({
       choice: null,
       ingredients: null,
       cuisine: null,
+      //recipieJson: null,
       tempCalIn: null,
     },
     exercise: {
       equipments: null,
       intensity: null,
+      //exerciseJson: null,
       tempCalOut: null,
+    },
+    jsons: {
+      exerciseJson: null,
+      recipieJson: null,
     },
   },
   getters: {
@@ -30,6 +36,9 @@ export default new Vuex.Store({
     },
     exercise(state) {
       return state.exercise;
+    },
+    jsons(state) {
+      return state.jsons;
     },
   },
   mutations: {
@@ -53,6 +62,18 @@ export default new Vuex.Store({
     },
     SET_EX_EQM(state, equipments) {
       state.exercise.equipments = equipments;
+    },
+    SET_MEAL_JSON(state, json) {
+      state.jsons.recipieJson = json;
+    },
+    SET_EX_JSON(state,json) {
+      state.jsons.exerciseJson = json;
+    },
+    SET_MEAL_CAL(state, calValue) {
+      state.meals.tempCalIn = calValue;
+    },
+    SET_EX_CAL(state, calValue) {
+      state.exercise.tempCalOut = calValue;
     },
   },
   actions: {

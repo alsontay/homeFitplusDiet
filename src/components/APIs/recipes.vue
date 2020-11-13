@@ -7,6 +7,7 @@
 <script>
 import axios from "axios";
 import { mapGetters } from "vuex";
+import store from "../../store.js"
 import firebase from "../../firebase.js";
 import breakfast from "../../assets/breakfast.json";
 import lunchdinner from "../../assets/lunchdinner.json";
@@ -25,7 +26,7 @@ export default {
   data() {
     return {
       requeststring:
-        "https://api.spoonacular.com/recipes/complexSearch?apiKey=178df41563e84c7c87b95a138ab8b70d",
+        "https://api.spoonacular.com/recipes/complexSearch?apiKey=50a56564126a4bb797bab48f0382a4d7",
       bcalorie: breakfast,
       ldcalorie: lunchdinner,
       recipes: [],
@@ -242,6 +243,8 @@ export default {
     this.mealtype = this.mealRequest.choice;
     this.ingredients = this.mealRequest.ingredients;
     this.cuisine = this.mealRequest.cuisine;
+    // Stores json file retireved by axios
+    setTimeout(function(){ store.commit("SET_MEAL_JSON", [1,2,3,4,5]); }, 5000);
   },
 };
 </script>

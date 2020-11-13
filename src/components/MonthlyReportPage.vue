@@ -43,13 +43,14 @@ export default {
   computed: {
     ...mapGetters({
       user: "user",
+      meal: "jsons",
     }),
   },
   mounted() {
     setTimeout(function () {
       window.dispatchEvent(new Event("resize"));
     }, 5000);
-    //console.log(this.meal.choice);
+    console.log(this.meal);
   },
 };
 </script>
