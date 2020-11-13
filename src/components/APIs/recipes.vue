@@ -243,8 +243,7 @@ export default {
     this.mealtype = this.mealRequest.choice;
     this.ingredients = this.mealRequest.ingredients;
     this.cuisine = this.mealRequest.cuisine;
-    // Stores json file retireved by axios
-    setTimeout(function(){ store.commit("SET_MEAL_JSON", [1,2,3,4,5]); }, 5000);
+    
   },
 };
 </script>

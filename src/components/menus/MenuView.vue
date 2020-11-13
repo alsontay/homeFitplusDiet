@@ -360,7 +360,7 @@ export default {
   },
 
   mounted() {
-    console.log("hi")
+    //console.log("hi")
     //this.fullmenu = this.mealRequests.recipieJson;
     //setTimeout(function() {console.log("hi"); console.log(this.mealRequests);}, 2000);
   }
