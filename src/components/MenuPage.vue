@@ -150,7 +150,6 @@ export default {
       store.commit("SET_MEAL_TYPE", this.meal);
       store.commit("SET_MEAL_LIST", this.selectedIngredients);
       store.commit("SET_MEAL_CUISINE", this.cuisine);
-      //console.log("hello");
     },
   },
 };
