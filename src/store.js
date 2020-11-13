@@ -42,7 +42,7 @@ export default new Vuex.Store({
     },
     calStorage(state) {
       return state.calStorage;
-    }
+    },
   },
   mutations: {
     SET_LOGGED_IN(state, value) {
@@ -69,7 +69,7 @@ export default new Vuex.Store({
     SET_MEAL_JSON(state, json) {
       state.jsons.recipieJson = json;
     },
-    SET_EX_JSON(state,json) {
+    SET_EX_JSON(state, json) {
       state.jsons.exerciseJson = json;
     },
     SET_MEAL_CAL(state, calValue) {

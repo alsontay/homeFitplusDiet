@@ -59,32 +59,37 @@
                     <div class="col-5 justify-content-center">
                       <div class="row">
                         <div class="col">
-                      <img
-                        :src="recipes[0].image"
-                        class="img-fluid"
-                        alt="Responsive image"
-                      />
+                          <img
+                            :src="recipes[0].image"
+                            class="img-fluid"
+                            alt="Responsive image"
+                          />
+                        </div>
                       </div>
-                      </div>
-                      <br>
+                      <br />
                       <div class="row">
                         <div class="col">
                           NUTRIENTS:<br />
                           <p>
-                            {{recipes[0].nutrition.nutrients[0].title}}:
-                            {{recipes[0].nutrition.nutrients[0].amount}}{{recipes[0].nutrition.nutrients[0].unit}}
-                          <br>
-                            {{recipes[0].nutrition.nutrients[1].title}}:
-                            {{recipes[0].nutrition.nutrients[1].amount}}{{recipes[0].nutrition.nutrients[1].unit}}
-                          <br>
-                            {{recipes[0].nutrition.nutrients[3].title}}:
-                            {{recipes[0].nutrition.nutrients[3].amount}}{{recipes[0].nutrition.nutrients[3].unit}}
-                          <br>
-                            {{recipes[0].nutrition.nutrients[5].title}}:
-                            {{recipes[0].nutrition.nutrients[5].amount}}{{recipes[0].nutrition.nutrients[5].unit}}
-                          <br>
-                            {{recipes[0].nutrition.nutrients[8].title}}:
-                            {{recipes[0].nutrition.nutrients[8].amount}}{{recipes[0].nutrition.nutrients[8].unit}}
+                            {{ recipes[0].nutrition.nutrients[0].title }}:
+                            {{ recipes[0].nutrition.nutrients[0].amount
+                            }}{{ recipes[0].nutrition.nutrients[0].unit }}
+                            <br />
+                            {{ recipes[0].nutrition.nutrients[1].title }}:
+                            {{ recipes[0].nutrition.nutrients[1].amount
+                            }}{{ recipes[0].nutrition.nutrients[1].unit }}
+                            <br />
+                            {{ recipes[0].nutrition.nutrients[3].title }}:
+                            {{ recipes[0].nutrition.nutrients[3].amount
+                            }}{{ recipes[0].nutrition.nutrients[3].unit }}
+                            <br />
+                            {{ recipes[0].nutrition.nutrients[5].title }}:
+                            {{ recipes[0].nutrition.nutrients[5].amount
+                            }}{{ recipes[0].nutrition.nutrients[5].unit }}
+                            <br />
+                            {{ recipes[0].nutrition.nutrients[8].title }}:
+                            {{ recipes[0].nutrition.nutrients[8].amount
+                            }}{{ recipes[0].nutrition.nutrients[8].unit }}
                           </p>
                         </div>
                       </div>
@@ -99,25 +104,29 @@
                     <div class="col-7">
                       <div class="row">
                         <div class="col-4">
-                          <div class="card px-2 py-2 mb-5" style="background-color:transparent">
-                          INGREDIENTS: <br />
-                          <div v-for="ing in ingList0" :key="ing" class="ing">
-                            {{ing}}
+                          <div
+                            class="card px-2 py-2 mb-5"
+                            style="background-color: transparent"
+                          >
+                            INGREDIENTS: <br />
+                            <div v-for="ing in ingList0" :key="ing" class="ing">
+                              {{ ing }}
                             </div>
-                        </div>
+                          </div>
                         </div>
                         <div class="col-8">
-                          <div class="card px-2 py-2 mb-5" style="background-color:transparent">
-                          INSTRUCTIONS: <br />
                           <div
-                            v-for="step in recipes[0].analyzedInstructions[0]
-                              .steps"
-                            :key="step.number"
+                            class="card px-2 py-2 mb-5"
+                            style="background-color: transparent"
                           >
-                            <p>
-                              {{step.number}}: {{step.step}}
-                            </p>
-                          </div>
+                            INSTRUCTIONS: <br />
+                            <div
+                              v-for="step in recipes[0].analyzedInstructions[0]
+                                .steps"
+                              :key="step.number"
+                            >
+                              <p>{{ step.number }}: {{ step.step }}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -171,32 +180,37 @@
                     <div class="col-5 justify-content-center">
                       <div class="row">
                         <div class="col">
-                      <img
-                        :src="recipes[1].image"
-                        class="img-fluid"
-                        alt="Responsive image"
-                      />
+                          <img
+                            :src="recipes[1].image"
+                            class="img-fluid"
+                            alt="Responsive image"
+                          />
+                        </div>
                       </div>
-                      </div>
-                      <br>
+                      <br />
                       <div class="row">
                         <div class="col">
                           NUTRIENTS:<br />
                           <p>
-                            {{recipes[1].nutrition.nutrients[0].title}}:
-                            {{recipes[1].nutrition.nutrients[0].amount}}{{recipes[1].nutrition.nutrients[0].unit}}
-                          <br>
-                            {{recipes[1].nutrition.nutrients[1].title}}:
-                            {{recipes[1].nutrition.nutrients[1].amount}}{{recipes[1].nutrition.nutrients[1].unit}}
-                          <br>
-                            {{recipes[1].nutrition.nutrients[3].title}}:
-                            {{recipes[1].nutrition.nutrients[3].amount}}{{recipes[1].nutrition.nutrients[3].unit}}
-                          <br>
-                            {{recipes[1].nutrition.nutrients[5].title}}:
-                            {{recipes[1].nutrition.nutrients[5].amount}}{{recipes[1].nutrition.nutrients[5].unit}}
-                          <br>
-                            {{recipes[1].nutrition.nutrients[8].title}}:
-                            {{recipes[1].nutrition.nutrients[8].amount}}{{recipes[1].nutrition.nutrients[8].unit}}
+                            {{ recipes[1].nutrition.nutrients[0].title }}:
+                            {{ recipes[1].nutrition.nutrients[0].amount
+                            }}{{ recipes[1].nutrition.nutrients[0].unit }}
+                            <br />
+                            {{ recipes[1].nutrition.nutrients[1].title }}:
+                            {{ recipes[1].nutrition.nutrients[1].amount
+                            }}{{ recipes[1].nutrition.nutrients[1].unit }}
+                            <br />
+                            {{ recipes[1].nutrition.nutrients[3].title }}:
+                            {{ recipes[1].nutrition.nutrients[3].amount
+                            }}{{ recipes[1].nutrition.nutrients[3].unit }}
+                            <br />
+                            {{ recipes[1].nutrition.nutrients[5].title }}:
+                            {{ recipes[1].nutrition.nutrients[5].amount
+                            }}{{ recipes[1].nutrition.nutrients[5].unit }}
+                            <br />
+                            {{ recipes[1].nutrition.nutrients[8].title }}:
+                            {{ recipes[1].nutrition.nutrients[8].amount
+                            }}{{ recipes[1].nutrition.nutrients[8].unit }}
                           </p>
                         </div>
                       </div>
@@ -211,25 +225,29 @@
                     <div class="col-7">
                       <div class="row">
                         <div class="col-4">
-                          <div class="card px-2 py-2 mb-5" style="background-color:transparent">
-                          INGREDIENTS: <br />
-                          <div v-for="ing in ingList1" :key="ing" class="ing">
-                            {{ing}}
+                          <div
+                            class="card px-2 py-2 mb-5"
+                            style="background-color: transparent"
+                          >
+                            INGREDIENTS: <br />
+                            <div v-for="ing in ingList1" :key="ing" class="ing">
+                              {{ ing }}
                             </div>
-                        </div>
+                          </div>
                         </div>
                         <div class="col-8">
-                          <div class="card px-2 py-2 mb-5" style="background-color:transparent">
-                          INSTRUCTIONS: <br />
                           <div
-                            v-for="step in recipes[1].analyzedInstructions[0]
-                              .steps"
-                            :key="step.number"
+                            class="card px-2 py-2 mb-5"
+                            style="background-color: transparent"
                           >
-                            <p>
-                              {{step.number}}: {{step.step}}
-                            </p>
-                          </div>
+                            INSTRUCTIONS: <br />
+                            <div
+                              v-for="step in recipes[1].analyzedInstructions[0]
+                                .steps"
+                              :key="step.number"
+                            >
+                              <p>{{ step.number }}: {{ step.step }}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -283,32 +301,37 @@
                     <div class="col-5 justify-content-center">
                       <div class="row">
                         <div class="col">
-                      <img
-                        :src="recipes[2].image"
-                        class="img-fluid"
-                        alt="Responsive image"
-                      />
+                          <img
+                            :src="recipes[2].image"
+                            class="img-fluid"
+                            alt="Responsive image"
+                          />
+                        </div>
                       </div>
-                      </div>
-                      <br>
+                      <br />
                       <div class="row">
                         <div class="col">
                           NUTRIENTS:<br />
                           <p>
-                            {{recipes[2].nutrition.nutrients[0].title}}:
-                            {{recipes[2].nutrition.nutrients[0].amount}}{{recipes[2].nutrition.nutrients[0].unit}}
-                          <br>
-                            {{recipes[2].nutrition.nutrients[1].title}}:
-                            {{recipes[2].nutrition.nutrients[1].amount}}{{recipes[2].nutrition.nutrients[1].unit}}
-                          <br>
-                            {{recipes[2].nutrition.nutrients[3].title}}:
-                            {{recipes[2].nutrition.nutrients[3].amount}}{{recipes[2].nutrition.nutrients[3].unit}}
-                          <br>
-                            {{recipes[2].nutrition.nutrients[5].title}}:
-                            {{recipes[2].nutrition.nutrients[5].amount}}{{recipes[2].nutrition.nutrients[5].unit}}
-                          <br>
-                            {{recipes[2].nutrition.nutrients[8].title}}:
-                            {{recipes[2].nutrition.nutrients[8].amount}}{{recipes[2].nutrition.nutrients[8].unit}}
+                            {{ recipes[2].nutrition.nutrients[0].title }}:
+                            {{ recipes[2].nutrition.nutrients[0].amount
+                            }}{{ recipes[2].nutrition.nutrients[0].unit }}
+                            <br />
+                            {{ recipes[2].nutrition.nutrients[1].title }}:
+                            {{ recipes[2].nutrition.nutrients[1].amount
+                            }}{{ recipes[2].nutrition.nutrients[1].unit }}
+                            <br />
+                            {{ recipes[2].nutrition.nutrients[3].title }}:
+                            {{ recipes[2].nutrition.nutrients[3].amount
+                            }}{{ recipes[2].nutrition.nutrients[3].unit }}
+                            <br />
+                            {{ recipes[2].nutrition.nutrients[5].title }}:
+                            {{ recipes[2].nutrition.nutrients[5].amount
+                            }}{{ recipes[2].nutrition.nutrients[5].unit }}
+                            <br />
+                            {{ recipes[2].nutrition.nutrients[8].title }}:
+                            {{ recipes[2].nutrition.nutrients[8].amount
+                            }}{{ recipes[2].nutrition.nutrients[8].unit }}
                           </p>
                         </div>
                       </div>
@@ -323,25 +346,29 @@
                     <div class="col-7">
                       <div class="row">
                         <div class="col-4">
-                          <div class="card px-2 py-2 mb-5" style="background-color:transparent">
-                          INGREDIENTS: <br />
-                          <div v-for="ing in ingList2" :key="ing" class="ing">
-                            {{ing}}
+                          <div
+                            class="card px-2 py-2 mb-5"
+                            style="background-color: transparent"
+                          >
+                            INGREDIENTS: <br />
+                            <div v-for="ing in ingList2" :key="ing" class="ing">
+                              {{ ing }}
                             </div>
-                        </div>
+                          </div>
                         </div>
                         <div class="col-8">
-                          <div class="card px-2 py-2 mb-5" style="background-color:transparent">
-                          INSTRUCTIONS: <br />
                           <div
-                            v-for="step in recipes[2].analyzedInstructions[0]
-                              .steps"
-                            :key="step.number"
+                            class="card px-2 py-2 mb-5"
+                            style="background-color: transparent"
                           >
-                            <p>
-                              {{step.number}}: {{step.step}}
-                            </p>
-                          </div>
+                            INSTRUCTIONS: <br />
+                            <div
+                              v-for="step in recipes[2].analyzedInstructions[0]
+                                .steps"
+                              :key="step.number"
+                            >
+                              <p>{{ step.number }}: {{ step.step }}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -371,7 +398,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
   name: "MenuView",
@@ -379,53 +406,53 @@ export default {
   // computed: {
   //   ...mapGetters({
   //     mealRequests: "meals",
-  //   }), 
+  //   }),
   // },
   data() {
     return {
       menu: {
-        currRecipe: {}
+        currRecipe: {},
       },
     };
   },
   computed: {
-    ingList0: function() {
-      let ing = []
-        let step = this.recipes[0].analyzedInstructions[0].steps
-        for (let j=0; j<step.length; j++) {
-          let ingr = step[j].ingredients
-          for(let i=0; i<ingr.length;i++) {
-            if (!ing.includes(ingr[i].name)) {
-            ing.push(ingr[i].name)
-          }
+    ingList0: function () {
+      let ing = [];
+      let step = this.recipes[0].analyzedInstructions[0].steps;
+      for (let j = 0; j < step.length; j++) {
+        let ingr = step[j].ingredients;
+        for (let i = 0; i < ingr.length; i++) {
+          if (!ing.includes(ingr[i].name)) {
+            ing.push(ingr[i].name);
           }
         }
+      }
       return ing;
     },
-    ingList1: function() {
-      let ing = []
-        let step = this.recipes[1].analyzedInstructions[0].steps
-        for (let j=0; j<step.length; j++) {
-          let ingr = step[j].ingredients
-          for(let i=0; i<ingr.length;i++) {
-            if (!ing.includes(ingr[i].name)) {
-            ing.push(ingr[i].name)
-          }
+    ingList1: function () {
+      let ing = [];
+      let step = this.recipes[1].analyzedInstructions[0].steps;
+      for (let j = 0; j < step.length; j++) {
+        let ingr = step[j].ingredients;
+        for (let i = 0; i < ingr.length; i++) {
+          if (!ing.includes(ingr[i].name)) {
+            ing.push(ingr[i].name);
           }
         }
+      }
       return ing;
     },
-    ingList2: function() {
-      let ing = []
-        let step = this.recipes[2].analyzedInstructions[0].steps
-        for (let j=0; j<step.length; j++) {
-          let ingr = step[j].ingredients
-          for(let i=0; i<ingr.length;i++) {
-            if (!ing.includes(ingr[i].name)) {
-            ing.push(ingr[i].name)
-          }
+    ingList2: function () {
+      let ing = [];
+      let step = this.recipes[2].analyzedInstructions[0].steps;
+      for (let j = 0; j < step.length; j++) {
+        let ingr = step[j].ingredients;
+        for (let i = 0; i < ingr.length; i++) {
+          if (!ing.includes(ingr[i].name)) {
+            ing.push(ingr[i].name);
           }
         }
+      }
       return ing;
     },
   },
@@ -439,7 +466,7 @@ export default {
     //console.log("hi")
     //this.fullmenu = this.mealRequests.recipieJson;
     //setTimeout(function() {console.log("hi"); console.log(this.mealRequests);}, 2000);
-  }
+  },
 };
 </script>
 
@@ -468,8 +495,8 @@ p {
 }
 
 .ing {
-  margin-top:0;
-  margin-bottom:0;
+  margin-top: 0;
+  margin-bottom: 0;
   font-family: Arial;
   font-size: 12pt;
 }
