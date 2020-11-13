@@ -295,12 +295,16 @@ export default {
   background-color: rgb(243, 239, 239);
 }
 
-h2 {
-  font-size: 30pt;
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.subheader {
-  font-size: 16pt;
-  font-family: calibri;
+
+#section {
+  padding: 15px;
+  max-width: 1300px;
 }
 
 .stbtn {
@@ -320,25 +324,13 @@ h2 {
   padding-bottom: 0;
 }
 
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#section {
-  padding: 15px;
-  max-width: 1500px;
-}
-
 #section-card {
   padding: 15px;
   max-width: 90%;
 }
 
 #logo {
-  margin: 10px;
+  margin: 15px;
   max-width: 100px;
 }
 
