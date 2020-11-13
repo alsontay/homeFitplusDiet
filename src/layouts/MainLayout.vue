@@ -30,7 +30,7 @@
             >Fitness/Diet Plan</mdb-dropdown-toggle
           >
           <mdb-dropdown-menu color="default">
-            <router-link to="/fitnessplan">
+            <router-link to="/fitnessform">
               <mdb-dropdown-item
                 ><mdb-icon icon="user" id="navmenu-icon" />Fitness
                 Plan</mdb-dropdown-item

@@ -9,6 +9,7 @@
       <mdb-row>
         <mdb-card class="p-4 pl-5 pr-5 mb-5" id="selectioncard">
           <mdb-row class="d-flex justify-content-center mb-3">
+            <h5>What meal are you having?</h5>
             <mdb-btn-group size="lg">
               <mdb-btn
                 color="default"
@@ -33,15 +34,15 @@
               >
             </mdb-btn-group>
           </mdb-row>
-          <mdb-row
-            class="d-flex justify-content-center align-items-center mb-3"
-          >
+          <mdb-row class="d-flex justify-content-center align-items-center mb-3"
+            ><h5>What cuisine would you like?</h5>
             <select class="custom-select" v-model="cuisine">
               <option v-for="cusine in cusines" v-bind:key="cusine">
                 {{ cusine }}
               </option>
             </select>
           </mdb-row>
+          <h5>List your available ingredients here!</h5>
           <mdb-row class="d-flex justify-content-between align-items-center">
             <div>
               <select v-model="ingredient" class="custom-select">
