@@ -1,25 +1,27 @@
 <template>
   <div>
-    <div class="landing-page center" style="height:100%">
+    <div class="landing-page center" style="height: 100%">
       <div class="rgba-grey-slight py-4 px-4">
         <div class="rgba-teal-slight py-5 px-4">
           <section id="section">
             <section class="center">
               <div id="section-card">
                 <mdb-row style="overflow-x: hidden">
-                      <img
-                          src="/images/logo.png"
-                          alt="logo"
-                          width="100%"
-                          height="100%"
-                          id="logo"
-                        />
-                      <mdb-col id="title">
-                        <h2 class="h2-responsive justify-content-center">HOMEFIT+DIET</h2>
-                        <h5 class="h5-responsive justify-content-center text-muted">
-                          Eat Fit, Keep Fit
-                        </h5>
-                      </mdb-col>
+                  <img
+                    src="/images/logo.png"
+                    alt="logo"
+                    width="100%"
+                    height="100%"
+                    id="logo"
+                  />
+                  <mdb-col id="title">
+                    <h2 class="h2-responsive justify-content-center">
+                      HOMEFIT+DIET
+                    </h2>
+                    <h5 class="h5-responsive justify-content-center text-muted">
+                      Eat Fit, Keep Fit
+                    </h5>
+                  </mdb-col>
                 </mdb-row>
                 <mdb-row style="overflow-x: hidden">
                   <mdb-col lg="6" id="title-image">
