@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="landing-page center" style="height:100%">
+      <div class="rgba-grey-slight py-4 px-4">
         <div class="rgba-teal-slight py-5 px-4">
           <section id="section">
             <section class="center">
@@ -64,6 +65,7 @@
               </div>
             </section>
           </section>
+        </div>
       </div>
     </div>
     <form @submit="login">
@@ -308,8 +310,8 @@ h5 {
 }
 
 #section {
-  padding: 15px;
-  max-width: 1300px;
+  padding: 10px;
+  max-width: 1200px;
 }
 
 .stbtn {
