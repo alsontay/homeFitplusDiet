@@ -79,7 +79,7 @@
         </mdb-card>
       </mdb-row>
       <mdb-row>
-        <router-link to="/fitnessrec">
+        <router-link to="/fitness-rec">
           <mdb-btn
             color="default"
             size="lg"

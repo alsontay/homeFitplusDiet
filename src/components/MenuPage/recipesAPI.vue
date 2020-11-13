@@ -11,7 +11,7 @@ import store from "../../store.js";
 import firebase from "../../firebase.js";
 import breakfast from "../../assets/breakfast.json";
 import lunchdinner from "../../assets/lunchdinner.json";
-import MenuView from "../../components/menus/MenuView.vue";
+import MenuView from "./MenuView.vue";
 
 export default {
   components: {
