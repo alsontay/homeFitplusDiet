@@ -1,5 +1,14 @@
 <template>
+  <div v-if="recipes.length < 3">
+    <br /><br /><br /><br />
+    <h1>(⌣́_⌣̀)</h1>
+    <h3>
+      Sorry! It appears that there is no recipes for your available ingredients
+    </h3>
+    <h3>Please try again with different preferences.</h3>
+  </div>
   <div
+    v-else
     class="accordion md-accordion accordion-3 z-depth-1-half"
     id="accordionEx194"
     role="tablist"
@@ -11,10 +20,10 @@
       <i class="fas fa-drumstick-bite mr-3 fa-2x deep-orange-text"></i>
     </ul>
 
-    <h2 id="title" class="text-center text-uppercase red-text py-4 px-3">
-      Here are your menu suggestions for the day!
+    <h2 id="title" class="text-center text-uppercase py-4 px-3">
+      Here are your suggested recipes for the day!
     </h2>
-
+    <h4>Choose one and enjoy!</h4>
     <hr class="mb-0" />
 
     <div class="rgba-red-slight py-5 px-4">
@@ -132,12 +141,12 @@
                       </div>
                       <br />
                       <div class="row">
-                          <button
-                            v-on:click="setValue(0)"
-                            class="btn btn-warning"
-                          >
-                            SELECT
-                          </button>
+                        <button
+                          v-on:click="setValue(0)"
+                          class="btn btn-warning"
+                        >
+                          SELECT
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -252,11 +261,11 @@
                       <br />
                       <div class="row">
                         <button
-                            v-on:click="setValue(1)"
-                            class="btn btn-warning"
-                          >
-                            SELECT
-                          </button>
+                          v-on:click="setValue(1)"
+                          class="btn btn-warning"
+                        >
+                          SELECT
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -371,11 +380,11 @@
                       <br />
                       <div class="row">
                         <button
-                            v-on:click="setValue(2)"
-                            class="btn btn-warning"
-                          >
-                            SELECT
-                          </button>
+                          v-on:click="setValue(2)"
+                          class="btn btn-warning"
+                        >
+                          SELECT
+                        </button>
                       </div>
                     </div>
                   </div>
