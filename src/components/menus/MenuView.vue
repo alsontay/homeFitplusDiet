@@ -332,9 +332,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: "MenuView",
   props: ["recipes"],
+  // computed: {
+  //   ...mapGetters({
+  //     mealRequests: "meals",
+  //   }), 
+  // },
   data() {
     return {
       menu: {
@@ -351,6 +358,12 @@ export default {
       this.menu.dinner = val;
     },
   },
+
+  mounted() {
+    //console.log("hi")
+    //this.fullmenu = this.mealRequests.recipieJson;
+    //setTimeout(function() {console.log("hi"); console.log(this.mealRequests);}, 2000);
+  }
 };
 </script>
 

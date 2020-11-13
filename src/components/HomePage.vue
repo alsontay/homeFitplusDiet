@@ -143,7 +143,7 @@ export default {
     return {
       stories: [
         {
-          title: "Trusted fitness & nutrition website",
+          title: "HF+D Helped me to stay fit!",
           img: "/images/User1.jpg",
           text:
             "Homefit+diet provided me with fitness and nutrition plans to stay healthy during the circuit breaker period!",

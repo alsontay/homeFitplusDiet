@@ -49,7 +49,6 @@ export default {
     setTimeout(function () {
       window.dispatchEvent(new Event("resize"));
     }, 5000);
-    //console.log(this.meal.choice);
   },
 };
 </script>

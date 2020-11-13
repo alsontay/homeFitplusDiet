@@ -10,14 +10,20 @@ export default new Vuex.Store({
       data: null,
     },
     meals: {
-      choice: null,
+      choice: null, // breakfast, lunch, dinner
       ingredients: null,
       cuisine: null,
-      tempCalIn: null,
     },
     exercise: {
       equipments: null,
       intensity: null,
+    },
+    jsons: {
+      exerciseJson: null,
+      recipieJson: null,
+    },
+    calStorage: {
+      tempCalIn: null,
       tempCalOut: null,
     },
   },
@@ -31,6 +37,12 @@ export default new Vuex.Store({
     exercise(state) {
       return state.exercise;
     },
+    jsons(state) {
+      return state.jsons;
+    },
+    calStorage(state) {
+      return state.calStorage;
+    }
   },
   mutations: {
     SET_LOGGED_IN(state, value) {
@@ -53,6 +65,18 @@ export default new Vuex.Store({
     },
     SET_EX_EQM(state, equipments) {
       state.exercise.equipments = equipments;
+    },
+    SET_MEAL_JSON(state, json) {
+      state.jsons.recipieJson = json;
+    },
+    SET_EX_JSON(state,json) {
+      state.jsons.exerciseJson = json;
+    },
+    SET_MEAL_CAL(state, calValue) {
+      state.calStorage.tempCalIn = calValue;
+    },
+    SET_EX_CAL(state, calValue) {
+      state.calStorage.tempCalOut = calValue;
     },
   },
   actions: {
