@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       requeststring:
-        "https://api.spoonacular.com/recipes/complexSearch?apiKey=178df41563e84c7c87b95a138ab8b70d",
+        "https://api.spoonacular.com/recipes/complexSearch?apiKey=50a56564126a4bb797bab48f0382a4d7",
       bcalorie: breakfast,
       ldcalorie: lunchdinner,
       recipes: [],
@@ -109,7 +109,8 @@ export default {
         "&number=3" +
         "&type=breakfast" +
         "&instructionsRequired=true" +
-        "&addRecipeInformation=true";
+        "&addRecipeInformation=true" +
+        "&addRecipeNutrition=true";
       const finalstring =
         this.requeststring +
         infostring +
@@ -190,7 +191,8 @@ export default {
         offsetNumber.toString() +
         "&type=main%20course" +
         "&instructionsRequired=true" +
-        "&addRecipeInformation=true";
+        "&addRecipeInformation=true" +
+        "&addRecipeNutrition=true";
       const finalstring =
         this.requeststring +
         infostring +
@@ -226,7 +228,7 @@ export default {
     setTimeout(() => {
       var finalrequeststring =
         this.mealtype == "breakfast"
-          ? this.breakfastrequestStringMaker()
+          ? this.brequestStringMaker()
           : this.ldrequestStringMaker();
 
       axios.get(finalrequeststring).then((response) => {
