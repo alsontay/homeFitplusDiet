@@ -1,209 +1,145 @@
 <template>
-  <div>
-    <h1>
-      For Functionality only, Can choose to use a nicer way to present using
-      bootstrap
-    </h1>
-    <form role="form">
-      <h2>Hello select meal type</h2>
-      <label class="col-lg-3 col-form-label form-control-label"
-        >Choose your meal type</label
-      >
-      <select
-        id="form-control"
-        class="form-control"
-        size="0"
-        v-model="mealtype"
-      >
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
-      </select>
-      <h2>Choose your cuisine preference</h2>
-      <label class="col-lg-3 col-form-label form-control-label">Cuisine</label>
-
-      <select id="form-control" class="form-control" size="0" v-model="cuisine">
-        <option value="nopreference">No Preference</option>
-        <option value="american">American</option>
-        <option value="british">British</option>
-        <option value="chinese">Chinese</option>
-        <option value="french">French</option>
-        <option value="greek">Greek</option>
-        <option value="indian">Indian</option>
-        <option value="italian">Italian</option>
-        <option value="japanese">Japanese</option>
-        <option value="korean">Korean</option>
-        <option value="mexican">Mexican</option>
-        <option value="middle%20eastern">Middle Eastern</option>
-        <option value="spanish">Spanish</option>
-        <option value="thai">Thai</option>
-      </select>
-
-
-      <h2>Choose your available ingredients</h2>
-      <div class="autocomplete">
-        <input
-          id="textbox"
-          type="text"
-          @input="onChange"
-          v-model="search"
-          @keydown.down="onArrowDown"
-          @keydown.up="onArrowUp"
-          @keydown.enter="onEnter"
-          autocomplete="off"
-        />
-        <ul
-          id="autocomplete-results"
-          v-show="isOpen"
-          class="autocomplete-results"
-        >
-          <li class="loading" v-if="isLoading">Loading results...</li>
-          <li
-            v-else
-            v-for="(result, i) in results"
-            :key="i"
-            @click="setResult(result)"
-            class="autocomplete-result"
-            :class="{ 'is-active': i === arrowCounter }"
+  <mdb-container class="test">
+    <mdb-container class="mt-5 mb-5 test">
+      <h2>Menu</h2>
+    </mdb-container>
+    <mdb-container
+      class="mt-4 test d-flex flex-column align-items-center justify-content-center"
+    >
+      <mdb-row>
+        <mdb-card class="p-4 pl-5 pr-5 mb-5" id="selectioncard">
+          <mdb-row class="d-flex justify-content-center mb-3">
+            <mdb-btn-group size="lg">
+              <mdb-btn
+                color="default"
+                size="lg"
+                @click.native="selectMeal('breakfast')"
+                :active="meal === 'breakfast'"
+                >Breakfast</mdb-btn
+              >
+              <mdb-btn
+                color="default"
+                size="lg"
+                @click.native="selectMeal('lunch')"
+                :active="meal === 'lunch'"
+                >Lunch</mdb-btn
+              >
+              <mdb-btn
+                color="default"
+                size="lg"
+                @click.native="selectMeal('dinner')"
+                :active="meal === 'dinner'"
+                >Dinner</mdb-btn
+              >
+            </mdb-btn-group>
+          </mdb-row>
+          <mdb-row
+            class="d-flex justify-content-center align-items-center mb-3"
           >
-            {{ result }}
-          </li>
-        </ul>
-        <mdb-btn type="submit" @click="onSubmit" color="default"
-          >Add to Ingredient List</mdb-btn
-        >
-        <br />
-        {{ selectedIngred }}
-        <br />
-        <router-link to="/MenuSelection"
-          ><button>GO TO MENU</button></router-link
-        >
-      </div>
-    </form>
-  </div>
+            <select class="custom-select" v-model="cusine">
+              <option v-for="cusine in cusines" v-bind:key="cusine">
+                {{ cusine }}
+              </option>
+            </select>
+          </mdb-row>
+          <mdb-row class="d-flex justify-content-between align-items-center">
+            <div>
+              <select v-model="ingredient" class="custom-select">
+                <option
+                  v-for="ingredient in ingredients"
+                  v-bind:key="ingredient"
+                >
+                  {{ ingredient }}
+                </option>
+              </select>
+            </div>
+            <mdb-btn color="default" class="ml-3" @click="selectIngredient">
+              Add
+            </mdb-btn>
+          </mdb-row>
+        </mdb-card>
+      </mdb-row>
+      <mdb-row>
+        <mdb-card class="pt-4 pb-2 pl-5 pr-5 mb-5" id="selectioncard">
+          <mdb-tbl hover class="mb-3">
+            <mdb-tbl-head>
+              <tr>
+                <th><b>Selected Ingredients</b></th>
+              </tr>
+            </mdb-tbl-head>
+            <mdb-tbl-body>
+              <tr
+                v-for="ingredient in selected"
+                v-bind:key="ingredient"
+                @click="removeIngredient(ingredient)"
+              >
+                <td>{{ ingredient }}</td>
+              </tr>
+            </mdb-tbl-body>
+          </mdb-tbl>
+          <p id="helpertext">
+            <small>Click on the ingredient to remove it from the list</small>
+          </p>
+        </mdb-card>
+      </mdb-row>
+      <mdb-row>
+        <router-link to="/MenuSelection">
+          <mdb-btn color="default" size="lg" class="ml-3">
+            <b>Generate Menu</b>
+          </mdb-btn>
+        </router-link>
+      </mdb-row>
+    </mdb-container>
+  </mdb-container>
 </template>
 
 <script>
-// import Recipes from "./APIs/recipes.vue";
-import ingredients from "../assets/new_ingredients.json";
+import cusines from "../assets/cusine.json";
+import ingredients from "../assets/ingredients.json";
 
 export default {
   name: "MenuPage",
-
   data() {
     return {
-      mealtype: "",
-      cuisine: "",
-      isOpen: false,
-      results: [],
-      search: "",
-      isLoading: false,
-      arrowCounter: 0,
-      items: ingredients,
-      selectedIngred: [],
+      meal: "breakfast",
+      cusines,
+      cusine: "",
+      ingredients,
+      ingredient: "",
+      selected: [],
     };
   },
-
   methods: {
-    onChange() {
-      this.$emit("input", this.search);
-
-      if (this.isAsync) {
-        this.isLoading = true;
-      } else {
-        // Let's  our flat array
-        this.filterResults();
-        this.isOpen = true;
-      }
+    selectMeal(meal) {
+      this.meal = meal;
     },
-
-    filterResults() {
-      // first uncapitalize all the things
-      this.results = this.items.filter((item) => {
-        return item.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
-      });
+    selectIngredient() {
+      if (
+        this.ingredient.trim() === "" ||
+        !this.ingredients.find((x) => x === this.ingredient) ||
+        !!this.selected.find((x) => x === this.ingredient)
+      )
+        return;
+      this.selected.push(this.ingredient);
+      this.ingredient = "";
     },
-    setResult(result) {
-      this.search = result;
-      this.isOpen = false;
+    removeIngredient(ingredient) {
+      this.selected = this.selected.filter((x) => x !== ingredient);
     },
-    onArrowDown(evt) {
-      if (this.arrowCounter < this.results.length) {
-        this.arrowCounter = this.arrowCounter + 1;
-      }
-    },
-    onArrowUp() {
-      if (this.arrowCounter > 0) {
-        this.arrowCounter = this.arrowCounter - 1;
-      }
-    },
-    onEnter() {
-      // if not pointing to autocomplete, don't do anything to search input
-      if (!this.results[this.arrowCounter]) return;
-      this.search = this.results[this.arrowCounter];
-      this.isOpen = false;
-      this.arrowCounter = -1;
-    },
-    onSubmit() {
-      // event.preventDefault();
-      this.selectedIngred.push(this.search);
-      this.search = "";
-      console.log(this.selectedIngred);
-    },
-    handleClickOutside(evt) {
-      if (!this.$el.contains(evt.target)) {
-        this.isOpen = false;
-        this.arrowCounter = -1;
-      }
-    },
-  },
-  watch: {
-    items: function (val, oldValue) {
-      if (val.length !== oldValue.length) {
-        this.results = val;
-        this.isLoading = false;
-      }
-    },
-  },
-
-  mounted() {
-    document.addEventListener("click", this.handleClickOutside);
-  },
-  destroyed() {
-    document.removeEventListener("click", this.handleClickOutside);
   },
 };
 </script>
 
 <style scoped>
-#textbox {
-  padding: 10px;
-  margin-top: 20px;
-  height: 50px;
-  width: 300px;
-}
-.autocomplete {
-  position: relative;
+/* .test {
+  border: 1px transparent;
+} */
+
+#selectioncard {
+  width: 500px;
 }
 
-.autocomplete-results {
-  padding: 0;
-  margin: 0;
-  border: 1px solid #eeeeee;
-  height: 120px;
-  overflow: auto;
-}
-
-.autocomplete-result {
-  list-style: none;
-  text-align: left;
-  padding: 4px 2px;
-  cursor: pointer;
-}
-
-.autocomplete-result.is-active,
-.autocomplete-result:hover {
-  background-color: #4aae9b;
-  color: white;
+#helpertext {
+  color: gray;
 }
 </style>

@@ -1,66 +1,73 @@
 <template>
   <div>
     <div class="landing-page center">
-      <section id="section">
-        <section class="center">
-          <div id="section-card">
-            <mdb-row style="overflow-x: hidden">
-              <mdb-col lg="5" id="title-image">
-                <mdb-view src="/images/undraw_pilates_gpdb.svg" alt="Pilates" />
-              </mdb-col>
-              <mdb-col lg="7">
-                <mdb-row>
-                  <mdb-col col="3" lg="3" id="title">
-                    <img
-                      src="/images/logo.png"
-                      alt="logo"
-                      width="100%"
-                      id="logo"
+      <div class="rgba-grey-slight py-4 px-4">
+        <div class="rgba-teal-slight py-5 px-4">
+          <section id="section">
+            <section class="center">
+              <div id="section-card">
+                <mdb-row class="mt-5" style="overflow-x: hidden">
+                  <mdb-col lg="6" id="title-image">
+                    <mdb-view
+                      src="/images/undraw_pilates_gpdb.svg"
+                      alt="Pilates"
                     />
                   </mdb-col>
-                  <mdb-col col="9" lg="9" id="title">
-                    <h2 class="h2-responsive text-left">HOMEFIT+DIET</h2>
-                    <h5 class="h5-responsive text-left text-muted">
-                      Eat Fit, Keep Fit
-                    </h5>
+                  <mdb-col lg="6">
+                    <mdb-row>
+                      <mdb-col col="3" lg="3" id="title">
+                        <img
+                          src="/images/logo.png"
+                          alt="logo"
+                          width="100%"
+                          id="logo"
+                        />
+                      </mdb-col>
+                      <mdb-col col="9" lg="9" id="title">
+                        <h2 class="h2-responsive text-left">HOMEFIT+DIET</h2>
+                        <h5 class="h5-responsive text-left text-muted">
+                          Eat Fit, Keep Fit
+                        </h5>
+                      </mdb-col>
+                    </mdb-row>
+                    <mdb-row id="title-text">
+                      <p class="subheader text-justify-center">
+                        COVID-19 has caused us to be stuck at home and limited
+                        our physical activity and food options.
+                        <br />
+                        But fret not! <br />
+                        Homefit+diet is here to help you EAT FIT and KEEP FIT,
+                        all within the comforts of your own home!
+                        <br />
+                        Join us now! <br />
+                      </p>
+                    </mdb-row>
+                    <mdb-row>
+                      <mdb-col>
+                        <mdb-btn
+                          class="stbtn"
+                          @click.native="showSignup = true"
+                          color="default"
+                          >START</mdb-btn
+                        >
+                        <p>
+                          Already have an account?
+                          <mdb-btn
+                            @click.native="showLogin = true"
+                            class="lgnbtn"
+                            color=""
+                            >Login</mdb-btn
+                          >
+                        </p>
+                      </mdb-col>
+                    </mdb-row>
                   </mdb-col>
                 </mdb-row>
-                <mdb-row id="title-text">
-                  <p class="text-justify">
-                    We aim to help you achieve your goals in fitness and dieting
-                    while you are stuck at home! Our fitness and diet plans are
-                    crafted by an algorithm designed by professional coaches and
-                    nutritionists. So if you stick to the plans, we guarantee
-                    that you will see results!
-                    <br /><br />
-                    Happy EATING FIT and KEEPING FIT!
-                  </p>
-                </mdb-row>
-                <mdb-row>
-                  <mdb-col col="6" id="title-actions">
-                    <mdb-btn
-                      block
-                      color="default"
-                      @click.native="showSignup = true"
-                    >
-                      Sign Up
-                    </mdb-btn>
-                  </mdb-col>
-                  <mdb-col col="6" id="title-actions">
-                    <mdb-btn
-                      block
-                      color="default"
-                      @click.native="showLogin = true"
-                    >
-                      Login
-                    </mdb-btn>
-                  </mdb-col>
-                </mdb-row>
-              </mdb-col>
-            </mdb-row>
-          </div>
-        </section>
-      </section>
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
     </div>
     <form @submit="login">
       <mdb-modal
@@ -298,6 +305,23 @@ export default {
 #section {
   padding: 15px;
   max-width: 1300px;
+}
+
+.stbtn {
+  font-size: 20pt;
+  font-family: roboto;
+  color: white;
+  padding-left: 30pt;
+  padding-right: 30pt;
+}
+
+.lgnbtn {
+  color: blue;
+  font-size: 12pt;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #section-card {
