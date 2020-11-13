@@ -28,7 +28,8 @@ export default {
       bcalorie: breakfast,
       ldcalorie: lunchdinner,
       recipes: [],
-      ingredients: ["cheese"], //from form
+      mealtype: "breakfast",
+      ingredients: ["egg"], //from form
       cuisine: "", //from form
       info: {
         data: {
@@ -68,8 +69,10 @@ export default {
         } else if (x == "diabetes") {
           restrictions["maxCarbs"] = restrictions["maxCalories"] * 0.6;
         } else if (x == "heart") {
-          restrictions["maxCholesterol"] = 0;
-          restrictions["maxSaturatedFat"] = 0;
+          restrictions["maxCholesterol"] = 20;
+          restrictions["maxSaturatedFat"] = Math.round(
+            restrictions["maxCalories"] * 0.04
+          );
         } else if (x == "hypertension") {
           restrictions["maxSodium"] = 0;
         } else if (x == "hypoglycemia") {
@@ -267,7 +270,7 @@ export default {
   mounted() {
     var docRef = firebase
       .firestore()
-      .collection("users")
+      .collection("userinfo")
       .doc(this.user.data.id);
     let curr = this.info.data;
     docRef.get().then(function (doc) {
@@ -287,7 +290,12 @@ export default {
       }
     });
     setTimeout(() => {
-      axios.get(this.dinnerrequestStringMaker()).then((response) => {
+      var finalrequeststring =
+        this.mealtype == "breakfast"
+          ? this.breakfastrequestStringMaker()
+          : this.lunchrequestStringMaker();
+
+      axios.get(finalrequeststring).then((response) => {
         console.log("Response==>");
         console.log(response);
         this.recipes = response.data.results;
