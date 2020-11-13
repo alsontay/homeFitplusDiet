@@ -77,7 +77,7 @@
       </mdb-row>
       <mdb-row>
         <router-link to="/fitnessrec">
-          <mdb-btn color="default" size="lg" class="ml-3">
+          <mdb-btn color="default" size="lg" class="ml-3" v-on:click="storeExercise">
             <b>Generate Workout</b>
           </mdb-btn>
         </router-link>
@@ -87,6 +87,8 @@
 </template>
 
 <script>
+import store from "../../store.js"
+
 export default {
   name: "FitnessForm",
   data() {
@@ -121,6 +123,10 @@ export default {
       this.selectedEquipment = this.selectedEquipment.filter(
         (x) => x !== equipment
       );
+    },
+    storeExercise() {
+      store.commit("SET_EX_INT", this.intensity);
+      store.commit("SET_EX_EQM", this.selectedEquipment);
     },
   },
 };

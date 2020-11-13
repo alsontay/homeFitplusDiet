@@ -46,6 +46,12 @@ export default new Vuex.Store({
     SET_MEAL_CUISINE(state, cuisine) {
       state.meals.cuisine = cuisine;
     },
+    SET_EX_INT(state, intensity) {
+      state.exercise.intensity = intensity;
+    },
+    SET_EX_EQM(state, equipments) {
+      state.exercise.equipments = equipments;
+    },
   },
   actions: {
     fetchUser({ commit }, user) {

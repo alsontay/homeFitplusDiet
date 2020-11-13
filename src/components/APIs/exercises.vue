@@ -6,7 +6,14 @@
 
 <script>
 import axios from "axios";
+import { mapGetters } from "vuex";
+
 export default {
+  computed: {
+    ...mapGetters({
+      exRequest: 'exercise',
+    }),
+  },
   data() {
     return {
       exercises: [],
@@ -28,6 +35,7 @@ export default {
   },
 
   mounted() {
+    this.equipmentlist = this.exRequest.equipments;
     axios.get(this.requestStringMaker()).then((response) => {
       console.log("Response==>");
       console.log(response);
