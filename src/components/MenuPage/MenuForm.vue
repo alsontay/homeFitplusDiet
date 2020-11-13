@@ -86,7 +86,7 @@
         </mdb-card>
       </mdb-row>
       <mdb-row>
-        <router-link to="/MenuSelection">
+        <router-link to="/menu-selection">
           <mdb-btn
             color="default"
             size="lg"
@@ -102,8 +102,8 @@
 </template>
 
 <script>
-import store from "../store.js";
-import ingredients from "../assets/ingredients.json";
+import store from "../../store.js";
+import ingredients from "../../assets/ingredients.json";
 
 export default {
   name: "MenuPage",

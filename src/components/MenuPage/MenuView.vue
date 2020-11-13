@@ -132,14 +132,12 @@
                       </div>
                       <br />
                       <div class="row">
-                        <router-link to="/menuSelected"
-                          ><button
+                          <button
                             v-on:click="setValue(0)"
                             class="btn btn-warning"
                           >
                             SELECT
-                          </button></router-link
-                        >
+                          </button>
                       </div>
                     </div>
                   </div>
@@ -253,14 +251,12 @@
                       </div>
                       <br />
                       <div class="row">
-                        <router-link to="/menuSelected"
-                          ><button
+                        <button
                             v-on:click="setValue(1)"
                             class="btn btn-warning"
                           >
                             SELECT
-                          </button></router-link
-                        >
+                          </button>
                       </div>
                     </div>
                   </div>
@@ -374,14 +370,12 @@
                       </div>
                       <br />
                       <div class="row">
-                        <router-link to="/menuSelected"
-                          ><button
+                        <button
                             v-on:click="setValue(2)"
                             class="btn btn-warning"
                           >
                             SELECT
-                          </button></router-link
-                        >
+                          </button>
                       </div>
                     </div>
                   </div>
