@@ -41,6 +41,12 @@
                 {{ cusine }}
               </option>
             </select>
+            <p id="helpertext">
+              <small
+                >No Preference is strongly recommended for you to try new
+                cuisines!</small
+              >
+            </p>
           </mdb-row>
           <h5>List your available ingredients here!</h5>
           <mdb-row class="d-flex justify-content-between align-items-center">
@@ -58,10 +64,6 @@
               Add
             </mdb-btn>
           </mdb-row>
-        </mdb-card>
-      </mdb-row>
-      <mdb-row>
-        <mdb-card class="pt-4 pb-2 pl-5 pr-5 mb-5" id="selectioncard">
           <mdb-tbl hover class="mb-3">
             <mdb-tbl-head>
               <tr>
@@ -101,7 +103,6 @@
 
 <script>
 import store from "../store.js";
-import cusines from "../assets/cusine.json";
 import ingredients from "../assets/ingredients.json";
 
 export default {
@@ -109,7 +110,17 @@ export default {
   data() {
     return {
       meal: "",
-      cusines,
+      cusines: [
+        "No Preference",
+        "American",
+        "Chinese",
+        "French",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Mexican",
+        "Thai",
+      ],
       cuisine: "",
       ingredients,
       ingredient: "",
