@@ -39,6 +39,7 @@
         <option value="thai">Thai</option>
       </select>
 
+
       <h2>Choose your available ingredients</h2>
       <div class="autocomplete">
         <input

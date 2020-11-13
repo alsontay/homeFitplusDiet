@@ -319,11 +319,7 @@ export default {
       const userid = this.user.data.id;
       console.log(userid);
       console.log(this.info.data);
-      firebase
-        .firestore()
-        .collection("userinfo")
-        .doc(userid)
-        .set(this.info.data);
+      firebase.firestore().collection("userinfo").doc(userid).set(this.info.data);
       alert("User profile information updated!");
     },
   },

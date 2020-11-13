@@ -12,7 +12,7 @@ export default {
           {
             label: "Total Consumption",
             data: [],
-            backgroundColor: "lightgreen",
+            backgroundColor: "cyan",
           },
           /*{
                 label: 'Sales2',
@@ -89,9 +89,9 @@ export default {
         }
       });
     },
-    async render() {
+    async render () {
       this.renderChart(this.chartdata, this.options);
-    },
+    }
   },
 
   created() {
