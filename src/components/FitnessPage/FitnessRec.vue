@@ -19,15 +19,15 @@
     </h2>
     <h4 v-if="this.intensity == 'light'">
       Do 4 Sets of 6 for each of the exercises below. <br />Expected duration:
-      20 minutes - Total Calories Burned:
+      20 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h4>
     <h4 v-if="this.intensity == 'moderate'">
       Do 5 Sets of 10 for each of the exercises below. <br />Expected duration:
-      30 minutes - Total Calories Burned:
+      30 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h4>
     <h4 v-if="this.intensity == 'intense'">
       Do 7 Sets of 12 for each of the exercises below. <br />Expected duration:
-      45 minutes - Total Calories Burned:
+      45 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h4>
 
     <hr class="mb-0" />
@@ -43,7 +43,11 @@
             aria-multiselectable="true"
           >
             <!-- Accordion card -->
-            <div class="card mb-4">
+            <div
+              class="card mb-4"
+              v-for="(exercise, index) in exercises"
+              v-bind:key="index"
+            >
               <!-- Card header -->
               <div
                 class="card-header warning-color accent-1"
@@ -60,7 +64,7 @@
                   <h4
                     class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
                   >
-                    {{ exercises.results[0].name }}
+                    {{ exercise.name }}
                   </h4>
                 </a>
               </div>
@@ -83,8 +87,7 @@
                         <div class="col">
                           DESCRIPTION:<br />
                           <p>
-                            <span v-html="exercises.results[0].description">
-                            </span>
+                            <span v-html="exercise.description"> </span>
                           </p>
                         </div>
                       </div>
@@ -93,313 +96,20 @@
                   <div class="row mt-5">
                     <div class="col">
                       MUSCLES TRAINED:<br />
-                      <div v-for="id in exercises.results[0].muscles" :key="id">
+                      <div v-for="id in exercise.muscles" :key="id">
                         {{ muscles[id].name }}
                       </div>
                     </div>
 
                     <div class="col">
                       EQUIPMENT USED:<br />
-                      <div
-                        v-for="id in exercises.results[0].equipment"
-                        :key="id"
-                      >
+                      <div v-for="id in exercise.equipment" :key="id">
                         {{ excal[id].name }}
                       </div>
                     </div>
                     <div class="col">
                       CALORIE BURNED:<br />
-                      {{ calcCalories(exercises.results[0].equipment[0]) }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Accordion card -->
-
-            <!-- Accordion card -->
-            <div class="card mb-4">
-              <!-- Card header -->
-              <div
-                class="card-header warning-color accent-1"
-                role="tab"
-                id="heading33"
-              >
-                <a
-                  data-toggle="collapse"
-                  data-parent="#accordionEx5"
-                  href="#collapse31"
-                  aria-expanded="true"
-                  aria-controls="collapse31"
-                >
-                  <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
-                  >
-                    {{ exercises.results[1].name }}
-                  </h4>
-                </a>
-              </div>
-
-              <!-- Card body -->
-              <div
-                id="collapse31"
-                class="collapse show"
-                role="tabpanel"
-                aria-labelledby="heading31"
-                data-parent="#accordionEx5"
-              >
-                <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="row justify-content-center">
-                    <div
-                      class="card px-2 py-2"
-                      style="background-color: transparent"
-                    >
-                      <div class="col">
-                        DESCRIPTION:<br />
-                        <p>
-                          <span v-html="exercises.results[1].description">
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-5">
-                    <div class="col">
-                      MUSCLES TRAINED:<br />
-                      <div v-for="id in exercises.results[1].muscles" :key="id">
-                        {{ muscles[id].name }}
-                      </div>
-                    </div>
-
-                    <div class="col">
-                      EQUIPMENT USED:<br />
-                      <div
-                        v-for="id in exercises.results[1].equipment"
-                        :key="id"
-                      >
-                        {{ excal[id].name }}
-                      </div>
-                    </div>
-                    <div class="col">
-                      CALORIE BURNED:<br />
-                      {{ calcCalories(exercises.results[1].equipment[0]) }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Accordion card -->
-
-            <!-- Accordion card -->
-            <div class="card mb-4">
-              <!-- Card header -->
-              <div
-                class="card-header warning-color accent-1"
-                role="tab"
-                id="heading33"
-              >
-                <a
-                  data-toggle="collapse"
-                  data-parent="#accordionEx5"
-                  href="#collapse32"
-                  aria-expanded="true"
-                  aria-controls="collapse32"
-                >
-                  <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
-                  >
-                    {{ exercises.results[2].name }}
-                  </h4>
-                </a>
-              </div>
-
-              <!-- Card body -->
-              <div
-                id="collapse32"
-                class="collapse show"
-                role="tabpanel"
-                aria-labelledby="heading32"
-                data-parent="#accordionEx5"
-              >
-                <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="row justify-content-center">
-                    <div
-                      class="card px-2 py-2"
-                      style="background-color: transparent"
-                    >
-                      <div class="col">
-                        DESCRIPTION:<br />
-                        <p>
-                          <span v-html="exercises.results[2].description">
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-5">
-                    <div class="col">
-                      MUSCLES TRAINED:<br />
-                      <div v-for="id in exercises.results[2].muscles" :key="id">
-                        {{ muscles[id].name }}
-                      </div>
-                    </div>
-
-                    <div class="col">
-                      EQUIPMENT USED:<br />
-                      <div
-                        v-for="id in exercises.results[2].equipment"
-                        :key="id"
-                      >
-                        {{ excal[id].name }}
-                      </div>
-                    </div>
-                    <div class="col">
-                      CALORIE BURNED:<br />
-                      {{ calcCalories(exercises.results[2].equipment[0]) }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Accordion card -->
-            <!-- Accordion card -->
-            <div class="card mb-4">
-              <!-- Card header -->
-              <div
-                class="card-header warning-color accent-1"
-                role="tab"
-                id="heading33"
-              >
-                <a
-                  data-toggle="collapse"
-                  data-parent="#accordionEx5"
-                  href="#collapse33"
-                  aria-expanded="true"
-                  aria-controls="collapse33"
-                >
-                  <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
-                  >
-                    {{ exercises.results[3].name }}
-                  </h4>
-                </a>
-              </div>
-
-              <!-- Card body -->
-              <div
-                id="collapse33"
-                class="collapse show"
-                role="tabpanel"
-                aria-labelledby="heading33"
-                data-parent="#accordionEx5"
-              >
-                <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="row justify-content-center">
-                    <div
-                      class="card px-2 py-2"
-                      style="background-color: transparent"
-                    >
-                      <div class="col">
-                        DESCRIPTION:<br />
-                        <p>
-                          <span v-html="exercises.results[3].description">
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-5">
-                    <div class="col">
-                      MUSCLES TRAINED:<br />
-                      <div v-for="id in exercises.results[3].muscles" :key="id">
-                        {{ muscles[id].name }}
-                      </div>
-                    </div>
-
-                    <div class="col">
-                      EQUIPMENT USED:<br />
-                      <div
-                        v-for="id in exercises.results[3].equipment"
-                        :key="id"
-                      >
-                        {{ excal[id].name }}
-                      </div>
-                    </div>
-                    <div class="col">
-                      CALORIE BURNED:<br />
-                      {{ calcCalories(exercises.results[3].equipment[0]) }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Accordion card -->
-            <!-- Accordion card -->
-            <div class="card mb-4">
-              <!-- Card header -->
-              <div
-                class="card-header warning-color accent-1"
-                role="tab"
-                id="heading33"
-              >
-                <a
-                  data-toggle="collapse"
-                  data-parent="#accordionEx5"
-                  href="#collapse34"
-                  aria-expanded="true"
-                  aria-controls="collapse34"
-                >
-                  <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
-                  >
-                    {{ exercises.results[4].name }}
-                  </h4>
-                </a>
-              </div>
-
-              <!-- Card body -->
-              <div
-                id="collapse34"
-                class="collapse show"
-                role="tabpanel"
-                aria-labelledby="heading34"
-                data-parent="#accordionEx5"
-              >
-                <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="row justify-content-center">
-                    <div
-                      class="card px-2 py-2"
-                      style="background-color: transparent"
-                    >
-                      <div class="col">
-                        DESCRIPTION:<br />
-                        <p>
-                          <span v-html="exercises.results[4].description">
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-5">
-                    <div class="col">
-                      MUSCLES TRAINED:<br />
-                      <div v-for="id in exercises.results[4].muscles" :key="id">
-                        {{ muscles[id].name }}
-                      </div>
-                    </div>
-
-                    <div class="col">
-                      EQUIPMENT USED:<br />
-                      <div
-                        v-for="id in exercises.results[4].equipment"
-                        :key="id"
-                      >
-                        {{ excal[id].name }}
-                      </div>
-                    </div>
-                    <div class="col">
-                      CALORIE BURNED:<br />
-                      {{ calcCalories(exercises.results[4].equipment[0]) }}
+                      {{ exercise.caloriesBurnt }}
                     </div>
                   </div>
                 </div>
@@ -435,11 +145,13 @@ export default {
       excal,
       requeststring:
         "https://wger.de/api/v2/exercise/?language=2&format=json&limit=5&equipment=7",
+      totalCaloriesBurnt: 0,
     };
   },
 
   methods: {
-    calcCalories: function (id) {
+    calculateCalories: function (exercise) {
+      const id = exercise.equipment[0];
       const calorieMin = excal[id][this.intensity];
       const totalMin =
         this.intensity == "light"
@@ -447,12 +159,11 @@ export default {
           : this.intensity == "moderate"
           ? 25 / 5
           : 36 / 5; //minus rest time
-      const currCalorie =
+      const caloriesBurnt =
         Math.round(
           (calorieMin * totalMin + Math.random() - Math.random() + 1) * 10
         ) / 10;
-      console.log(currCalorie);
-      return currCalorie;
+      return { ...exercise, caloriesBurnt };
     },
     requestStringMaker: function () {
       for (let equipment of this.equipmentList) {
@@ -474,12 +185,19 @@ export default {
   },
 
   mounted() {
-    this.equipmentList = this.exRequest.equipments;
-    this.intensity = this.exRequest.intensity;
+    const { intensity, equipments } = this.exRequest;
+    this.equipmentList = equipments;
+    this.intensity = intensity;
     axios.get(this.requestStringMaker()).then((response) => {
-      console.log("Response==>");
-      console.log(response);
-      this.exercises = response.data;
+      const exercises = response.data.results;
+      this.exercises = exercises.map(this.calculateCalories);
+      const totalCaloriesBurnt = this.exercises.reduce(
+        (accumulator, exercise) => accumulator + exercise.caloriesBurnt,
+        0
+      );
+      this.totalCaloriesBurnt = Math.round(totalCaloriesBurnt * 100) / 100;
+      console.log(this.exercises);
+      console.log(this.totalCaloriesBurnt);
     });
   },
 };

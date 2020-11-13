@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="landing-page center">
     <div class="landing-page center" style="height: 100%">
       <div class="rgba-grey-slight py-4 px-4">
         <div class="rgba-teal-slight py-5 px-4">
