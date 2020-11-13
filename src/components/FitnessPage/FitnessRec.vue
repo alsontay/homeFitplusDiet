@@ -43,7 +43,11 @@
             aria-multiselectable="true"
           >
             <!-- Accordion card -->
-            <div class="card mb-4" v-for="(exercise, index) in exercises" v-bind:key="index">
+            <div
+              class="card mb-4"
+              v-for="(exercise, index) in exercises"
+              v-bind:key="index"
+            >
               <!-- Card header -->
               <div
                 class="card-header warning-color accent-1"
@@ -83,8 +87,7 @@
                         <div class="col">
                           DESCRIPTION:<br />
                           <p>
-                            <span v-html="exercise.description">
-                            </span>
+                            <span v-html="exercise.description"> </span>
                           </p>
                         </div>
                       </div>
@@ -100,10 +103,7 @@
 
                     <div class="col">
                       EQUIPMENT USED:<br />
-                      <div
-                        v-for="id in exercise.equipment"
-                        :key="id"
-                      >
+                      <div v-for="id in exercise.equipment" :key="id">
                         {{ excal[id].name }}
                       </div>
                     </div>
@@ -145,7 +145,7 @@ export default {
       excal,
       requeststring:
         "https://wger.de/api/v2/exercise/?language=2&format=json&limit=5&equipment=7",
-      totalCaloriesBurnt: 0
+      totalCaloriesBurnt: 0,
     };
   },
 
@@ -191,7 +191,10 @@ export default {
     axios.get(this.requestStringMaker()).then((response) => {
       const exercises = response.data.results;
       this.exercises = exercises.map(this.calculateCalories);
-      const totalCaloriesBurnt = this.exercises.reduce((accumulator, exercise) => accumulator + exercise.caloriesBurnt, 0);
+      const totalCaloriesBurnt = this.exercises.reduce(
+        (accumulator, exercise) => accumulator + exercise.caloriesBurnt,
+        0
+      );
       this.totalCaloriesBurnt = Math.round(totalCaloriesBurnt * 100) / 100;
       console.log(this.exercises);
       console.log(this.totalCaloriesBurnt);
