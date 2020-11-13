@@ -3,9 +3,9 @@
     <div class="home-page">
       <mdb-container>
         <mdb-row class="justify-content-center mt-5">
-          <h1>EAT FIT, KEEP FIT</h1>
+          <h1>HOME FIT+DIET</h1>
         </mdb-row>
-
+        <h3>EAT FIT, KEEP FIT</h3>
         <mdb-row>
           <mdb-col class="mt-5"> </mdb-col>
         </mdb-row>
@@ -144,21 +144,21 @@ export default {
       stories: [
         {
           title: "HF+D Helped me to stay fit!",
-          img: "/images/User1.jpg",
-          text:
-            "Homefit+diet provided me with fitness and nutrition plans to stay healthy during the circuit breaker period!",
-        },
-        {
-          title: "Trusted fitness & nutrition website",
-          img: "/images/User2.jpg",
-          text:
-            "Homefit+diet provided me with fitness and nutrition plans to stay healthy during the circuit breaker period!",
-        },
-        {
-          title: "Trusted fitness & nutrition website",
           img: "/images/User3.jpg",
           text:
-            "Homefit+diet provided me with fitness and nutrition plans to stay healthy during the circuit breaker period!",
+            "With circuit breaker, there is even less chances for me to head out. However, HomeFit+Diet has provided me with fitness and nutrition plans to stay fit and healthy even with COVID-19 spreading around!",
+        },
+        {
+          title: "Trusted Food & Nutrition site",
+          img: "/images/User1.jpg",
+          text:
+            "As someone who used to work in CBD where there are many healthy lunch options, HomeFit+Diet has helped me find a suitable substitute back at home where such options are far less abundant!",
+        },
+        {
+          title: "Overcome Stay At Home!",
+          img: "/images/User2.jpg",
+          text:
+            "As a student doing home-based learning, HomeFit+Diet has helped me find ways to exercise and stay fit because I can no longer attend co-curricular activities or physical PE lessons!",
         },
       ],
       foodGallery: [

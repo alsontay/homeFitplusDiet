@@ -1,5 +1,6 @@
 <template>
-  <div v-if="recipes.length < 3">
+  <div v-if="!recipes"></div>
+  <div v-else-if="recipes.length < 3">
     <br /><br /><br /><br />
     <h1>(⌣́_⌣̀)</h1>
     <h3>
@@ -142,10 +143,15 @@
                       <br />
                       <div class="row">
                         <button
-                          v-on:click="setValue(0)"
+                          v-on:click="
+                            tracker(
+                              recipes[0].title,
+                              recipes[0].nutrition.nutrients[0].amount
+                            )
+                          "
                           class="btn btn-warning"
                         >
-                          SELECT
+                          SELECTED AND TRACK!
                         </button>
                       </div>
                     </div>
@@ -261,10 +267,15 @@
                       <br />
                       <div class="row">
                         <button
-                          v-on:click="setValue(1)"
+                          v-on:click="
+                            tracker(
+                              recipes[1].title,
+                              recipes[1].nutrition.nutrients[0].amount
+                            )
+                          "
                           class="btn btn-warning"
                         >
-                          SELECT
+                          SELECTED AND TRACK!
                         </button>
                       </div>
                     </div>
@@ -380,10 +391,15 @@
                       <br />
                       <div class="row">
                         <button
-                          v-on:click="setValue(2)"
+                          v-on:click="
+                            tracker(
+                              recipes[2].title,
+                              recipes[2].nutrition.nutrients[0].amount
+                            )
+                          "
                           class="btn btn-warning"
                         >
-                          SELECT
+                          SELECTED AND TRACK!
                         </button>
                       </div>
                     </div>
@@ -406,11 +422,6 @@ import { mapGetters } from "vuex";
 export default {
   name: "MenuView",
   props: ["recipes"],
-  // computed: {
-  //   ...mapGetters({
-  //     mealRequests: "meals",
-  //   }),
-  // },
   data() {
     return {
       menu: {
@@ -460,15 +471,14 @@ export default {
     },
   },
   methods: {
-    setValue: function (val) {
-      this.menu.currRecipe = val;
+    tracker: function (name, cal) {
+      alert(
+        name +
+          " selected!\n" +
+          cal.toString() +
+          " kcal of calories will be logged."
+      );
     },
-  },
-
-  mounted() {
-    //console.log("hi")
-    //this.fullmenu = this.mealRequests.recipieJson;
-    //setTimeout(function() {console.log("hi"); console.log(this.mealRequests);}, 2000);
   },
 };
 </script>

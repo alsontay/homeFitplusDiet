@@ -1,42 +1,55 @@
 <template>
-  <div>
-    <mdb-row id="title-text">
-      <p>
-        CALORIE TRACKER <br />
-        Keep track of your calorie count here!
-      </p>
-    </mdb-row>
-    <div id="inputfields">
-      <label id="label-text">Breakfast</label>
-      <mdb-input type="number" v-model="calcount.data.values.bfast" />
+  <mdb-container class="test">
+    <mdb-container class="mt-5 mb-5 test">
+      <h2>Calorie Tracker</h2>
+      <h3 id="title">
+        Keep track of your other untracked calorie intakes here!
+      </h3>
+    </mdb-container>
+    <mdb-container
+      class="mt-4 test d-flex flex-column align-items-center justify-content-center"
+    >
+      <mdb-row>
+        <mdb-card class="p-4 pl-5 pr-5 mb-5" id="selectioncard">
+          <mdb-row class="d-flex justify-content-center mb-3">
+            <div>
+              <label id="label-text">Breakfast</label>
+              <mdb-input type="number" v-model="calcount.data.values.bfast" />
 
-      <label id="label-text">Lunch</label>
-      <mdb-input type="number" v-model="calcount.data.values.lunch" />
+              <label id="label-text">Lunch</label>
+              <mdb-input type="number" v-model="calcount.data.values.lunch" />
 
-      <label id="label-text">Dinner</label>
-      <mdb-input type="number" v-model="calcount.data.values.dinnr" />
-    </div>
-    <div class="form-group row" id="inputfields">
-      <label id="label-text">Date of Logging</label>
-      <div class="col-lg-2">
-        <input
-          class="form-control"
-          type="date"
-          min="1940-01-01"
-          v-model="calcount.data.date"
-        />
-      </div>
-    </div>
-    <div id="buttonstyle">
-      <mdb-btn
-        block
-        color="default"
-        type="submit"
-        v-on:click="updateInformation()"
-        >Submit</mdb-btn
-      >
-    </div>
-  </div>
+              <label id="label-text">Dinner</label>
+              <mdb-input type="number" v-model="calcount.data.values.dinnr" />
+              <label id="label-text">Other (Snacks etc.)</label>
+              <mdb-input type="number" v-model="calcount.data.values.othr" />
+            </div>
+          </mdb-row>
+          <h5 id="label-text">Date of logging</h5>
+
+          <div class="col-lg-2">
+            <input
+              class="form-control"
+              type="date"
+              min="1940-01-01"
+              v-model="calcount.data.date"
+              style="width: 370px"
+            />
+          </div>
+        </mdb-card>
+      </mdb-row>
+      <mdb-row>
+        <mdb-btn
+          color="default"
+          size="lg"
+          class="ml-3"
+          v-on:click="updateInformation"
+        >
+          <b>Track</b>
+        </mdb-btn>
+      </mdb-row>
+    </mdb-container>
+  </mdb-container>
 </template>
 
 <script>
@@ -63,6 +76,7 @@ export default {
             bfast: 0,
             lunch: 0,
             dinnr: 0,
+            othr: 0,
           },
           date: "",
         },
@@ -108,6 +122,7 @@ export default {
         curr.values.bfast = db.bfast;
         curr.values.lunch = db.lunch;
         curr.values.dinnr = db.dinnr;
+        curr.values.othr = db.othr;
       }
     });
     //console.log(curr);
@@ -116,26 +131,17 @@ export default {
 </script>
 
 <style scoped>
-.test {
-  border: 1px solid black;
+#title {
+  font-family: "Caveat", cursive;
 }
 
-#buttonstyle {
-  width: 10%;
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+#selectioncard {
+  width: 500px;
 }
 
-#inputfields {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#helpertext {
+  color: gray;
 }
-
 #label-text {
   display: flex;
   flex-direction: column;
@@ -143,15 +149,5 @@ export default {
   align-items: center;
   font-family: "Caveat", cursive;
   font-size: 30px;
-}
-
-#title-text {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Caveat", cursive;
-  font-size: 50px;
 }
 </style>

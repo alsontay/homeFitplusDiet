@@ -2,7 +2,7 @@
   <div>
     <mdb-row id="title-text">
       <h2>Monthly Report</h2>
-      <h3>
+      <h3 id="title">
         Hello {{ this.user.data.displayName }}, here's your progress over the
         past 30 entries!
       </h3>
@@ -54,6 +54,9 @@ export default {
 </script>
 
 <style scoped>
+#title {
+  font-family: "Caveat", cursive;
+}
 #title-text {
   padding: 20px;
   padding-bottom: 40px;
