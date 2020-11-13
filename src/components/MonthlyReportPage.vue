@@ -22,8 +22,10 @@
         </mdb-col>
       </mdb-row>
       <mdb-row id="disclaimer">
-        It takes a while (~500ms) for the server to fetch your calorie data, so please be patient :) <br />
-        If you visit this page too often too quickly, it might fail to load too as firestore will give errors.
+        It takes a while (~500ms) for the server to fetch your calorie data, so
+        please be patient :) <br />
+        If you visit this page too often too quickly, it might fail to load too
+        as firestore will give errors.
       </mdb-row>
     </mdb-container>
   </div>

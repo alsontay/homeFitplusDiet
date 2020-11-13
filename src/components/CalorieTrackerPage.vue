@@ -78,8 +78,11 @@ export default {
       if (db2.exists) {
         db.update(update);
       } else {
-        db.set({ $today: { consume: this.calcount.data.values } });
-        //db.consume.set(this.calcount.data.values);
+        var update2 = {};
+        update2[`${this.calcount.data.date}`] = {
+          consume: this.calcount.data.values,
+        };
+        db.set(update2);
       }
       alert("Calorie Counts Updated!");
     },
