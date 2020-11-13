@@ -84,7 +84,12 @@
       </mdb-row>
       <mdb-row>
         <router-link to="/MenuSelection">
-          <mdb-btn color="default" size="lg" class="ml-3" v-on:click="storeIngredients">
+          <mdb-btn
+            color="default"
+            size="lg"
+            class="ml-3"
+            v-on:click="storeIngredients"
+          >
             <b>Generate Menu</b>
           </mdb-btn>
         </router-link>
@@ -94,7 +99,7 @@
 </template>
 
 <script>
-import store from "../store.js"
+import store from "../store.js";
 import cusines from "../assets/cusine.json";
 import ingredients from "../assets/ingredients.json";
 
@@ -125,14 +130,16 @@ export default {
       this.ingredient = "";
     },
     removeIngredient(ingredient) {
-      this.selectedIngredients = this.selectedIngredients.filter((x) => x !== ingredient);
+      this.selectedIngredients = this.selectedIngredients.filter(
+        (x) => x !== ingredient
+      );
     },
     storeIngredients() {
       store.commit("SET_MEAL_TYPE", this.meal);
       store.commit("SET_MEAL_LIST", this.selectedIngredients);
-      store.commit("SET_MEAL_CUISINE", this.cuisine)
+      store.commit("SET_MEAL_CUISINE", this.cuisine);
       //console.log("hello");
-    }
+    },
   },
 };
 </script>

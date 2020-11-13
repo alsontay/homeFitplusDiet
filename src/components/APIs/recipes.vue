@@ -309,10 +309,10 @@ export default {
     this.mealtype = this.mealRequest.choice;
     this.ingredients = this.mealRequest.ingredients;
     this.cuisine = this.mealRequest.cuisine;
-    console.log("--------")
-    console.log(this.mealtype)
-    console.log(this.ingredients)
-    console.log(this.cuisine)
+    console.log("--------");
+    console.log(this.mealtype);
+    console.log(this.ingredients);
+    console.log(this.cuisine);
   },
 };
 </script>

@@ -17,7 +17,7 @@ export default new Vuex.Store({
     exercise: {
       equipments: null,
       intensity: null,
-    }
+    },
   },
   getters: {
     user(state) {
@@ -28,7 +28,7 @@ export default new Vuex.Store({
     },
     exercise(state) {
       return state.exercise;
-    }
+    },
   },
   mutations: {
     SET_LOGGED_IN(state, value) {
@@ -45,7 +45,7 @@ export default new Vuex.Store({
     },
     SET_MEAL_CUISINE(state, cuisine) {
       state.meals.cuisine = cuisine;
-    }
+    },
   },
   actions: {
     fetchUser({ commit }, user) {
