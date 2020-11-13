@@ -16,21 +16,21 @@
                 size="lg"
                 @click.native="selectintensity('light')"
                 :active="intensity === 'light'"
-                >Light</mdb-btn
+                >Light <br />(~20 mins)</mdb-btn
               >
               <mdb-btn
                 color="default"
                 size="lg"
                 @click.native="selectintensity('moderate')"
                 :active="intensity === 'moderate'"
-                >Moderate</mdb-btn
+                >Moderate <br />(~30 mins)</mdb-btn
               >
               <mdb-btn
                 color="default"
                 size="lg"
                 @click.native="selectintensity('intense')"
                 :active="intensity === 'intense'"
-                >Intense</mdb-btn
+                >Intense <br />(~45 mins)</mdb-btn
               >
             </mdb-btn-group>
           </mdb-row>
@@ -40,7 +40,7 @@
               <select
                 v-model="equipment"
                 class="custom-select"
-                style="width: 260px"
+                style="width: 350px"
               >
                 <option
                   v-for="equipment in equipmentList"
