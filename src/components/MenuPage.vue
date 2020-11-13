@@ -36,7 +36,7 @@
           <mdb-row
             class="d-flex justify-content-center align-items-center mb-3"
           >
-            <select class="custom-select" v-model="cusine">
+            <select class="custom-select" v-model="cuisine">
               <option v-for="cusine in cusines" v-bind:key="cusine">
                 {{ cusine }}
               </option>
@@ -69,7 +69,7 @@
             </mdb-tbl-head>
             <mdb-tbl-body>
               <tr
-                v-for="ingredient in selected"
+                v-for="ingredient in selectedIngredients"
                 v-bind:key="ingredient"
                 @click="removeIngredient(ingredient)"
               >
@@ -84,7 +84,7 @@
       </mdb-row>
       <mdb-row>
         <router-link to="/MenuSelection">
-          <mdb-btn color="default" size="lg" class="ml-3">
+          <mdb-btn color="default" size="lg" class="ml-3" v-on:click="storeIngredients">
             <b>Generate Menu</b>
           </mdb-btn>
         </router-link>
@@ -94,6 +94,7 @@
 </template>
 
 <script>
+import store from "../store.js"
 import cusines from "../assets/cusine.json";
 import ingredients from "../assets/ingredients.json";
 
@@ -101,12 +102,12 @@ export default {
   name: "MenuPage",
   data() {
     return {
-      meal: "breakfast",
+      meal: "",
       cusines,
-      cusine: "",
+      cuisine: "",
       ingredients,
       ingredient: "",
-      selected: [],
+      selectedIngredients: [],
     };
   },
   methods: {
@@ -117,15 +118,21 @@ export default {
       if (
         this.ingredient.trim() === "" ||
         !this.ingredients.find((x) => x === this.ingredient) ||
-        !!this.selected.find((x) => x === this.ingredient)
+        !!this.selectedIngredients.find((x) => x === this.ingredient)
       )
         return;
-      this.selected.push(this.ingredient);
+      this.selectedIngredients.push(this.ingredient);
       this.ingredient = "";
     },
     removeIngredient(ingredient) {
-      this.selected = this.selected.filter((x) => x !== ingredient);
+      this.selectedIngredients = this.selectedIngredients.filter((x) => x !== ingredient);
     },
+    storeIngredients() {
+      store.commit("SET_MEAL_TYPE", this.meal);
+      store.commit("SET_MEAL_LIST", this.selectedIngredients);
+      store.commit("SET_MEAL_CUISINE", this.cuisine)
+      //console.log("hello");
+    }
   },
 };
 </script>

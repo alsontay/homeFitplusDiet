@@ -43,6 +43,7 @@
 import { mdbInput } from "mdbvue";
 import { mapGetters } from "vuex";
 import firebase from "../firebase.js";
+import store from "../store.js"
 
 export default {
   name: "CalorieTrackerPage",

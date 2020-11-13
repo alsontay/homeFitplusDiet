@@ -19,6 +19,7 @@ export default {
   computed: {
     ...mapGetters({
       user: "user",
+      mealRequest: "meals",
     }),
   },
   data() {
@@ -286,7 +287,7 @@ export default {
         curr.diet = db.diet;
         curr.intolerance = db.intolerance;
         curr.condition = db.condition;
-        console.log(curr);
+        //console.log(curr);
       }
     });
     setTimeout(() => {
@@ -303,6 +304,15 @@ export default {
         console.log(this.recipes);
       });
     }, 2000);
+
+    // Assigns computed store values to the vue page.
+    this.mealtype = this.mealRequest.choice;
+    this.ingredients = this.mealRequest.ingredients;
+    this.cuisine = this.mealRequest.cuisine;
+    console.log("--------")
+    console.log(this.mealtype)
+    console.log(this.ingredients)
+    console.log(this.cuisine)
   },
 };
 </script>
