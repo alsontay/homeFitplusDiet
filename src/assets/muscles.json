@@ -1,0 +1,77 @@
+{
+    "1" : {
+        "name": "Biceps brachii",
+            "is_front": true
+    },
+
+    "2": {
+        "name": "Anterior deltoid",
+            "is_front": true
+    },
+
+    "3": {
+        "name": "Serratus anterior",
+            "is_front": true
+    },
+
+    "4": {
+        "name": "Pectoralis major",
+            "is_front": true
+    },
+
+    "5": {
+        "name": "Triceps brachii",
+            "is_front": false
+    },
+
+    "6": {
+        "name": "Rectus abdominis",
+            "is_front": true
+    },
+
+    "7": {
+        "name": "Gastrocnemius",
+            "is_front": false
+    },
+
+    "8" : {
+        "name": "Gluteus maximus",
+            "is_front": false
+    },
+
+    "9": {
+        "name": "Trapezius",
+            "is_front": false
+    },
+
+    "10" : {
+        "name": "Quadriceps femoris",
+            "is_front": true
+    },
+    "11": {
+        "name": "Biceps femoris",
+            "is_front": false
+    },
+
+    "12": {
+        "name": "Latissimus dorsi",
+            "is_front": false
+    },
+
+    "13" : {
+        "name": "Brachialis",
+            "is_front": true
+    },
+
+    "14": {
+        "name": "Obliquus externus abdominis",
+            "is_front": true
+    },
+    "15": {
+        "name": "Soleus",
+            "is_front": false
+    }
+}
+
+
+    
