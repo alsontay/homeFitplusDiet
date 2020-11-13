@@ -110,7 +110,8 @@ export default {
         "&number=3" +
         "&type=breakfast" +
         "&instructionsRequired=true" +
-        "&addRecipeInformation=true";
+        "&addRecipeInformation=true" +
+        "&addRecipeNutrition=true";
       const finalstring =
         this.requeststring +
         infostring +
@@ -191,7 +192,8 @@ export default {
         offsetNumber.toString() +
         "&type=main%20course" +
         "&instructionsRequired=true" +
-        "&addRecipeInformation=true";
+        "&addRecipeInformation=true" +
+        "&addRecipeNutrition=true";
       const finalstring =
         this.requeststring +
         infostring +
