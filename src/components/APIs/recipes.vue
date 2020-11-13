@@ -7,7 +7,7 @@
 <script>
 import axios from "axios";
 import { mapGetters } from "vuex";
-import store from "../../store.js"
+import store from "../../store.js";
 import firebase from "../../firebase.js";
 import breakfast from "../../assets/breakfast.json";
 import lunchdinner from "../../assets/lunchdinner.json";
@@ -245,7 +245,6 @@ export default {
     this.mealtype = this.mealRequest.choice;
     this.ingredients = this.mealRequest.ingredients;
     this.cuisine = this.mealRequest.cuisine;
-    
   },
 };
 </script>

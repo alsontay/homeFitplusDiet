@@ -62,24 +62,38 @@
                 data-parent="#accordionEx5"
               >
                 <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="col">
-                    DESCRIPTION:<br />
-                    <p>
-                      <span v-html="exercises.results[0].description"> </span>
-                    </p>
-                  </div>
-
-                  <div class="col">
-                    MUSCLES TRAIN:<br />
-                    <div v-for="id in exercises.results[0].muscles" :key="id">
-                      {{ muscles[id].name }}
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div
+                        class="card px-2 py-2"
+                        style="background-color: transparent"
+                      >
+                        <div class="col">
+                          DESCRIPTION:<br />
+                          <p>
+                            <span v-html="exercises.results[0].description">
+                            </span>
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <div class="row mt-5">
+                    <div class="col">
+                      MUSCLES TRAIN:<br />
+                      <div v-for="id in exercises.results[0].muscles" :key="id">
+                        {{ muscles[id].name }}
+                      </div>
+                    </div>
 
-                  <div class="col">
-                    EQUIPMENT USED:<br />
-                    <div v-for="id in exercises.results[0].equipment" :key="id">
-                      {{ exercisename[id].name }}
+                    <div class="col">
+                      EQUIPMENT USED:<br />
+                      <div
+                        v-for="id in exercises.results[0].equipment"
+                        :key="id"
+                      >
+                        {{ exercisename[id].name }}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -119,24 +133,36 @@
                 data-parent="#accordionEx5"
               >
                 <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="col">
-                    DESCRIPTION:<br />
-                    <p>
-                      <span v-html="exercises.results[1].description"> </span>
-                    </p>
-                  </div>
-
-                  <div class="col">
-                    MUSCLES TRAIN:<br />
-                    <div v-for="id in exercises.results[1].muscles" :key="id">
-                      {{ muscles[id].name }}
+                  <div class="row justify-content-center">
+                    <div
+                      class="card px-2 py-2"
+                      style="background-color: transparent"
+                    >
+                      <div class="col">
+                        DESCRIPTION:<br />
+                        <p>
+                          <span v-html="exercises.results[1].description">
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
+                  <div class="row mt-5">
+                    <div class="col">
+                      MUSCLES TRAIN:<br />
+                      <div v-for="id in exercises.results[1].muscles" :key="id">
+                        {{ muscles[id].name }}
+                      </div>
+                    </div>
 
-                  <div class="col">
-                    EQUIPMENT USED:<br />
-                    <div v-for="id in exercises.results[1].equipment" :key="id">
-                      {{ exercisename[id].name }}
+                    <div class="col">
+                      EQUIPMENT USED:<br />
+                      <div
+                        v-for="id in exercises.results[1].equipment"
+                        :key="id"
+                      >
+                        {{ exercisename[id].name }}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -176,24 +202,36 @@
                 data-parent="#accordionEx5"
               >
                 <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="col">
-                    DESCRIPTION:<br />
-                    <p>
-                      <span v-html="exercises.results[3].description"> </span>
-                    </p>
-                  </div>
-
-                  <div class="col">
-                    MUSCLES TRAIN:<br />
-                    <div v-for="id in exercises.results[2].muscles" :key="id">
-                      {{ muscles[id].name }}
+                  <div class="row justify-content-center">
+                    <div
+                      class="card px-2 py-2"
+                      style="background-color: transparent"
+                    >
+                      <div class="col">
+                        DESCRIPTION:<br />
+                        <p>
+                          <span v-html="exercises.results[2].description">
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
+                  <div class="row mt-5">
+                    <div class="col">
+                      MUSCLES TRAIN:<br />
+                      <div v-for="id in exercises.results[2].muscles" :key="id">
+                        {{ muscles[id].name }}
+                      </div>
+                    </div>
 
-                  <div class="col">
-                    EQUIPMENT USED:<br />
-                    <div v-for="id in exercises.results[2].equipment" :key="id">
-                      {{ exercisename[id].name }}
+                    <div class="col">
+                      EQUIPMENT USED:<br />
+                      <div
+                        v-for="id in exercises.results[2].equipment"
+                        :key="id"
+                      >
+                        {{ exercisename[id].name }}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -232,24 +270,36 @@
                 data-parent="#accordionEx5"
               >
                 <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="col">
-                    DESCRIPTION:<br />
-                    <p>
-                      <span v-html="exercises.results[3].description"> </span>
-                    </p>
-                  </div>
-
-                  <div class="col">
-                    MUSCLES TRAIN:<br />
-                    <div v-for="id in exercises.results[3].muscles" :key="id">
-                      {{ muscles[id].name }}
+                  <div class="row justify-content-center">
+                    <div
+                      class="card px-2 py-2"
+                      style="background-color: transparent"
+                    >
+                      <div class="col">
+                        DESCRIPTION:<br />
+                        <p>
+                          <span v-html="exercises.results[3].description">
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
+                  <div class="row mt-5">
+                    <div class="col">
+                      MUSCLES TRAIN:<br />
+                      <div v-for="id in exercises.results[3].muscles" :key="id">
+                        {{ muscles[id].name }}
+                      </div>
+                    </div>
 
-                  <div class="col">
-                    EQUIPMENT USED:<br />
-                    <div v-for="id in exercises.results[3].equipment" :key="id">
-                      {{ exercisename[id].name }}
+                    <div class="col">
+                      EQUIPMENT USED:<br />
+                      <div
+                        v-for="id in exercises.results[3].equipment"
+                        :key="id"
+                      >
+                        {{ exercisename[id].name }}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -288,24 +338,36 @@
                 data-parent="#accordionEx5"
               >
                 <div class="card-body yellow lighten-5 black-text z-depth-1">
-                  <div class="col">
-                    DESCRIPTION:<br />
-                    <p>
-                      <span v-html="exercises.results[4].description"> </span>
-                    </p>
-                  </div>
-
-                  <div class="col">
-                    MUSCLES TRAIN:<br />
-                    <div v-for="id in exercises.results[4].muscles" :key="id">
-                      {{ muscles[id].name }}
+                  <div class="row justify-content-center">
+                    <div
+                      class="card px-2 py-2"
+                      style="background-color: transparent"
+                    >
+                      <div class="col">
+                        DESCRIPTION:<br />
+                        <p>
+                          <span v-html="exercises.results[4].description">
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
+                  <div class="row mt-5">
+                    <div class="col">
+                      MUSCLES TRAIN:<br />
+                      <div v-for="id in exercises.results[4].muscles" :key="id">
+                        {{ muscles[id].name }}
+                      </div>
+                    </div>
 
-                  <div class="col">
-                    EQUIPMENT USED:<br />
-                    <div v-for="id in exercises.results[4].equipment" :key="id">
-                      {{ exercisename[id].name }}
+                    <div class="col">
+                      EQUIPMENT USED:<br />
+                      <div
+                        v-for="id in exercises.results[4].equipment"
+                        :key="id"
+                      >
+                        {{ exercisename[id].name }}
+                      </div>
                     </div>
                   </div>
                 </div>
