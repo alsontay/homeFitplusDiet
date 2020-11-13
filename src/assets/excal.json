@@ -48,7 +48,7 @@
     },
 
     "7": {
-        "name": "none (bodyweight)",
+        "name": "None",
         "comments": "Assume 60kg. Exercises include situp, push-up, burpees, etc, just varying by intensity",
         "light": 3.2,
         "medium": 4.6,

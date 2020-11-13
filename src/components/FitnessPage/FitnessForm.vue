@@ -54,6 +54,9 @@
               Add
             </mdb-btn>
           </mdb-row>
+          <p id="helpertext">
+            <small>Ignore if you have no available equipment</small>
+          </p>
           <mdb-tbl hover class="mb-3">
             <mdb-tbl-head>
               <tr>
@@ -77,7 +80,12 @@
       </mdb-row>
       <mdb-row>
         <router-link to="/fitnessrec">
-          <mdb-btn color="default" size="lg" class="ml-3" v-on:click="storeExercise">
+          <mdb-btn
+            color="default"
+            size="lg"
+            class="ml-3"
+            v-on:click="storeExercise"
+          >
             <b>Generate Workout</b>
           </mdb-btn>
         </router-link>
@@ -87,20 +95,14 @@
 </template>
 
 <script>
-import store from "../../store.js"
+import store from "../../store.js";
 
 export default {
   name: "FitnessForm",
   data() {
     return {
       intensity: "light",
-      equipmentList: [
-        "None",
-        "Pull-up Bar",
-        "Dumbbell",
-        "Barbell",
-        "Kettlebell",
-      ],
+      equipmentList: ["Pull-up Bar", "Dumbbell", "Barbell", "Kettlebell"],
       equipment: "",
       selectedEquipment: [],
     };
