@@ -19,11 +19,11 @@
             ><mdb-icon icon="utensils" />Menu</mdb-nav-item
           >
         </router-link>
-        
+
         <router-link to="/fitness-form">
           <mdb-nav-item id="navmenu-icon"
-                ><mdb-icon icon="dumbbell" />Workout</mdb-nav-item
-              >
+            ><mdb-icon icon="dumbbell" />Workout</mdb-nav-item
+          >
         </router-link>
 
         <router-link to="/calorie-tracker">

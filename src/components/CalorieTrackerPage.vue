@@ -81,9 +81,9 @@ export default {
       } else {
         var update2 = {};
         update2[`${this.calcount.data.date}`] = {
-          consume: this.caclcount.data.values,
+          consume: this.calcount.data.values,
         };
-        db.set(update);
+        db.set(update2);
       }
       alert("Calorie Counts Updated!");
     },

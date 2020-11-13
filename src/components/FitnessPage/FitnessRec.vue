@@ -17,6 +17,18 @@
     >
       Here are your workouts for the day!
     </h2>
+    <h4 v-if="this.intensity == 'light'">
+      Do 4 Sets of 6 for each of the exercises below. <br />Expected duration:
+      20 minutes - Total Calories Burned:
+    </h4>
+    <h4 v-if="this.intensity == 'moderate'">
+      Do 5 Sets of 10 for each of the exercises below. <br />Expected duration:
+      30 minutes - Total Calories Burned:
+    </h4>
+    <h4 v-if="this.intensity == 'intense'">
+      Do 7 Sets of 12 for each of the exercises below. <br />Expected duration:
+      45 minutes - Total Calories Burned:
+    </h4>
 
     <hr class="mb-0" />
 
@@ -80,7 +92,7 @@
                   </div>
                   <div class="row mt-5">
                     <div class="col">
-                      MUSCLES TRAIN:<br />
+                      MUSCLES TRAINED:<br />
                       <div v-for="id in exercises.results[0].muscles" :key="id">
                         {{ muscles[id].name }}
                       </div>
@@ -92,8 +104,12 @@
                         v-for="id in exercises.results[0].equipment"
                         :key="id"
                       >
-                        {{ exercisename[id].name }}
+                        {{ excal[id].name }}
                       </div>
+                    </div>
+                    <div class="col">
+                      CALORIE BURNED:<br />
+                      {{ calcCalories(exercises.results[0].equipment[0]) }}
                     </div>
                   </div>
                 </div>
@@ -149,7 +165,7 @@
                   </div>
                   <div class="row mt-5">
                     <div class="col">
-                      MUSCLES TRAIN:<br />
+                      MUSCLES TRAINED:<br />
                       <div v-for="id in exercises.results[1].muscles" :key="id">
                         {{ muscles[id].name }}
                       </div>
@@ -161,8 +177,12 @@
                         v-for="id in exercises.results[1].equipment"
                         :key="id"
                       >
-                        {{ exercisename[id].name }}
+                        {{ excal[id].name }}
                       </div>
+                    </div>
+                    <div class="col">
+                      CALORIE BURNED:<br />
+                      {{ calcCalories(exercises.results[1].equipment[0]) }}
                     </div>
                   </div>
                 </div>
@@ -218,7 +238,7 @@
                   </div>
                   <div class="row mt-5">
                     <div class="col">
-                      MUSCLES TRAIN:<br />
+                      MUSCLES TRAINED:<br />
                       <div v-for="id in exercises.results[2].muscles" :key="id">
                         {{ muscles[id].name }}
                       </div>
@@ -230,8 +250,12 @@
                         v-for="id in exercises.results[2].equipment"
                         :key="id"
                       >
-                        {{ exercisename[id].name }}
+                        {{ excal[id].name }}
                       </div>
+                    </div>
+                    <div class="col">
+                      CALORIE BURNED:<br />
+                      {{ calcCalories(exercises.results[2].equipment[0]) }}
                     </div>
                   </div>
                 </div>
@@ -286,7 +310,7 @@
                   </div>
                   <div class="row mt-5">
                     <div class="col">
-                      MUSCLES TRAIN:<br />
+                      MUSCLES TRAINED:<br />
                       <div v-for="id in exercises.results[3].muscles" :key="id">
                         {{ muscles[id].name }}
                       </div>
@@ -298,8 +322,12 @@
                         v-for="id in exercises.results[3].equipment"
                         :key="id"
                       >
-                        {{ exercisename[id].name }}
+                        {{ excal[id].name }}
                       </div>
+                    </div>
+                    <div class="col">
+                      CALORIE BURNED:<br />
+                      {{ calcCalories(exercises.results[3].equipment[0]) }}
                     </div>
                   </div>
                 </div>
@@ -354,7 +382,7 @@
                   </div>
                   <div class="row mt-5">
                     <div class="col">
-                      MUSCLES TRAIN:<br />
+                      MUSCLES TRAINED:<br />
                       <div v-for="id in exercises.results[4].muscles" :key="id">
                         {{ muscles[id].name }}
                       </div>
@@ -366,8 +394,12 @@
                         v-for="id in exercises.results[4].equipment"
                         :key="id"
                       >
-                        {{ exercisename[id].name }}
+                        {{ excal[id].name }}
                       </div>
+                    </div>
+                    <div class="col">
+                      CALORIE BURNED:<br />
+                      {{ calcCalories(exercises.results[4].equipment[0]) }}
                     </div>
                   </div>
                 </div>
@@ -385,7 +417,7 @@
 import axios from "axios";
 import { mapGetters } from "vuex";
 import muscles from "../../assets/muscles.json";
-import exercisename from "../../assets/excal.json";
+import excal from "../../assets/excal.json";
 
 export default {
   computed: {
@@ -400,12 +432,28 @@ export default {
       equipmentList: [],
       intensity: "",
       muscles,
-      exercisename,
+      excal,
       requeststring:
         "https://wger.de/api/v2/exercise/?language=2&format=json&limit=5&equipment=7",
     };
   },
+
   methods: {
+    calcCalories: function (id) {
+      const calorieMin = excal[id][this.intensity];
+      const totalMin =
+        this.intensity == "light"
+          ? 17.45 / 5
+          : this.intensity == "moderate"
+          ? 25 / 5
+          : 36 / 5; //minus rest time
+      const currCalorie =
+        Math.round(
+          (calorieMin * totalMin + Math.random() - Math.random() + 1) * 10
+        ) / 10;
+      console.log(currCalorie);
+      return currCalorie;
+    },
     requestStringMaker: function () {
       for (let equipment of this.equipmentList) {
         var id =
@@ -436,4 +484,34 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+#title {
+  font-family: "Caveat", cursive;
+}
+
+.accordion {
+  font-family: "Caveat", cursive;
+}
+
+.btn {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+p {
+  font-size: 12pt;
+  font-family: Arial;
+}
+
+.col-7 {
+  font-size: 14pt;
+}
+
+.ing {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Arial;
+  font-size: 12pt;
+}
+</style>
