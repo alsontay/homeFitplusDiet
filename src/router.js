@@ -4,16 +4,19 @@ import Router from "vue-router";
 import MainLayout from "./layouts/MainLayout.vue";
 import LandingPage from "./components/LandingPage.vue";
 import HomePage from "./components/HomePage.vue";
-import FitnessPage from "./components/FitnessPage.vue";
-import DietPage from "./components/DietPage.vue";
-import MenuPage from "./components/MenuPage.vue";
-import CalorieTrackerPage from "./components/CalorieTrackerPage.vue";
-import MonthlyReportPage from "./components/MonthlyReportPage.vue";
 import ProfilePage from "./components/ProfilePage/index.vue";
+
+import MenuForm from "./components/MenuPage/MenuForm.vue";
+import MenuView from "./components/MenuPage/MenuView.vue";
+import MenuSelection from "./components/MenuPage/MenuSelection.vue";
+
+import FitnessForm from "./components/FitnessPage/FitnessForm.vue";
+import FitnessRec from "./components/FitnessPage/FitnessRec.vue";
+
+import CalorieTrackerPage from "./components/CalorieTrackerPage.vue";
+import MonthlyReport from "./components/MonthlyReportPage/MonthlyReport.vue";
+
 import Error404 from "./components/Error404.vue";
-import MenuView from "./components/menus/MenuView.vue";
-import MenuSelected from "./components/menus/MenuSelected.vue";
-import MenuSelection from "./components/menus/MenuSelection.vue";
 
 Vue.use(Router);
 
@@ -56,24 +59,17 @@ export default new Router({
           },
         },
         {
-          path: "/fitnessplan",
-          component: FitnessPage,
+          path: "/fitness-form",
+          component: FitnessForm,
           meta: {
-            title: "FitnessPlan",
+            title: "Fitness Form",
           },
         },
         {
-          path: "/dietplan",
-          component: DietPage,
+          path: "/fitness-rec",
+          component: FitnessRec,
           meta: {
-            title: "DietPlan",
-          },
-        },
-        {
-          path: "/menu",
-          component: MenuPage,
-          meta: {
-            title: "Menu",
+            title: "Fitness Rec",
           },
         },
         {
@@ -85,7 +81,7 @@ export default new Router({
         },
         {
           path: "/monthly-report",
-          component: MonthlyReportPage,
+          component: MonthlyReport,
           meta: {
             title: "Monthly Report",
           },
@@ -98,24 +94,24 @@ export default new Router({
           },
         },
         {
-          path: "/menuSelected",
-          component: MenuSelected,
+          path: "/menu-form",
+          component: MenuForm,
           meta: {
-            title: "MenuSelected",
+            title: "Menu Form",
           },
         },
         {
-          path: "/menuSelection",
+          path: "/menu-selection",
           component: MenuSelection,
           meta: {
-            title: "MenuSelection",
+            title: "Menu Selection",
           },
         },
         {
-          path: "/menuView",
+          path: "/menu-view",
           component: MenuView,
           meta: {
-            title: "MenuView",
+            title: "Menu View",
           },
         },
 

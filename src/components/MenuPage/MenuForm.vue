@@ -9,6 +9,7 @@
       <mdb-row>
         <mdb-card class="p-4 pl-5 pr-5 mb-5" id="selectioncard">
           <mdb-row class="d-flex justify-content-center mb-3">
+            <h5>What meal are you having?</h5>
             <mdb-btn-group size="lg">
               <mdb-btn
                 color="default"
@@ -33,15 +34,21 @@
               >
             </mdb-btn-group>
           </mdb-row>
-          <mdb-row
-            class="d-flex justify-content-center align-items-center mb-3"
-          >
-            <select class="custom-select" v-model="cusine">
+          <mdb-row class="d-flex justify-content-center align-items-center mb-3"
+            ><h5>What cuisine would you like?</h5>
+            <select class="custom-select" v-model="cuisine">
               <option v-for="cusine in cusines" v-bind:key="cusine">
                 {{ cusine }}
               </option>
             </select>
+            <p id="helpertext">
+              <small
+                >No Preference is strongly recommended for you to try new
+                cuisines!</small
+              >
+            </p>
           </mdb-row>
+          <h5>List your available ingredients here!</h5>
           <mdb-row class="d-flex justify-content-between align-items-center">
             <div>
               <select v-model="ingredient" class="custom-select">
@@ -57,10 +64,6 @@
               Add
             </mdb-btn>
           </mdb-row>
-        </mdb-card>
-      </mdb-row>
-      <mdb-row>
-        <mdb-card class="pt-4 pb-2 pl-5 pr-5 mb-5" id="selectioncard">
           <mdb-tbl hover class="mb-3">
             <mdb-tbl-head>
               <tr>
@@ -69,7 +72,7 @@
             </mdb-tbl-head>
             <mdb-tbl-body>
               <tr
-                v-for="ingredient in selected"
+                v-for="ingredient in selectedIngredients"
                 v-bind:key="ingredient"
                 @click="removeIngredient(ingredient)"
               >
@@ -83,8 +86,13 @@
         </mdb-card>
       </mdb-row>
       <mdb-row>
-        <router-link to="/MenuSelection">
-          <mdb-btn color="default" size="lg" class="ml-3">
+        <router-link to="/menu-selection">
+          <mdb-btn
+            color="default"
+            size="lg"
+            class="ml-3"
+            v-on:click="storeIngredients"
+          >
             <b>Generate Menu</b>
           </mdb-btn>
         </router-link>
@@ -94,19 +102,29 @@
 </template>
 
 <script>
-import cusines from "../assets/cusine.json";
-import ingredients from "../assets/ingredients.json";
+import store from "../../store.js";
+import ingredients from "../../assets/ingredients.json";
 
 export default {
   name: "MenuPage",
   data() {
     return {
-      meal: "breakfast",
-      cusines,
-      cusine: "",
+      meal: "",
+      cusines: [
+        "No Preference",
+        "American",
+        "Chinese",
+        "French",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Mexican",
+        "Thai",
+      ],
+      cuisine: "",
       ingredients,
       ingredient: "",
-      selected: [],
+      selectedIngredients: [],
     };
   },
   methods: {
@@ -117,14 +135,21 @@ export default {
       if (
         this.ingredient.trim() === "" ||
         !this.ingredients.find((x) => x === this.ingredient) ||
-        !!this.selected.find((x) => x === this.ingredient)
+        !!this.selectedIngredients.find((x) => x === this.ingredient)
       )
         return;
-      this.selected.push(this.ingredient);
+      this.selectedIngredients.push(this.ingredient);
       this.ingredient = "";
     },
     removeIngredient(ingredient) {
-      this.selected = this.selected.filter((x) => x !== ingredient);
+      this.selectedIngredients = this.selectedIngredients.filter(
+        (x) => x !== ingredient
+      );
+    },
+    storeIngredients() {
+      store.commit("SET_MEAL_TYPE", this.meal);
+      store.commit("SET_MEAL_LIST", this.selectedIngredients);
+      store.commit("SET_MEAL_CUISINE", this.cuisine);
     },
   },
 };

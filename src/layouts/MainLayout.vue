@@ -14,36 +14,18 @@
             ><mdb-icon icon="home" />Home</mdb-nav-item
           >
         </router-link>
-        <router-link to="/menu">
+        <router-link to="/menu-form">
           <mdb-nav-item id="navmenu-icon"
             ><mdb-icon icon="utensils" />Menu</mdb-nav-item
           >
         </router-link>
-        <mdb-dropdown tag="li" class="nav-item" end>
-          <mdb-dropdown-toggle
-            tag="a"
-            navLink
-            color="default"
-            slot="toggle"
-            waves-fixed
-            icon="chalkboard-teacher"
-            >Fitness/Diet Plan</mdb-dropdown-toggle
+
+        <router-link to="/fitness-form">
+          <mdb-nav-item id="navmenu-icon"
+            ><mdb-icon icon="dumbbell" />Workout</mdb-nav-item
           >
-          <mdb-dropdown-menu color="default">
-            <router-link to="/fitnessplan">
-              <mdb-dropdown-item
-                ><mdb-icon icon="user" id="navmenu-icon" />Fitness
-                Plan</mdb-dropdown-item
-              >
-            </router-link>
-            <router-link to="/dietplan">
-              <mdb-dropdown-item
-                ><mdb-icon icon="user" id="navmenu-icon" />Diet
-                Plan</mdb-dropdown-item
-              >
-            </router-link>
-          </mdb-dropdown-menu>
-        </mdb-dropdown>
+        </router-link>
+
         <router-link to="/calorie-tracker">
           <mdb-nav-item id="navmenu-icon"
             ><mdb-icon icon="search" />Calorie Tracker</mdb-nav-item

@@ -1,81 +1,81 @@
 {
     "1" : {
         "name" : "Barbell",
-        "comments": "Values are calories per minute for someone weight ~57kg for a light/medium/intense workout.",
+        "comments": "Values are calories per minute for someone weight ~57kg for a light/moderate/intense workout.",
         "light": 3.1,
-        "medium": 4.3,
+        "moderate": 4.3,
         "intense": 5.7
     },
 
     "2": {
         "name" : "SZ-Bar",
-        "comments": "Actually this is just a more ergonomic barbell so i am using the simillar values here - 0.2 higher throughout cause i guess less strain = more gain? idk",
+        "comments": "Actually this is just a more ergonomic barbell, not used",
         "light": 3.3,
-        "medium": 4.5,
+        "moderate": 4.5,
         "intense": 5.9
     },
 
     "3": {
         "name": "Dumbbell",
-        "comments": "Simillar to barbell. But harder to lift properly with it so i made the values 0.2 lower?",
+        "comments": "Similar to barbell.",
         "light": 2.9,
-        "medium": 4.1,
+        "moderate": 4.1,
         "intense": 5.5
     },
 
     "4": {
         "name": "Gym Mat",
         "comments": "Since those workout collide with mat exercises, hence not used",
-        "light": 6.3,
-        "medium": 10.4,
-        "intense": 19.2
+        "light": 3.2,
+        "moderate": 4.6,
+        "intense": 6.1
     },
 
     "5": {
         "name": "Swiss Ball",
-        "comments": "It's those bouncy balls, i have no clue what you can do with them",
+        "comments": "Those bouncy balls, not used",
         "light": 2.6,
-        "medium": 3.3,
+        "moderate": 3.3,
         "intense": 4.5
     },
 
     "6": {
         "name": "Pull-up bar",
-        "comments": "I just got my answers from google's top ans",
+        "comments": "",
         "light": 4.0,
-        "medium": 6.3,
+        "moderate": 6.3,
         "intense": 9.7
     },
 
     "7": {
-        "name": "none (bodyweight)",
+        "name": "None",
         "comments": "Assume 60kg. Exercises include situp, push-up, burpees, etc, just varying by intensity",
         "light": 3.2,
-        "medium": 4.6,
+        "moderate": 4.6,
         "intense": 6.1
     },
 
     "8" : {
         "name": "Bench",
-        "comments": "I realise you need a barbell to do BENCH press... so values same as barbell.",
+        "comments": "Not used",
         "light": 3.1,
-        "medium": 4.3,
+        "moderate": 4.3,
         "intense": 5.7
     },
 
     "9": {
         "name": "Incline Bench",
-        "comments": "Same as bench.",
+        "comments": "Same as bench, but not used",
         "light": 3.1,
-        "medium": 4.3,
+        "moderate": 4.3,
         "intense": 5.7
     },
 
     "10" : {
         "name": "Kettleball",
-        "comments": "WebMD says Kettlebell Workouts burn calories fast so i just put high values",
+        "comments": "High calorie consumption",
         "light": 7.1,
-        "medium": 9.3,
+        "moderate": 9.3,
         "intense": 15.7
     }
     

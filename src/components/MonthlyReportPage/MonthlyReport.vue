@@ -33,10 +33,10 @@
 
 <script>
 import { mapGetters } from "vuex";
-import CalorieChart from "./charts/CalorieChart.vue";
+import CalorieChart from "./CalorieChart.vue";
 
 export default {
-  name: "MonthlyReportPage",
+  name: "MonthlyReport",
   components: {
     CalorieChart,
   },
