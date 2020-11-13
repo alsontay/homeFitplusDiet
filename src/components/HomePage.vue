@@ -143,6 +143,12 @@ export default {
     return {
       stories: [
         {
+          title: "Overcome Stay At Home!",
+          img: "/images/User2.jpg",
+          text:
+            "As a student doing home-based learning, HomeFit+Diet has helped me find ways to exercise and stay fit because I can no longer attend co-curricular activities or physical PE lessons!",
+        },
+        {
           title: "HF+D Helped me to stay fit!",
           img: "/images/User3.jpg",
           text:
@@ -153,12 +159,6 @@ export default {
           img: "/images/User1.jpg",
           text:
             "As someone who used to work in CBD where there are many healthy lunch options, HomeFit+Diet has helped me find a suitable substitute back at home where such options are far less abundant!",
-        },
-        {
-          title: "Overcome Stay At Home!",
-          img: "/images/User2.jpg",
-          text:
-            "As a student doing home-based learning, HomeFit+Diet has helped me find ways to exercise and stay fit because I can no longer attend co-curricular activities or physical PE lessons!",
         },
       ],
       foodGallery: [
