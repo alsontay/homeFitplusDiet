@@ -1,7 +1,11 @@
 <template>
   <mdb-container class="test">
     <mdb-container class="mt-5 mb-5 test">
-      <h2>Workout</h2>
+      <h2>Workout Recommendation</h2>
+      <h3 id="title">
+        We will generate for you a workout plan according to the current
+        equipments you have!
+      </h3>
     </mdb-container>
     <mdb-container
       class="mt-4 test d-flex flex-column align-items-center justify-content-center"
@@ -34,7 +38,7 @@
               >
             </mdb-btn-group>
           </mdb-row>
-          <h5>List your available equipment here!</h5>
+          <h5>Add your available equipment here!</h5>
           <mdb-row class="d-flex justify-content-between align-items-center">
             <div>
               <select
@@ -134,4 +138,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#title {
+  font-family: "Caveat", cursive;
+}
+#helpertext {
+  color: gray;
+}
+</style>

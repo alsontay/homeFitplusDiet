@@ -1,7 +1,11 @@
 <template>
   <mdb-container class="test">
     <mdb-container class="mt-5 mb-5 test">
-      <h2>Menu</h2>
+      <h2>Menu Recommendation</h2>
+      <h3 id="title">
+        We will recommend you 3 recipes for you to choose subjected to your
+        available ingredients!
+      </h3>
     </mdb-container>
     <mdb-container
       class="mt-4 test d-flex flex-column align-items-center justify-content-center"
@@ -48,7 +52,7 @@
               >
             </p>
           </mdb-row>
-          <h5>List your available ingredients here!</h5>
+          <h5>Add your available ingredients here!</h5>
           <mdb-row class="d-flex justify-content-between align-items-center">
             <div>
               <select v-model="ingredient" class="custom-select">
@@ -59,6 +63,11 @@
                   {{ ingredient }}
                 </option>
               </select>
+              <p id="helpertext">
+                <small
+                  >We will try our best to incorporate your ingredients</small
+                >
+              </p>
             </div>
             <mdb-btn color="default" class="ml-3" @click="selectIngredient">
               Add
@@ -121,7 +130,7 @@ export default {
         "Mexican",
         "Thai",
       ],
-      cuisine: "",
+      cuisine: "No Preference",
       ingredients,
       ingredient: "",
       selectedIngredients: [],
@@ -156,9 +165,9 @@ export default {
 </script>
 
 <style scoped>
-/* .test {
-  border: 1px transparent;
-} */
+#title {
+  font-family: "Caveat", cursive;
+}
 
 #selectioncard {
   width: 500px;

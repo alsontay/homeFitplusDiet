@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Recipes from "./RecipesAPI.vue";
+import Recipes from "./RecipesAPI";
 
 export default {
   name: "MenuSelection",

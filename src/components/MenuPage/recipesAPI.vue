@@ -29,7 +29,7 @@ export default {
         "https://api.spoonacular.com/recipes/complexSearch?apiKey=50a56564126a4bb797bab48f0382a4d7",
       bcalorie: breakfast,
       ldcalorie: lunchdinner,
-      recipes: [],
+      recipes: null,
       mealtype: "", //from form
       ingredients: ["egg"], //from form
       cuisine: "", //from form

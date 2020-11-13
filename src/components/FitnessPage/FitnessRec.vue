@@ -17,18 +17,24 @@
     >
       Here are your workouts for the day!
     </h2>
-    <h4 v-if="this.intensity == 'light'">
+    <button
+      v-on:click="tracker(intensity, totalCaloriesBurnt)"
+      class="btn btn-warning"
+    >
+      COMPLETED AND TRACK!
+    </button>
+    <h3 v-if="this.intensity == 'light'">
       Do 4 Sets of 6 for each of the exercises below. <br />Expected duration:
       20 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
-    </h4>
-    <h4 v-if="this.intensity == 'moderate'">
+    </h3>
+    <h3 v-if="this.intensity == 'moderate'">
       Do 5 Sets of 10 for each of the exercises below. <br />Expected duration:
       30 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
-    </h4>
-    <h4 v-if="this.intensity == 'intense'">
+    </h3>
+    <h3 v-if="this.intensity == 'intense'">
       Do 7 Sets of 12 for each of the exercises below. <br />Expected duration:
       45 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
-    </h4>
+    </h3>
 
     <hr class="mb-0" />
 
@@ -150,6 +156,16 @@ export default {
   },
 
   methods: {
+    tracker: function (intensity, cal) {
+      console.log("HI");
+      intensity = intensity[0].toUpperCase() + intensity.substring(1);
+      alert(
+        intensity +
+          " intensity workout completed!\n" +
+          cal.toString() +
+          " kcal of calories will be logged."
+      );
+    },
     calculateCalories: function (exercise) {
       const id = exercise.equipment[0];
       const calorieMin = excal[id][this.intensity];
