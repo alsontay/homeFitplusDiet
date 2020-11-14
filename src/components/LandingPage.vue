@@ -65,6 +65,11 @@
                   </mdb-col>
                 </mdb-row>
               </div>
+              <div class="footer-copyright text-center py-3">
+                <mdb-container fluid class="fixed-bottom">
+                  &copy; 2020 Goal Diggers
+                </mdb-container>
+              </div>
             </section>
           </section>
         </div>
@@ -369,5 +374,11 @@ h5 {
 
 #modal-close {
   margin-top: 10px;
+}
+
+.fixed-bottom {
+  background-color:rgb(243, 239, 239);
+  width: 100%;
+  bottom: 0;
 }
 </style>

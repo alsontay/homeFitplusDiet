@@ -115,7 +115,7 @@ import store from "../../store.js";
 import ingredients from "../../assets/ingredients.json";
 
 export default {
-  name: "MenuPage",
+  name: "MenuForm",
   data() {
     return {
       meal: "",

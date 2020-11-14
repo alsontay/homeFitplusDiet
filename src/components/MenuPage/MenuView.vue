@@ -151,7 +151,7 @@
                           "
                           class="btn btn-warning"
                         >
-                          SELECTED AND TRACK!
+                          SELECT AND TRACK!
                         </button>
                       </div>
                     </div>
@@ -275,7 +275,7 @@
                           "
                           class="btn btn-warning"
                         >
-                          SELECTED AND TRACK!
+                          SELECT AND TRACK!
                         </button>
                       </div>
                     </div>
@@ -399,7 +399,7 @@
                           "
                           class="btn btn-warning"
                         >
-                          SELECTED AND TRACK!
+                          SELECT AND TRACK!
                         </button>
                       </div>
                     </div>

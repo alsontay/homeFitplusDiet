@@ -2,7 +2,7 @@
   <div>
     <div class="home-page">
       <mdb-container>
-        <mdb-row class="justify-content-center mt-5">
+        <mdb-row class="justify-content-center mt-5" style="color:#2e3951">
           <h1>HOME FIT+DIET</h1>
         </mdb-row>
         <h3>EAT FIT, KEEP FIT</h3>
@@ -12,7 +12,7 @@
 
         <mdb-row class="justify-content-center">
           <mdb-col>
-            <h2>What We Offer <mdb-icon icon="check-double" /></h2>
+            <h2 style="color:#2e3951">What We Offer <mdb-icon icon="check-double" /></h2>
             <p class="info">
               Trying to lose weight, keep fit, or eat healthy?<br />We provide
               you with the right features to reach your goals.
@@ -146,7 +146,7 @@ export default {
           title: "Overcome Stay At Home!",
           img: "/images/User2.jpg",
           text:
-            "As a student doing home-based learning, HomeFit+Diet has helped me find ways to exercise and stay fit because I can no longer attend co-curricular activities or physical PE lessons!",
+            "As a university student having only online classes and not being allowed to return to campus, HomeFit+Diet has helped me find ways to exercise and stay fit while co-curricular activities are put on hold!",
         },
         {
           title: "HF+D Helped me to stay fit!",
@@ -206,10 +206,12 @@ h2 {
   font-size: 30pt;
   font-family: Impact;
   margin-top: 50pt;
+  color:#2e3951
 }
 
 h1 {
   font-size: 100pt;
   font-family: Impact;
+  color:#2e3951
 }
 </style>
