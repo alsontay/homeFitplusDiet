@@ -104,7 +104,7 @@ export default {
         var update2 = {};
         update2[`${this.calcount.data.date}`] = {
           consume: this.calcount.data.values,
-          expend: this.calcount.expend,
+          expend: this.calcount.data.expend,
         };
         db.set(update2);
       }
