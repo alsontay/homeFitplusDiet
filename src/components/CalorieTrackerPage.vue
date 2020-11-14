@@ -24,6 +24,10 @@
 
               <label id="label-text">Other (Snacks etc.)</label>
               <mdb-input type="number" v-model="calcount.data.values.othr" />
+
+              <label id="label-text"> Calories Burnt (Exercise) </label>
+              <mdb-input type="number" v-model="calcount.data.expend" />
+
             </div>
           </mdb-row>
 
@@ -82,6 +86,7 @@ export default {
             othr: 0,
           },
           date: "",
+          expend: 0,
         },
       },
     };
@@ -126,6 +131,8 @@ export default {
         curr.values.lunch = db.lunch;
         curr.values.dinnr = db.dinnr;
         curr.values.othr = db.othr;
+        var db2 = doc.data()[`${today}`].expend;
+        curr.expend = db2;
       }
     });
     //console.log(curr);
