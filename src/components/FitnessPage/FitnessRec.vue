@@ -132,6 +132,7 @@
 <script>
 import axios from "axios";
 import { mapGetters } from "vuex";
+import firebase from "../../firebase.js"
 import muscles from "../../assets/muscles.json";
 import excal from "../../assets/excal.json";
 
@@ -139,6 +140,7 @@ export default {
   computed: {
     ...mapGetters({
       exRequest: "exercise",
+      user: "user",
     }),
   },
 
@@ -149,6 +151,7 @@ export default {
       intensity: "",
       muscles,
       excal,
+      date : "",
       requeststring:
         "https://wger.de/api/v2/exercise/?language=2&format=json&limit=5&equipment=7",
       totalCaloriesBurnt: 0,
@@ -156,7 +159,21 @@ export default {
   },
 
   methods: {
-    tracker: function (intensity, cal) {
+    async tracker (intensity, cal) {
+      const userid = this.user.data.id;
+      var update = {};
+      update[`${this.date}.expend`] = this.totalCaloriesBurnt;
+      const db = firebase.firestore().collection("calories").doc(userid);
+      const db2 = await db.get();
+      if (db2.exists) {
+        db.update(update);
+      } else {
+        var update2 = {};
+        update2[`${this.date}`] = {
+          expend: this.totalCaloriesBurnt,
+        };
+        db.set(update2);
+      }
       console.log("HI");
       intensity = intensity[0].toUpperCase() + intensity.substring(1);
       alert(
@@ -214,6 +231,13 @@ export default {
       this.totalCaloriesBurnt = Math.round(totalCaloriesBurnt * 100) / 100;
       console.log(this.exercises);
       console.log(this.totalCaloriesBurnt);
+      // Curr Date Calculation
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+      var yyyy = today.getFullYear();
+      today = yyyy + "-" + mm + "-" + dd;
+      this.date = today;
     });
   },
 };
