@@ -12,7 +12,7 @@ export default {
           {
             label: "Total Consumption",
             data: [],
-            backgroundColor: 'rgba(219, 255, 254, 0.9)',
+            backgroundColor: "rgba(219, 255, 254, 0.9)",
           },
           /*{
                 label: 'Sales2',
@@ -79,9 +79,9 @@ export default {
             let data = ref2[sortedKeys[counter]].consume;
             // Total Calorie Consumption
             //console.log(data);
-            var total = 0
+            var total = 0;
             for (var key in data) {
-              total += parseInt(data[key])
+              total += parseInt(data[key]);
               //console.log(key);
             }
             //var total =
