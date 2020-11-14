@@ -21,10 +21,16 @@
 
               <label id="label-text">Dinner</label>
               <mdb-input type="number" v-model="calcount.data.values.dinnr" />
+
               <label id="label-text">Other (Snacks etc.)</label>
               <mdb-input type="number" v-model="calcount.data.values.othr" />
+
+              <label id="label-text"> Calories Burnt (Exercise) </label>
+              <mdb-input type="number" v-model="calcount.data.expend" />
+
             </div>
           </mdb-row>
+
           <h5 id="label-text">Date of logging</h5>
 
           <div class="col-lg-2">
@@ -36,6 +42,7 @@
               style="width: 370px"
             />
           </div>
+          <br />
         </mdb-card>
       </mdb-row>
       <mdb-row>
@@ -79,6 +86,7 @@ export default {
             othr: 0,
           },
           date: "",
+          expend: 0,
         },
       },
     };
@@ -123,6 +131,8 @@ export default {
         curr.values.lunch = db.lunch;
         curr.values.dinnr = db.dinnr;
         curr.values.othr = db.othr;
+        var db2 = doc.data()[`${today}`].expend;
+        curr.expend = db2;
       }
     });
     //console.log(curr);

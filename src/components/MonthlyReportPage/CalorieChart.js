@@ -12,7 +12,7 @@ export default {
           {
             label: "Total Consumption",
             data: [],
-            backgroundColor: "cyan",
+            backgroundColor: "rgba(219, 255, 254, 0.9)",
           },
           /*{
                 label: 'Sales2',
@@ -78,10 +78,16 @@ export default {
             if (counter == 30) break;
             let data = ref2[sortedKeys[counter]].consume;
             // Total Calorie Consumption
-            var total =
-              parseInt(data.bfast) +
-              parseInt(data.lunch) +
-              parseInt(data.dinnr);
+            //console.log(data);
+            var total = 0;
+            for (var key in data) {
+              total += parseInt(data[key]);
+              //console.log(key);
+            }
+            //var total =
+            //  parseInt(data.bfast) +
+            //  parseInt(data.lunch) +
+            //  parseInt(data.dinnr);
             chartdata.labels.push(sortedKeys[counter]);
             chartdata.datasets[0].data.push(total);
             counter++;

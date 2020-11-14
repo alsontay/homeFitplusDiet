@@ -418,6 +418,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import firebase from "../../firebase.js";
 
 export default {
   name: "MenuView",
@@ -427,9 +428,16 @@ export default {
       menu: {
         currRecipe: {},
       },
+      date : "",
+      choice: "",
     };
   },
   computed: {
+    ...mapGetters({
+      user:"user",
+      meals:"meals",
+    }),
+
     ingList0: function () {
       let ing = [];
       let step = this.recipes[0].analyzedInstructions[0].steps;
@@ -443,6 +451,7 @@ export default {
       }
       return ing;
     },
+
     ingList1: function () {
       let ing = [];
       let step = this.recipes[1].analyzedInstructions[0].steps;
@@ -456,6 +465,7 @@ export default {
       }
       return ing;
     },
+
     ingList2: function () {
       let ing = [];
       let step = this.recipes[2].analyzedInstructions[0].steps;
@@ -470,8 +480,26 @@ export default {
       return ing;
     },
   },
+
   methods: {
-    tracker: function (name, cal) {
+    async tracker (name, cal) { 
+      console.log(this.choice);
+      const userid = this.user.data.id;
+      var update = {};
+      update[`${this.date}.consume.${this.choice}`] = cal;
+      const db = firebase.firestore().collection("calories").doc(userid);
+      const db2 = await db.get();
+      if (db2.exists) {
+        db.update(update);
+      } else {
+        var update2 = {};
+        var update3 = {};
+        update3[`${this.choice}`] = cal;
+        update2[`${this.date}`] = {
+          consume: update3,
+        };
+        db.set(update2);
+      } 
       alert(
         name +
           " selected!\n" +
@@ -479,7 +507,26 @@ export default {
           " kcal of calories will be logged."
       );
     },
+    mutateChoice: function(initial) {
+      if (initial === "breakfast") {
+        return "bfast";
+      } else if (initial === "dinner") {
+        return "dinnr";
+      } else {
+        return initial;
+      }
+    }
   },
+  mounted () {
+    // Curr Date Calculation
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + "-" + mm + "-" + dd;
+    this.date = today;
+    this.choice = this.mutateChoice(this.meals.choice);
+  }
 };
 </script>
 
