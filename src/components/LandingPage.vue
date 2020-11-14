@@ -377,7 +377,7 @@ h5 {
 }
 
 .fixed-bottom {
-  background-color:rgb(243, 239, 239);
+  background-color: rgb(243, 239, 239);
   width: 100%;
   bottom: 0;
 }

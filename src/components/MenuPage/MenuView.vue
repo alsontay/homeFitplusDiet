@@ -428,14 +428,14 @@ export default {
       menu: {
         currRecipe: {},
       },
-      date : "",
+      date: "",
       choice: "",
     };
   },
   computed: {
     ...mapGetters({
-      user:"user",
-      meals:"meals",
+      user: "user",
+      meals: "meals",
     }),
 
     ingList0: function () {
@@ -482,7 +482,7 @@ export default {
   },
 
   methods: {
-    async tracker (name, cal) { 
+    async tracker(name, cal) {
       //console.log(this.choice);
       const userid = this.user.data.id;
       var update = {};
@@ -499,7 +499,7 @@ export default {
           consume: update3,
         };
         db.set(update2);
-      } 
+      }
       alert(
         name +
           " selected!\n" +
@@ -507,7 +507,7 @@ export default {
           " kcal of calories will be logged."
       );
     },
-    mutateChoice: function(initial) {
+    mutateChoice: function (initial) {
       if (initial === "breakfast") {
         return "bfast";
       } else if (initial === "dinner") {
@@ -515,9 +515,9 @@ export default {
       } else {
         return initial;
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     // Curr Date Calculation
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, "0");
@@ -526,7 +526,7 @@ export default {
     today = yyyy + "-" + mm + "-" + dd;
     this.date = today;
     this.choice = this.mutateChoice(this.meals.choice);
-  }
+  },
 };
 </script>
 

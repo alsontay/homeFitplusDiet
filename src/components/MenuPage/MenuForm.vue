@@ -3,7 +3,7 @@
     <mdb-container class="mt-5 mb-5 test">
       <h2>Menu Recommendation</h2>
       <h3 id="title">
-        We will recommend you 3 recipes for you to choose subjected to your
+        We will recommend you 3 recipes customised just for you and your
         available ingredients!
       </h3>
     </mdb-container>
@@ -94,6 +94,7 @@
           </p>
         </mdb-card>
       </mdb-row>
+
       <mdb-row>
         <router-link to="/menu-selection">
           <mdb-btn
@@ -106,6 +107,9 @@
           </mdb-btn>
         </router-link>
       </mdb-row>
+      <p id="helpertext">
+        <small>Recipes will take awhile to calculate and generate!</small>
+      </p>
     </mdb-container>
   </mdb-container>
 </template>
