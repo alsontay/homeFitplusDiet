@@ -483,7 +483,7 @@ export default {
 
   methods: {
     async tracker (name, cal) { 
-      console.log(this.choice);
+      //console.log(this.choice);
       const userid = this.user.data.id;
       var update = {};
       update[`${this.date}.consume.${this.choice}`] = cal;

@@ -17,7 +17,8 @@
         </mdb-col>
         <mdb-col>
           <mdb-card class="chart-bg">
-            <h4>Second Chart</h4>
+            <h4>Calorie Expenditure</h4>
+            <calorie-chart-b> </calorie-chart-b>
           </mdb-card>
         </mdb-col>
       </mdb-row>
@@ -34,11 +35,13 @@
 <script>
 import { mapGetters } from "vuex";
 import CalorieChart from "./CalorieChart.vue";
+import CalorieChartB from "./CalorieChartB.vue"
 
 export default {
   name: "MonthlyReport",
   components: {
     CalorieChart,
+    CalorieChartB
   },
   computed: {
     ...mapGetters({

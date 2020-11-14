@@ -27,7 +27,6 @@
 
               <label id="label-text"> Calories Burnt (Exercise) </label>
               <mdb-input type="number" v-model="calcount.data.expend" />
-
             </div>
           </mdb-row>
 
@@ -96,6 +95,7 @@ export default {
       const userid = this.user.data.id;
       var update = {};
       update[`${this.calcount.data.date}.consume`] = this.calcount.data.values;
+      update[`${this.calcount.data.date}.expend`] = this.calcount.data.expend;
       const db = firebase.firestore().collection("calories").doc(userid);
       const db2 = await db.get();
       if (db2.exists) {
@@ -104,6 +104,7 @@ export default {
         var update2 = {};
         update2[`${this.calcount.data.date}`] = {
           consume: this.calcount.data.values,
+          expend: this.calcount.data.expend,
         };
         db.set(update2);
       }

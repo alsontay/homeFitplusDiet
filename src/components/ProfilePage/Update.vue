@@ -11,7 +11,7 @@
             <input
               class="form-control"
               type="text"
-              v-model="info.data.name"
+              v-model="user.data.displayName"
               disabled="disabled"
             />
           </div>
@@ -24,7 +24,7 @@
             <input
               class="form-control"
               type="email"
-              v-model="info.data.email"
+              v-model="user.data.email"
               disabled="disabled"
             />
           </div>
@@ -317,8 +317,8 @@ export default {
   methods: {
     updateInformation: function () {
       const userid = this.user.data.id;
-      console.log(userid);
-      console.log(this.info.data);
+      //console.log(userid);
+      //console.log(this.info.data);
       firebase
         .firestore()
         .collection("userinfo")
@@ -349,7 +349,7 @@ export default {
         //console.log(curr)
       }
     });
-    console.log(curr);
+    //console.log(curr);
   },
 };
 </script>
