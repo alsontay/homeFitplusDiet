@@ -10,29 +10,24 @@ export default {
       chartdata: {
         datasets: [
           {
-            label: "Total Consumption",
+            label: "Total Calories Burnt",
             data: [],
-            backgroundColor: "rgba(255, 237, 184, 0.9)",
+            backgroundColor: "rgba(236, 255, 189, 0.9)",
           },
-          /*{
-                label: 'Sales2',
-                data: [30,10,15],
-                backgroundColor:'green'
-              }*/
         ],
         labels: [],
       },
       options: {
         title: {
           display: true,
-          text: "Calorie Consumptions (Last 30 Entries)",
+          text: "Calorie Expenditure (Last 30 Entries)",
         },
         scales: {
           yAxes: [
             {
               scaleLabel: {
                 display: true,
-                labelString: "Total Calorie Consumption",
+                labelString: "Calorie Expenditure",
               },
             },
           ],
@@ -76,18 +71,11 @@ export default {
           sortedKeys.sort();
           for (const item in ref2) {
             if (counter == 30) break;
-            let data = ref2[sortedKeys[counter]].consume;
-            // Total Calorie Consumption
-            //console.log(data);
-            var total = 0;
+            let data = ref2[sortedKeys[counter]].expend;
+            var total = parseInt(data);
             for (var key in data) {
               total += parseInt(data[key]);
-              //console.log(key);
             }
-            //var total =
-            //  parseInt(data.bfast) +
-            //  parseInt(data.lunch) +
-            //  parseInt(data.dinnr);
             chartdata.labels.push(sortedKeys[counter]);
             chartdata.datasets[0].data.push(total);
             counter++;

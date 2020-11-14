@@ -11,7 +11,7 @@
             <input
               class="form-control"
               type="text"
-              v-model="info.data.name"
+              v-model="user.data.displayName"
               disabled="disabled"
             />
           </div>
@@ -24,7 +24,7 @@
             <input
               class="form-control"
               type="email"
-              v-model="info.data.email"
+              v-model="user.data.email"
               disabled="disabled"
             />
           </div>
