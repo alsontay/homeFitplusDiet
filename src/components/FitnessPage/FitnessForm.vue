@@ -105,7 +105,7 @@ export default {
   name: "FitnessForm",
   data() {
     return {
-      intensity: "light",
+      intensity: "",
       equipmentList: ["Pull-up Bar", "Dumbbell", "Barbell", "Kettlebell"],
       equipment: "",
       selectedEquipment: [],

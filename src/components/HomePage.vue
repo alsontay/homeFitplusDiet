@@ -2,7 +2,7 @@
   <div>
     <div class="home-page">
       <mdb-container>
-        <mdb-row class="justify-content-center mt-5" style="color:#2e3951">
+        <mdb-row class="justify-content-center mt-5" style="color: #2e3951">
           <h1>HOME FIT+DIET</h1>
         </mdb-row>
         <h3>EAT FIT, KEEP FIT</h3>
@@ -12,7 +12,9 @@
 
         <mdb-row class="justify-content-center">
           <mdb-col>
-            <h2 style="color:#2e3951">What We Offer <mdb-icon icon="check-double" /></h2>
+            <h2 style="color: #2e3951">
+              What We Offer <mdb-icon icon="check-double" />
+            </h2>
             <p class="info">
               Trying to lose weight, keep fit, or eat healthy?<br />We provide
               you with the right features to reach your goals.
@@ -112,7 +114,10 @@
         <mdb-row>
           <mdb-col>
             <h2>Food Gallery</h2>
-            <p>Our users' very own healthy creations!</p>
+            <p>
+              What our users have created using our healthy recipe
+              recommendations!
+            </p>
 
             <mdb-row class="justify-content-center">
               <mdb-carousel
@@ -127,7 +132,17 @@
         </mdb-row>
 
         <mdb-row>
-          <mdb-col class="mt-5"> </mdb-col>
+          <mdb-col class="mt-5">
+            <h2>About us</h2>
+            <p>
+              Thanks for signing up and using HomeFit+Diet!<br />We are a group
+              of students aiming to provide Singaporeans with means to lead a
+              healthy lifestyle despite being stuck at home due to COVID-19 :(
+              <br />If you like this website, do tell more of your friends and
+              family about it! <br />
+              Stay tuned for more updates!
+            </p>
+          </mdb-col>
         </mdb-row>
       </mdb-container>
     </div>
@@ -206,12 +221,12 @@ h2 {
   font-size: 30pt;
   font-family: Impact;
   margin-top: 50pt;
-  color:#2e3951
+  color: #2e3951;
 }
 
 h1 {
   font-size: 100pt;
   font-family: Impact;
-  color:#2e3951
+  color: #2e3951;
 }
 </style>

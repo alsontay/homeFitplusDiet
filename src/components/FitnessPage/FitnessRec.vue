@@ -19,7 +19,7 @@
     </h2>
     <button
       v-on:click="tracker(intensity, totalCaloriesBurnt)"
-      class="btn btn-warning"
+      class="btn btn-info btn-lg"
     >
       COMPLETED AND TRACK!
     </button>
@@ -92,7 +92,7 @@
                       >
                         <div class="col">
                           DESCRIPTION:<br />
-                          <p>
+                          <p id="text">
                             <span v-html="exercise.description"> </span>
                           </p>
                         </div>
@@ -102,20 +102,22 @@
                   <div class="row mt-5">
                     <div class="col">
                       MUSCLES TRAINED:<br />
-                      <div v-for="id in exercise.muscles" :key="id">
+                      <div id="text" v-for="id in exercise.muscles" :key="id">
                         {{ muscles[id].name }}
                       </div>
                     </div>
 
                     <div class="col">
                       EQUIPMENT USED:<br />
-                      <div v-for="id in exercise.equipment" :key="id">
+                      <div id="text" v-for="id in exercise.equipment" :key="id">
                         {{ excal[id].name }}
                       </div>
                     </div>
                     <div class="col">
                       CALORIE BURNED:<br />
-                      {{ exercise.caloriesBurnt }}
+                      <div id="text">
+                        {{ exercise.caloriesBurnt }}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -132,7 +134,7 @@
 <script>
 import axios from "axios";
 import { mapGetters } from "vuex";
-import firebase from "../../firebase.js"
+import firebase from "../../firebase.js";
 import muscles from "../../assets/muscles.json";
 import excal from "../../assets/excal.json";
 
@@ -151,7 +153,7 @@ export default {
       intensity: "",
       muscles,
       excal,
-      date : "",
+      date: "",
       requeststring:
         "https://wger.de/api/v2/exercise/?language=2&format=json&limit=5&equipment=7",
       totalCaloriesBurnt: 0,
@@ -159,7 +161,7 @@ export default {
   },
 
   methods: {
-    async tracker (intensity, cal) {
+    async tracker(intensity, cal) {
       const userid = this.user.data.id;
       var update = {};
       update[`${this.date}.expend`] = this.totalCaloriesBurnt;
@@ -249,6 +251,9 @@ export default {
 
 .accordion {
   font-family: "Caveat", cursive;
+}
+#text {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn {

@@ -3,7 +3,7 @@
     <mdb-container class="mt-5 mb-5 test">
       <h2>Calorie Tracker</h2>
       <h3 id="title">
-        Keep track of your other untracked calorie intakes here!
+        Keep track of your other untracked caloric consumption/expenditure here!
       </h3>
     </mdb-container>
     <mdb-container
@@ -13,6 +13,8 @@
         <mdb-card class="p-4 pl-5 pr-5 mb-5" id="selectioncard">
           <mdb-row class="d-flex justify-content-center mb-3">
             <div>
+              <label id="label-text"> Calories Burnt (Other exercises) </label>
+              <mdb-input type="number" v-model="calcount.data.expend" />
               <label id="label-text">Breakfast</label>
               <mdb-input type="number" v-model="calcount.data.values.bfast" />
 
@@ -24,9 +26,6 @@
 
               <label id="label-text">Other (Snacks etc.)</label>
               <mdb-input type="number" v-model="calcount.data.values.othr" />
-
-              <label id="label-text"> Calories Burnt (Exercise) </label>
-              <mdb-input type="number" v-model="calcount.data.expend" />
             </div>
           </mdb-row>
 
