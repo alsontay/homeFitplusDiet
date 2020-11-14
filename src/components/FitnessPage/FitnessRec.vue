@@ -174,7 +174,7 @@ export default {
         };
         db.set(update2);
       }
-      console.log("HI");
+      //console.log("HI");
       intensity = intensity[0].toUpperCase() + intensity.substring(1);
       alert(
         intensity +
@@ -212,7 +212,7 @@ export default {
       }
       this.requeststring +=
         "&offset=" + Math.floor((Math.random() * 100 + 1) / 6);
-      console.log(this.requeststring);
+      //console.log(this.requeststring);
       return this.requeststring;
     },
   },
@@ -229,8 +229,8 @@ export default {
         0
       );
       this.totalCaloriesBurnt = Math.round(totalCaloriesBurnt * 100) / 100;
-      console.log(this.exercises);
-      console.log(this.totalCaloriesBurnt);
+      //console.log(this.exercises);
+      //console.log(this.totalCaloriesBurnt);
       // Curr Date Calculation
       var today = new Date();
       var dd = String(today.getDate()).padStart(2, "0");

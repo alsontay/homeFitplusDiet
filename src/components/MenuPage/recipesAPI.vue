@@ -118,7 +118,7 @@ export default {
         ingredientstring +
         dietarystring +
         restrictionstring;
-      console.log(finalstring);
+      //console.log(finalstring);
       return finalstring;
     },
     ldrequestStringMaker: function () {
@@ -200,7 +200,7 @@ export default {
         ingredientstring +
         dietarystring +
         restrictionstring;
-      console.log(finalstring);
+      //console.log(finalstring);
       return finalstring;
     },
   },
@@ -233,11 +233,11 @@ export default {
           : this.ldrequestStringMaker();
 
       axios.get(finalrequeststring).then((response) => {
-        console.log("Response==>");
-        console.log(response);
+        //console.log("Response==>");
+        //console.log(response);
         this.recipes = response.data.results;
-        console.log("Links==>");
-        console.log(this.recipes);
+        //console.log("Links==>");
+        //console.log(this.recipes);
       });
     }, 1000);
 

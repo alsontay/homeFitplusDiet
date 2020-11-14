@@ -27,7 +27,6 @@
 
               <label id="label-text"> Calories Burnt (Exercise) </label>
               <mdb-input type="number" v-model="calcount.data.expend" />
-
             </div>
           </mdb-row>
 

@@ -317,8 +317,8 @@ export default {
   methods: {
     updateInformation: function () {
       const userid = this.user.data.id;
-      console.log(userid);
-      console.log(this.info.data);
+      //console.log(userid);
+      //console.log(this.info.data);
       firebase
         .firestore()
         .collection("userinfo")
@@ -349,7 +349,7 @@ export default {
         //console.log(curr)
       }
     });
-    console.log(curr);
+    //console.log(curr);
   },
 };
 </script>
