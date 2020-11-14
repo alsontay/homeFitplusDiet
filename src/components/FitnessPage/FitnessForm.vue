@@ -3,8 +3,8 @@
     <mdb-container class="mt-5 mb-5 test">
       <h2>Workout Recommendation</h2>
       <h3 id="title">
-        We will generate for you a workout plan according to the current
-        equipments you have!
+        We will generate a workout plan for you that incorporates the current
+        equipment you have!
       </h3>
     </mdb-container>
     <mdb-container
