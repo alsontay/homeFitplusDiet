@@ -107,6 +107,7 @@ export default {
         };
         db.set(update2);
       }
+
       alert("Calorie Counts Updated!");
     },
   },

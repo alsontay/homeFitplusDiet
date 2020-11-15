@@ -277,4 +277,7 @@ p {
   font-family: Arial;
   font-size: 12pt;
 }
+.button {
+  z-index: 1000;
+}
 </style>
