@@ -63,9 +63,10 @@ export default {
       const bmi = curr.weight / ((curr.height / 100) * (curr.height / 100));
       const gender = curr.sex;
       var calorie = this.bcalorie[ageGroup][gender];
-      calorie = bmi > 25 || curr.goal == "loseweight" ? calorie * 0.8 : calorie;
+      calorie = bmi > 25 || curr.goal == "loseweight" ? calorie * 0.8 : calorie; //20% less calories if overweight or goal is to loseweight
       var restrictions = { maxCalories: calorie };
       for (let x of condition) {
+        //restrictions accumulate according to the conditions the user have
         if (x == "none") {
           break;
         } else if (x == "diabetes") {
@@ -140,9 +141,10 @@ export default {
       const bmi = curr.weight / ((curr.height / 100) * (curr.height / 100));
       const gender = curr.sex;
       var calorie = this.ldcalorie[ageGroup][gender];
-      calorie = bmi > 25 || curr.goal == "loseweight" ? calorie * 0.8 : calorie;
+      calorie = bmi > 25 || curr.goal == "loseweight" ? calorie * 0.8 : calorie; //20% less calories if overweight or goal is to loseweight
       var restrictions = { maxCalories: calorie };
       for (let x of condition) {
+        //restrictions accumulate according to the conditions the user have
         if (x == "none") {
           break;
         } else if (x == "diabetes") {
@@ -191,7 +193,7 @@ export default {
           "=" +
           restrictions[k].toString();
       }
-      var offsetNumber = Math.floor(Math.random() * 3);
+      var offsetNumber = 0;
       if (this.mealtype == "dinner") {
         offsetNumber = Math.floor(Math.random() * 3);
       }
