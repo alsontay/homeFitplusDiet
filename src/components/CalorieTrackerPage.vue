@@ -61,6 +61,7 @@
         Target 20% less calories if you are trying to lose weight.
       </h4>
 
+
       <div class="row">
         <div class="col">
           <img :src="table" class="img-fluid" alt="Responsive image" />
@@ -143,12 +144,12 @@ export default {
     docRef.get().then(function (doc) {
       if (doc.exists) {
         var db = doc.data()[`${today}`].consume;
-        curr.values.bfast = db.bfast;
-        curr.values.lunch = db.lunch;
-        curr.values.dinnr = db.dinnr;
-        curr.values.othr = db.othr;
+        curr.values.bfast = typeof db.bfast === "undefined" ? 0 : db.bfast;
+        curr.values.lunch = typeof db.lunch === "undefined" ? 0 : db.lunch;
+        curr.values.dinnr = typeof db.dinnr === "undefined" ? 0 : db.dinnr;
+        curr.values.othr = typeof db.othr === "undefined" ? 0 : db.othr;
         var db2 = doc.data()[`${today}`].expend;
-        curr.expend = db2;
+        curr.expend = typeof db2 === "undefined" ? 0 : db2;
       }
     });
     //console.log(curr);

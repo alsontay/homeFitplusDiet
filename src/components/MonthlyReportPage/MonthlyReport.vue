@@ -22,10 +22,12 @@
           </mdb-card>
         </mdb-col>
       </mdb-row>
+
       <mdb-row id="disclaimer">
         It can take a while for the server to fetch your calorie data, so please
         be patient :)
       </mdb-row>
+
     </mdb-container>
   </div>
 </template>
