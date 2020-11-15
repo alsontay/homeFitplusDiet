@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       requeststring:
-        "https://api.spoonacular.com/recipes/complexSearch?apiKey=50a56564126a4bb797bab48f0382a4d7",
+        "https://api.spoonacular.com/recipes/complexSearch?apiKey=44f8119c2d3f4bbe84ac623d9d434620",
       bcalorie: breakfast,
       ldcalorie: lunchdinner,
       recipes: null,
@@ -106,9 +106,15 @@ export default {
           "=" +
           restrictions[k].toString();
       }
+      var offsetNumber = 0;
+      if (this.ingredients.length == 0 && this.cuisine == "No Preference") {
+        offsetNumber = Math.floor(Math.random() * 100);
+      }
       const infostring =
         "&number=3" +
-        "&type=breakfast" +
+        "&offset=" +
+        offsetNumber.toString() +
+        "&type=breakfast,bread,salad" +
         "&instructionsRequired=true" +
         "&addRecipeInformation=true" +
         "&addRecipeNutrition=true";
@@ -185,18 +191,18 @@ export default {
           "=" +
           restrictions[k].toString();
       }
-      var offsetNumber = 0;
+      var offsetNumber = Math.floor(Math.random() * 3);
       if (this.mealtype == "dinner") {
-        offsetNumber = 3;
+        offsetNumber = Math.floor(Math.random() * 3);
       }
       if (this.ingredients.length == 0 && this.cuisine == "No Preference") {
-        offsetNumber = Math.floor(Math.random() * 400);
+        offsetNumber = Math.floor(Math.random() * 800);
       }
       const infostring =
         "&number=3" +
         "&offset=" +
         offsetNumber.toString() +
-        "&type=main%20course" +
+        "&type=main%20course,side%20dish,soup" +
         "&instructionsRequired=true" +
         "&addRecipeInformation=true" +
         "&addRecipeNutrition=true";
