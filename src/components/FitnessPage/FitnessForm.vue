@@ -20,21 +20,21 @@
                 size="lg"
                 @click.native="selectintensity('light')"
                 :active="intensity === 'light'"
-                >Light <br />(~20 mins)</mdb-btn
+                >Light <br />(~30 mins)</mdb-btn
               >
               <mdb-btn
                 color="default"
                 size="lg"
                 @click.native="selectintensity('moderate')"
                 :active="intensity === 'moderate'"
-                >Moderate <br />(~30 mins)</mdb-btn
+                >Moderate <br />(~45 mins)</mdb-btn
               >
               <mdb-btn
                 color="default"
                 size="lg"
                 @click.native="selectintensity('intense')"
                 :active="intensity === 'intense'"
-                >Intense <br />(~45 mins)</mdb-btn
+                >Intense <br />(~60 mins)</mdb-btn
               >
             </mdb-btn-group>
           </mdb-row>

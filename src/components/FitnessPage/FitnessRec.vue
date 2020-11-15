@@ -19,21 +19,24 @@
     </h2>
     <button
       v-on:click="tracker(intensity, totalCaloriesBurnt)"
-      class="btn btn-info btn-lg"
+      class="btn btn-info btn"
     >
       COMPLETED AND TRACK!
     </button>
     <h3 v-if="this.intensity == 'light'">
-      Do 4 Sets of 6 for each of the exercises below. <br />Expected duration:
-      20 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
+      Do 5 Sets of 10 for each of the exercises below. <br />
+      Rest for 60 seconds in between each set. <br />Expected duration: 30
+      minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h3>
     <h3 v-if="this.intensity == 'moderate'">
-      Do 5 Sets of 10 for each of the exercises below. <br />Expected duration:
-      30 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
+      Do 7 Sets of 12 for each of the exercises below. <br />
+      Rest for 75 seconds in between each set. <br />Expected duration: 45
+      minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h3>
     <h3 v-if="this.intensity == 'intense'">
-      Do 7 Sets of 12 for each of the exercises below. <br />Expected duration:
-      45 minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
+      Do 9 Sets of 15 for each of the exercises below. <br />
+      Rest for 90 seconds in between each set. <br />Expected duration: 60
+      minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h3>
 
     <hr class="mb-0" />
@@ -190,10 +193,10 @@ export default {
       const calorieMin = excal[id][this.intensity];
       const totalMin =
         this.intensity == "light"
-          ? 17.45 / 5
+          ? 25 / 5 //total duration minus rest time
           : this.intensity == "moderate"
-          ? 25 / 5
-          : 36 / 5; //minus rest time
+          ? 38.75 / 5
+          : 52.5 / 5;
       const caloriesBurnt =
         Math.round(
           (calorieMin * totalMin + Math.random() - Math.random() + 1) * 10

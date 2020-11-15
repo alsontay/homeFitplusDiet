@@ -61,7 +61,6 @@
         Target 20% less calories if you are trying to lose weight.
       </h4>
 
-
       <div class="row">
         <div class="col">
           <img :src="table" class="img-fluid" alt="Responsive image" />
