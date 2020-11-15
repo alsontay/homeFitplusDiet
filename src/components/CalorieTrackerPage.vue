@@ -24,7 +24,7 @@
               <label id="label-text">Dinner</label>
               <mdb-input type="number" v-model="calcount.data.values.dinnr" />
 
-              <label id="label-text">Other (Snacks etc.)</label>
+              <label id="label-text">Other meals (Drinks, Snacks etc.)</label>
               <mdb-input type="number" v-model="calcount.data.values.othr" />
             </div>
           </mdb-row>
@@ -55,10 +55,12 @@
       </mdb-row>
       <h3>
         <br />
-        <br />
         Recommended Calorie Consumption and Expenditure to aim for!
       </h3>
-      <h4>Target 20% less calories if you are trying to lose weight.</h4>
+      <h4 id="title">
+        Target 20% less calories if you are trying to lose weight.
+      </h4>
+
 
       <div class="row">
         <div class="col">
