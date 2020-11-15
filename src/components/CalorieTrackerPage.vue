@@ -53,6 +53,18 @@
           <b>Track</b>
         </mdb-btn>
       </mdb-row>
+      <h3>
+        <br />
+        <br />
+        Recommended Calorie Consumption and Expenditure to aim for!
+      </h3>
+      <h4>Target 20% less calories if you are trying to lose weight.</h4>
+
+      <div class="row">
+        <div class="col">
+          <img :src="table" class="img-fluid" alt="Responsive image" />
+        </div>
+      </div>
     </mdb-container>
   </mdb-container>
 </template>
@@ -62,6 +74,7 @@ import { mdbInput } from "mdbvue";
 import { mapGetters } from "vuex";
 import firebase from "../firebase.js";
 import store from "../store.js";
+import image from "../assets/calorietable.jpg";
 
 export default {
   name: "CalorieTrackerPage",
@@ -75,6 +88,7 @@ export default {
   },
   data() {
     return {
+      table: image,
       calcount: {
         data: {
           values: {
@@ -128,12 +142,12 @@ export default {
     docRef.get().then(function (doc) {
       if (doc.exists) {
         var db = doc.data()[`${today}`].consume;
-        curr.values.bfast = typeof(db.bfast) === 'undefined' ? 0 : db.bfast;
-        curr.values.lunch = typeof(db.lunch) === 'undefined' ? 0 : db.lunch;
-        curr.values.dinnr = typeof(db.dinnr) === 'undefined' ? 0 : db.dinnr;
-        curr.values.othr = typeof(db.othr) === 'undefined' ? 0 : db.othr;
+        curr.values.bfast = typeof db.bfast === "undefined" ? 0 : db.bfast;
+        curr.values.lunch = typeof db.lunch === "undefined" ? 0 : db.lunch;
+        curr.values.dinnr = typeof db.dinnr === "undefined" ? 0 : db.dinnr;
+        curr.values.othr = typeof db.othr === "undefined" ? 0 : db.othr;
         var db2 = doc.data()[`${today}`].expend;
-        curr.expend = typeof(db2) === 'undefined' ? 0 : db2;
+        curr.expend = typeof db2 === "undefined" ? 0 : db2;
       }
     });
     //console.log(curr);

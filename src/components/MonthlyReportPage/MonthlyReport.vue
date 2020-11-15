@@ -26,19 +26,6 @@
           </mdb-card>
         </mdb-col>
       </mdb-row>
-
-      <h3>
-        <br />
-        <br />
-        Recommended Calorie Consumption and Expenditure to aim for!
-      </h3>
-      <h4>Target 20% less calories if you are trying to lose weight.</h4>
-
-      <div class="row">
-        <div class="col">
-          <img :src="table" class="img-fluid" alt="Responsive image" />
-        </div>
-      </div>
     </mdb-container>
   </div>
 </template>
@@ -47,15 +34,9 @@
 import { mapGetters } from "vuex";
 import CalorieChart from "./CalorieChart.vue";
 import CalorieChartB from "./CalorieChartB.vue";
-import image from "../../assets/calorietable.jpg";
 
 export default {
   name: "MonthlyReport",
-  data() {
-    return {
-      table: image,
-    };
-  },
   components: {
     CalorieChart,
     CalorieChartB,
