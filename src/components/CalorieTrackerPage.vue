@@ -3,8 +3,13 @@
     <mdb-container class="mt-5 mb-5 test">
       <h2>Calorie Tracker</h2>
       <h3 id="title">
-        Keep track of your other untracked caloric consumption/expenditure here!
+        Keep track of your caloric consumption/expenditure here!
       </h3>
+      <p id="helpertext">
+              <small
+                >All the entries are cumulative, so please add your untracked calories to the existing entries</small
+              >
+            </p>
     </mdb-container>
     <mdb-container
       class="mt-4 test d-flex flex-column align-items-center justify-content-center"
@@ -13,7 +18,7 @@
         <mdb-card class="p-4 pl-5 pr-5 mb-5" id="selectioncard">
           <mdb-row class="d-flex justify-content-center mb-3">
             <div>
-              <label id="label-text"> Calories Burnt (Other exercises) </label>
+              <label id="label-text"> Calories Burnt </label>
               <mdb-input type="number" v-model="calcount.data.expend" />
               <label id="label-text">Breakfast</label>
               <mdb-input type="number" v-model="calcount.data.values.bfast" />
