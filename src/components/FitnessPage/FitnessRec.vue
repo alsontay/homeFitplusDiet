@@ -24,17 +24,17 @@
     >
       COMPLETED AND TRACK!
     </button>
-    <h3 v-if="this.intensity == 'light'">
+    <h3 id="title" v-if="this.intensity == 'light'">
       Do 5 Sets of 10 for each of the exercises below. <br />
       Rest for 60 seconds in between each set. <br />Expected duration: 30
       minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h3>
-    <h3 v-if="this.intensity == 'moderate'">
+    <h3 id="title" v-if="this.intensity == 'moderate'">
       Do 7 Sets of 12 for each of the exercises below. <br />
       Rest for 75 seconds in between each set. <br />Expected duration: 45
       minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
     </h3>
-    <h3 v-if="this.intensity == 'intense'">
+    <h3 id="title" v-if="this.intensity == 'intense'">
       Do 9 Sets of 15 for each of the exercises below. <br />
       Rest for 90 seconds in between each set. <br />Expected duration: 60
       minutes - Total Calories Burned: {{ totalCaloriesBurnt }}
