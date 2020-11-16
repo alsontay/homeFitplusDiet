@@ -7,6 +7,13 @@ Due to COVID-19, various movement restrictions were put in place and many people
 
 Our Home Fit+Diet application will provide users with daily workout plans, dieting and nutrition tips and healthy food recipes so that users can maintain a healthy lifestyle while working or schooling from home. The application will customize and create a user’s fitness and nutrition plan based on their goals. In addition to providing healthy recipes, the application can also suggest food recipes based on the user’s limited available ingredients that will meet the requirements of the plan. It is similar to combining MyFitnessPal (food tracking application, with database of recipes) and FitPlan (physical workout with trainers and athletes), but with more customizations available for users.
 
+## Key Feature Summary
+
+Personalised Fitness Plan <br>
+Customised Recipe Recommendation System <br>
+Calorie Tracker <br>
+Monthly Report (Consumption and Expenditure) <br>
+
 ## Project setup
 ```
 npm install
@@ -29,3 +36,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# Authors
+1. Alson Tay Zhi Sheng (https://github.com/alsontay)
+2. Koh Ling Chen (https://github.com/llama-cookies)
+3. Lek Ze Ning (https://github.com/zeninggg)
+4. Ong Jia Qi (https://github.com/jiaqi14)
+
+
