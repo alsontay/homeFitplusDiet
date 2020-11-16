@@ -52,7 +52,7 @@
               >
             </p>
           </mdb-row>
-          <h5>Add your available ingredients here!</h5>
+          <h5>Add your available main ingredients here!</h5>
           <mdb-row class="d-flex justify-content-between align-items-center">
             <div>
               <select v-model="ingredient" class="custom-select">
