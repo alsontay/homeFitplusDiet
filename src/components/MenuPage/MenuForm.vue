@@ -125,7 +125,6 @@ export default {
       meal: "",
       cusines: [
         "No Preference",
-        "American",
         "Chinese",
         "French",
         "Italian",

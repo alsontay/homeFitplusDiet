@@ -194,7 +194,7 @@ export default {
           restrictions[k].toString();
       }
       var offsetNumber = 0;
-      if (this.mealtype == "dinner"  && this.cuisine == "No Preference") {
+      if (this.mealtype == "dinner" && this.cuisine == "No Preference") {
         offsetNumber = Math.floor(Math.random() * 3);
       }
       if (this.ingredients.length == 0 && this.cuisine == "No Preference") {

@@ -6,10 +6,11 @@
         Keep track of your caloric consumption/expenditure here!
       </h3>
       <p id="helpertext">
-              <small
-                >All the entries are cumulative, so please add your untracked calories to the existing entries</small
-              >
-            </p>
+        <small
+          >All the entries are cumulative, so please add your untracked calories
+          to the existing entries</small
+        >
+      </p>
     </mdb-container>
     <mdb-container
       class="mt-4 test d-flex flex-column align-items-center justify-content-center"
