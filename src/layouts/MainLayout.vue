@@ -4,7 +4,7 @@
       style="z-index: 100"
       expand="large"
       dark
-      color="default"
+      color="elegant-color-dark"
       :toggler="false"
     >
       <mdb-navbar-brand id="title">HOMEFIT+DIET</mdb-navbar-brand>
@@ -40,7 +40,7 @@
           <mdb-dropdown-toggle
             tag="a"
             navLink
-            color="default"
+            color="elegant-color"
             slot="toggle"
             waves-fixed
             icon="user"

@@ -24,10 +24,10 @@
     <h2 id="title" class="text-center text-uppercase py-4 px-3">
       Here are your suggested recipes for the day!
     </h2>
-    <h4>Choose one and enjoy!</h4>
+    <h4 id="title">Choose one and enjoy!</h4>
     <hr class="mb-0" />
 
-    <div class="rgba-red-slight py-5 px-4">
+    <div class="rgba-black-slight py-5 px-4">
       <div class="row d-flex justify-content-center">
         <div class="col-md-10 col-xl-8">
           <!--Accordion wrapper-->
@@ -40,7 +40,7 @@
             <!-- Accordion card -->
             <div class="card mb-4">
               <!-- Card header -->
-              <div class="card-header red accent-1" role="tab" id="heading33">
+              <div class="card-header elegant-color" role="tab" id="heading33">
                 <a
                   data-toggle="collapse"
                   data-parent="#accordionEx5"
@@ -49,7 +49,7 @@
                   aria-controls="collapse33"
                 >
                   <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
+                    class="justify-content-center text-uppercase white-text mb-0 py-3 mt-1"
                   >
                     {{ recipes[0].title }}
                   </h4>
@@ -64,7 +64,7 @@
                 aria-labelledby="heading33"
                 data-parent="#accordionEx5"
               >
-                <div class="card-body red lighten-5 black-text z-depth-1">
+                <div class="card-body grey lighten-3 black-text z-depth-1">
                   <div class="row">
                     <div class="col-5 justify-content-center">
                       <div class="row">
@@ -149,7 +149,7 @@
                               recipes[0].nutrition.nutrients[0].amount
                             )
                           "
-                          class="btn btn-warning"
+                          class="btn btn-dark"
                         >
                           SELECT AND TRACK!
                         </button>
@@ -164,7 +164,7 @@
             <!-- Accordion card -->
             <div class="card mb-4">
               <!-- Card header -->
-              <div class="card-header red accent-1" role="tab" id="heading34">
+              <div class="card-header elegant-color" role="tab" id="heading34">
                 <a
                   data-toggle="collapse"
                   data-parent="#accordionEx5"
@@ -173,7 +173,7 @@
                   aria-controls="collapse34"
                 >
                   <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
+                    class="justify-content-center text-uppercase white-text mb-0 py-3 mt-1"
                   >
                     {{ recipes[1].title }}
                   </h4>
@@ -188,7 +188,7 @@
                 aria-labelledby="heading34"
                 data-parent="#accordionEx5"
               >
-                <div class="card-body red lighten-5 black-text z-depth-1">
+                <div class="card-body grey lighten-3 black-text z-depth-1">
                   <div class="row">
                     <div class="col-5 justify-content-center">
                       <div class="row">
@@ -273,7 +273,7 @@
                               recipes[1].nutrition.nutrients[0].amount
                             )
                           "
-                          class="btn btn-warning"
+                          class="btn btn-dark"
                         >
                           SELECT AND TRACK!
                         </button>
@@ -288,7 +288,7 @@
             <!-- Accordion card -->
             <div class="card mb-4">
               <!-- Card header -->
-              <div class="card-header red accent-1" role="tab" id="heading35">
+              <div class="card-header elegant-color" role="tab" id="heading35">
                 <a
                   data-toggle="collapse"
                   data-parent="#accordionEx5"
@@ -297,7 +297,7 @@
                   aria-controls="collapse35"
                 >
                   <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
+                    class="justify-content-center text-uppercase white-text mb-0 py-3 mt-1"
                   >
                     {{ recipes[2].title }}
                   </h4>
@@ -312,7 +312,7 @@
                 aria-labelledby="heading35"
                 data-parent="#accordionEx5"
               >
-                <div class="card-body red lighten-5 black-text z-depth-1">
+                <div class="card-body grey lighten-3 black-text z-depth-1">
                   <div class="row">
                     <div class="col-5 justify-content-center">
                       <div class="row">
@@ -397,7 +397,7 @@
                               recipes[2].nutrition.nutrients[0].amount
                             )
                           "
-                          class="btn btn-warning"
+                          class="btn btn-dark"
                         >
                           SELECT AND TRACK!
                         </button>
@@ -532,7 +532,7 @@ export default {
 
 <style scoped>
 #title {
-  font-family: "Caveat", cursive;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .accordion {

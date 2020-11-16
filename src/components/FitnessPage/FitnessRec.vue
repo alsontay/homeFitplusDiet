@@ -19,7 +19,8 @@
     </h2>
     <button
       v-on:click="tracker(intensity, totalCaloriesBurnt)"
-      class="btn btn-info btn"
+      class="btn black btn"
+      style="color: white"
     >
       COMPLETED AND TRACK!
     </button>
@@ -41,7 +42,7 @@
 
     <hr class="mb-0" />
 
-    <div class="rgba-orange-slight py-5 px-4">
+    <div class="rgba-black-slight py-5 px-4">
       <div class="row d-flex justify-content-center">
         <div class="col-md-10 col-xl-8">
           <!--Accordion wrapper-->
@@ -59,7 +60,7 @@
             >
               <!-- Card header -->
               <div
-                class="card-header warning-color accent-1"
+                class="card-header elegant-color accent-1"
                 role="tab"
                 id="heading33"
               >
@@ -71,7 +72,7 @@
                   aria-controls="collapse30"
                 >
                   <h4
-                    class="justify-content-center text-uppercase black-text mb-0 py-3 mt-1"
+                    class="justify-content-center text-uppercase white-text mb-0 py-3 mt-1"
                   >
                     {{ exercise.name }}
                   </h4>
@@ -86,7 +87,7 @@
                 aria-labelledby="heading30"
                 data-parent="#accordionEx5"
               >
-                <div class="card-body yellow lighten-5 black-text z-depth-1">
+                <div class="card-body grey lighten-3 black-text z-depth-1">
                   <div class="row justify-content-center">
                     <div class="col">
                       <div
@@ -249,7 +250,7 @@ export default {
 </script>
 <style scoped>
 #title {
-  font-family: "Caveat", cursive;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .accordion {

@@ -12,7 +12,7 @@
 
         <mdb-row class="justify-content-center">
           <mdb-col>
-            <h2 style="color: #2e3951">
+            <h2 style="color: black">
               What We Offer <mdb-icon icon="check-double" />
             </h2>
             <p class="info">
@@ -89,7 +89,7 @@
                     </mdb-row>
                     <br />
                     <mdb-row>
-                      <mdb-card-body color="warning">
+                      <mdb-card-body color="default">
                         <mdb-card-title class="black-text">{{
                           item.title
                         }}</mdb-card-title>
@@ -221,12 +221,12 @@ h2 {
   font-size: 30pt;
   font-family: Impact;
   margin-top: 50pt;
-  color: #2e3951;
+  color: black;
 }
 
 h1 {
   font-size: 100pt;
   font-family: Impact;
-  color: #2e3951;
+  color: black;
 }
 </style>

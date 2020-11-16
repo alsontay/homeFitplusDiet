@@ -169,7 +169,7 @@ export default {
 
 <style scoped>
 #title {
-  font-family: "Caveat", cursive;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #selectioncard {

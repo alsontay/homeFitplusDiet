@@ -2,77 +2,75 @@
   <div class="landing-page center">
     <div class="landing-page center" style="height: 100%">
       <div class="rgba-grey-slight py-4 px-4">
-        <div class="rgba-teal-slight py-5 px-4">
-          <section id="section">
-            <section class="center">
-              <div id="section-card">
-                <mdb-row style="overflow-x: hidden">
-                  <img
-                    src="/images/logo.png"
-                    alt="logo"
-                    width="100%"
-                    height="100%"
-                    id="logo"
+        <section id="section">
+          <section class="center">
+            <div id="section-card">
+              <mdb-row style="overflow-x: hidden">
+                <img
+                  src="/images/logo.png"
+                  alt="logo"
+                  width="100%"
+                  height="100%"
+                  id="logo"
+                />
+                <mdb-col id="title">
+                  <h2 class="h2-responsive justify-content-center">
+                    HOMEFIT+DIET
+                  </h2>
+                  <h5 class="h5-responsive justify-content-center text-muted">
+                    Eat Fit, Keep Fit
+                  </h5>
+                </mdb-col>
+              </mdb-row>
+              <mdb-row style="overflow-x: hidden">
+                <mdb-col lg="6" id="title-image">
+                  <mdb-view
+                    src="/images/undraw_pilates_gpdb.svg"
+                    alt="Pilates"
                   />
-                  <mdb-col id="title">
-                    <h2 class="h2-responsive justify-content-center">
-                      HOMEFIT+DIET
-                    </h2>
-                    <h5 class="h5-responsive justify-content-center text-muted">
-                      Eat Fit, Keep Fit
-                    </h5>
-                  </mdb-col>
-                </mdb-row>
-                <mdb-row style="overflow-x: hidden">
-                  <mdb-col lg="6" id="title-image">
-                    <mdb-view
-                      src="/images/undraw_pilates_gpdb.svg"
-                      alt="Pilates"
-                    />
-                  </mdb-col>
-                  <mdb-col lg="6">
-                    <mdb-row id="title-text">
-                      <p class="subheader">
-                        COVID-19 has caused us to be stuck at home and limited
-                        our physical activity and food options.
-                        <br />
-                        But fret not! <br />
-                        Homefit+diet is here to help you EAT FIT and KEEP FIT,
-                        all within the comforts of your own home!
-                        <br />
-                        Join us now! <br />
-                      </p>
-                    </mdb-row>
-                    <mdb-row>
-                      <mdb-col>
+                </mdb-col>
+                <mdb-col lg="6">
+                  <mdb-row id="title-text">
+                    <p class="subheader">
+                      COVID-19 has caused us to be stuck at home and limited our
+                      physical activity and food options.
+                      <br />
+                      But fret not! <br />
+                      Homefit+diet is here to help you EAT FIT and KEEP FIT, all
+                      within the comforts of your own home!
+                      <br />
+                      Join us now! <br />
+                    </p>
+                  </mdb-row>
+                  <mdb-row>
+                    <mdb-col>
+                      <mdb-btn
+                        class="stbtn"
+                        @click.native="showSignup = true"
+                        color="default"
+                        >START</mdb-btn
+                      >
+                      <p>
+                        Already have an account?
                         <mdb-btn
-                          class="stbtn"
-                          @click.native="showSignup = true"
-                          color="default"
-                          >START</mdb-btn
+                          @click.native="showLogin = true"
+                          class="lgnbtn"
+                          color=""
+                          >Login</mdb-btn
                         >
-                        <p>
-                          Already have an account?
-                          <mdb-btn
-                            @click.native="showLogin = true"
-                            class="lgnbtn"
-                            color=""
-                            >Login</mdb-btn
-                          >
-                        </p>
-                      </mdb-col>
-                    </mdb-row>
-                  </mdb-col>
-                </mdb-row>
-              </div>
-              <div class="footer-copyright text-center py-3">
-                <mdb-container fluid class="fixed-bottom">
-                  &copy; 2020 Goal Diggers
-                </mdb-container>
-              </div>
-            </section>
+                      </p>
+                    </mdb-col>
+                  </mdb-row>
+                </mdb-col>
+              </mdb-row>
+            </div>
+            <div class="footer-copyright text-center py-3">
+              <mdb-container fluid class="fixed-bottom">
+                &copy; 2020 Goal Diggers
+              </mdb-container>
+            </div>
           </section>
-        </div>
+        </section>
       </div>
     </div>
     <form @submit="login">
@@ -298,7 +296,7 @@ export default {
   overflow-x: hidden;
   height: 100vh;
   width: 100vw;
-  background-color: rgb(243, 239, 239);
+  background-color: grey lighten-1;
 }
 
 .center {
