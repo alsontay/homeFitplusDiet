@@ -73,9 +73,6 @@ export default {
             if (counter == 30) break;
             let data = ref2[sortedKeys[counter]].expend;
             var total = parseInt(data);
-            for (var key in data) {
-              total += parseInt(data[key]);
-            }
             chartdata.labels.push(sortedKeys[counter]);
             chartdata.datasets[0].data.push(total);
             counter++;

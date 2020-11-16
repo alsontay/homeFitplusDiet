@@ -79,7 +79,7 @@ export default {
         } else if (x == "hypertension") {
           restrictions["maxSodium"] = 0;
         } else if (x == "hypoglycemia") {
-          restrictions["minCarbs"] = 150;
+          restrictions["minCarbs"] = 20;
         }
       }
       var ingredientstring = "&includeIngredients=";
@@ -163,9 +163,9 @@ export default {
           restrictions["minCalcium"] = 1;
           restrictions["minVitaminD"] = 800 * 0.67; //IU to mg
         } else if (x == "anaemia") {
-          restrictions["minIron"] = 60;
+          restrictions["minIron"] = 5;
         } else if (x == "hypoglycemia") {
-          restrictions["minCarbs"] = 150;
+          restrictions["mincarbs"] = 50;
         }
       }
       var ingredientstring = "&includeIngredients=";
