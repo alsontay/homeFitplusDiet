@@ -14,6 +14,10 @@ Customised Recipe Recommendation System <br>
 Calorie Tracker <br>
 Monthly Report (Consumption and Expenditure) <br>
 
+## Deployed Link
+
+[Home Fit+Diet](https://homefitdiet-f9353.web.app/)
+
 ## Project setup
 ```
 npm install
