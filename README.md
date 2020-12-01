@@ -41,10 +41,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-# Authors
-1. Alson Tay Zhi Sheng (https://github.com/alsontay)
-2. Koh Ling Chen (https://github.com/llama-cookies)
-3. Lek Ze Ning (https://github.com/zeninggg)
-4. Ong Jia Qi (https://github.com/jiaqi14)
-
 
